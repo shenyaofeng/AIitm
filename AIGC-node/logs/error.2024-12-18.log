@@ -1,0 +1,391 @@
+[2024-12-18T12:43:31.215] [ERROR] error - Error
+    at Query.run (C:\reactProject\AIGC-node\node_modules\sequelize\lib\dialects\mysql\query.js:52:25)
+    at C:\reactProject\AIGC-node\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.insert (C:\reactProject\AIGC-node\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+    at async model.save (C:\reactProject\AIGC-node\node_modules\sequelize\lib\model.js:2490:35)
+    at async user-info.create (C:\reactProject\AIGC-node\node_modules\sequelize\lib\model.js:1362:12)
+    at async login (C:\reactProject\AIGC-node\controller\user.js:10:5)
+    at async errorhandler (C:\reactProject\AIGC-node\config\errorhandler.js:5:5)
+    at async responseHandler (C:\reactProject\AIGC-node\config\result.js:18:3)
+    at async cors (C:\reactProject\AIGC-node\node_modules\@koa\cors\index.js:109:16) {
+  name: 'SequelizeUniqueConstraintError',
+  errors: [
+    ValidationErrorItem {
+      message: 'PRIMARY must be unique',
+      type: 'unique violation',
+      path: 'PRIMARY',
+      value: '17727127502',
+      origin: 'DB',
+      instance: [user-info],
+      validatorKey: 'not_unique',
+      validatorName: null,
+      validatorArgs: []
+    }
+  ],
+  parent: Error: Duplicate entry '17727127502' for key 'user-info.PRIMARY'
+      at Packet.asError (C:\reactProject\AIGC-node\node_modules\mysql2\lib\packets\packet.js:740:17)
+      at Execute.execute (C:\reactProject\AIGC-node\node_modules\mysql2\lib\commands\command.js:29:26)
+      at Connection.handlePacket (C:\reactProject\AIGC-node\node_modules\mysql2\lib\base\connection.js:475:34)
+      at PacketParser.onPacket (C:\reactProject\AIGC-node\node_modules\mysql2\lib\base\connection.js:93:12)
+      at PacketParser.executeStart (C:\reactProject\AIGC-node\node_modules\mysql2\lib\packet_parser.js:75:16)
+      at Socket.<anonymous> (C:\reactProject\AIGC-node\node_modules\mysql2\lib\base\connection.js:100:25)
+      at Socket.emit (node:events:518:28)
+      at addChunk (node:internal/streams/readable:559:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+      at Readable.push (node:internal/streams/readable:390:5) {
+    code: 'ER_DUP_ENTRY',
+    errno: 1062,
+    sqlState: '23000',
+    sqlMessage: "Duplicate entry '17727127502' for key 'user-info.PRIMARY'",
+    sql: 'INSERT INTO `user-info` (`phone`,`date`) VALUES (?,?);',
+    parameters: [ '17727127502', '2024-12-18 12:28:11' ]
+  },
+  original: Error: Duplicate entry '17727127502' for key 'user-info.PRIMARY'
+      at Packet.asError (C:\reactProject\AIGC-node\node_modules\mysql2\lib\packets\packet.js:740:17)
+      at Execute.execute (C:\reactProject\AIGC-node\node_modules\mysql2\lib\commands\command.js:29:26)
+      at Connection.handlePacket (C:\reactProject\AIGC-node\node_modules\mysql2\lib\base\connection.js:475:34)
+      at PacketParser.onPacket (C:\reactProject\AIGC-node\node_modules\mysql2\lib\base\connection.js:93:12)
+      at PacketParser.executeStart (C:\reactProject\AIGC-node\node_modules\mysql2\lib\packet_parser.js:75:16)
+      at Socket.<anonymous> (C:\reactProject\AIGC-node\node_modules\mysql2\lib\base\connection.js:100:25)
+      at Socket.emit (node:events:518:28)
+      at addChunk (node:internal/streams/readable:559:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+      at Readable.push (node:internal/streams/readable:390:5) {
+    code: 'ER_DUP_ENTRY',
+    errno: 1062,
+    sqlState: '23000',
+    sqlMessage: "Duplicate entry '17727127502' for key 'user-info.PRIMARY'",
+    sql: 'INSERT INTO `user-info` (`phone`,`date`) VALUES (?,?);',
+    parameters: [ '17727127502', '2024-12-18 12:28:11' ]
+  },
+  fields: { PRIMARY: '17727127502' },
+  sql: 'INSERT INTO `user-info` (`phone`,`date`) VALUES (?,?);'
+}
+[2024-12-18T12:44:52.111] [ERROR] error - Error
+    at Query.run (C:\reactProject\AIGC-node\node_modules\sequelize\lib\dialects\mysql\query.js:52:25)
+    at C:\reactProject\AIGC-node\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.insert (C:\reactProject\AIGC-node\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+    at async model.save (C:\reactProject\AIGC-node\node_modules\sequelize\lib\model.js:2490:35)
+    at async user-info.create (C:\reactProject\AIGC-node\node_modules\sequelize\lib\model.js:1362:12)
+    at async login (C:\reactProject\AIGC-node\controller\user.js:10:5)
+    at async errorhandler (C:\reactProject\AIGC-node\config\errorhandler.js:5:5)
+    at async responseHandler (C:\reactProject\AIGC-node\config\result.js:18:3)
+    at async cors (C:\reactProject\AIGC-node\node_modules\@koa\cors\index.js:109:16) {
+  name: 'SequelizeUniqueConstraintError',
+  errors: [
+    ValidationErrorItem {
+      message: 'PRIMARY must be unique',
+      type: 'unique violation',
+      path: 'PRIMARY',
+      value: '17727127502',
+      origin: 'DB',
+      instance: [user-info],
+      validatorKey: 'not_unique',
+      validatorName: null,
+      validatorArgs: []
+    }
+  ],
+  parent: Error: Duplicate entry '17727127502' for key 'user-info.PRIMARY'
+      at Packet.asError (C:\reactProject\AIGC-node\node_modules\mysql2\lib\packets\packet.js:740:17)
+      at Execute.execute (C:\reactProject\AIGC-node\node_modules\mysql2\lib\commands\command.js:29:26)
+      at Connection.handlePacket (C:\reactProject\AIGC-node\node_modules\mysql2\lib\base\connection.js:475:34)
+      at PacketParser.onPacket (C:\reactProject\AIGC-node\node_modules\mysql2\lib\base\connection.js:93:12)
+      at PacketParser.executeStart (C:\reactProject\AIGC-node\node_modules\mysql2\lib\packet_parser.js:75:16)
+      at Socket.<anonymous> (C:\reactProject\AIGC-node\node_modules\mysql2\lib\base\connection.js:100:25)
+      at Socket.emit (node:events:518:28)
+      at addChunk (node:internal/streams/readable:559:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+      at Readable.push (node:internal/streams/readable:390:5) {
+    code: 'ER_DUP_ENTRY',
+    errno: 1062,
+    sqlState: '23000',
+    sqlMessage: "Duplicate entry '17727127502' for key 'user-info.PRIMARY'",
+    sql: 'INSERT INTO `user-info` (`phone`,`date`) VALUES (?,?);',
+    parameters: [ '17727127502', '2024-12-18 12:28:11' ]
+  },
+  original: Error: Duplicate entry '17727127502' for key 'user-info.PRIMARY'
+      at Packet.asError (C:\reactProject\AIGC-node\node_modules\mysql2\lib\packets\packet.js:740:17)
+      at Execute.execute (C:\reactProject\AIGC-node\node_modules\mysql2\lib\commands\command.js:29:26)
+      at Connection.handlePacket (C:\reactProject\AIGC-node\node_modules\mysql2\lib\base\connection.js:475:34)
+      at PacketParser.onPacket (C:\reactProject\AIGC-node\node_modules\mysql2\lib\base\connection.js:93:12)
+      at PacketParser.executeStart (C:\reactProject\AIGC-node\node_modules\mysql2\lib\packet_parser.js:75:16)
+      at Socket.<anonymous> (C:\reactProject\AIGC-node\node_modules\mysql2\lib\base\connection.js:100:25)
+      at Socket.emit (node:events:518:28)
+      at addChunk (node:internal/streams/readable:559:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+      at Readable.push (node:internal/streams/readable:390:5) {
+    code: 'ER_DUP_ENTRY',
+    errno: 1062,
+    sqlState: '23000',
+    sqlMessage: "Duplicate entry '17727127502' for key 'user-info.PRIMARY'",
+    sql: 'INSERT INTO `user-info` (`phone`,`date`) VALUES (?,?);',
+    parameters: [ '17727127502', '2024-12-18 12:28:11' ]
+  },
+  fields: { PRIMARY: '17727127502' },
+  sql: 'INSERT INTO `user-info` (`phone`,`date`) VALUES (?,?);'
+}
+[2024-12-18T19:50:37.925] [ERROR] error - { msg: '缺少name字段', code: 400 }
+[2024-12-18T19:51:34.922] [ERROR] error - { msg: '缺少name字段', code: 400 }
+[2024-12-18T19:52:07.444] [ERROR] error - { msg: '缺少name字段', code: 400 }
+[2024-12-18T20:04:42.947] [ERROR] error - { msg: '用户名不能为空', code: 422 }
+[2024-12-18T20:04:50.114] [ERROR] error - { msg: '用户名不能为空', code: 422 }
+[2024-12-18T20:10:06.553] [ERROR] error - { msg: '用户名不能为空', code: 422 }
+[2024-12-18T20:10:37.444] [ERROR] error - { msg: '用户名不能为空', code: 400 }
+[2024-12-18T20:15:41.707] [ERROR] error - Error
+    at Query.run (C:\reactProject\AIGC-node\node_modules\sequelize\lib\dialects\mysql\query.js:52:25)
+    at C:\reactProject\AIGC-node\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.insert (C:\reactProject\AIGC-node\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+    at async model.save (C:\reactProject\AIGC-node\node_modules\sequelize\lib\model.js:2490:35)
+    at async user-info.create (C:\reactProject\AIGC-node\node_modules\sequelize\lib\model.js:1362:12)
+    at async login (C:\reactProject\AIGC-node\controller\user.js:11:5)
+    at async errorhandler (C:\reactProject\AIGC-node\config\errorhandler.js:5:5)
+    at async responseHandler (C:\reactProject\AIGC-node\config\result.js:18:3)
+    at async cors (C:\reactProject\AIGC-node\node_modules\@koa\cors\index.js:109:16) {
+  name: 'SequelizeUniqueConstraintError',
+  errors: [
+    ValidationErrorItem {
+      message: 'PRIMARY must be unique',
+      type: 'unique violation',
+      path: 'PRIMARY',
+      value: '15835535784',
+      origin: 'DB',
+      instance: [user-info],
+      validatorKey: 'not_unique',
+      validatorName: null,
+      validatorArgs: []
+    }
+  ],
+  parent: Error: Duplicate entry '15835535784' for key 'user-info.PRIMARY'
+      at Packet.asError (C:\reactProject\AIGC-node\node_modules\mysql2\lib\packets\packet.js:740:17)
+      at Execute.execute (C:\reactProject\AIGC-node\node_modules\mysql2\lib\commands\command.js:29:26)
+      at Connection.handlePacket (C:\reactProject\AIGC-node\node_modules\mysql2\lib\base\connection.js:475:34)
+      at PacketParser.onPacket (C:\reactProject\AIGC-node\node_modules\mysql2\lib\base\connection.js:93:12)
+      at PacketParser.executeStart (C:\reactProject\AIGC-node\node_modules\mysql2\lib\packet_parser.js:75:16)
+      at Socket.<anonymous> (C:\reactProject\AIGC-node\node_modules\mysql2\lib\base\connection.js:100:25)
+      at Socket.emit (node:events:518:28)
+      at addChunk (node:internal/streams/readable:559:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+      at Readable.push (node:internal/streams/readable:390:5) {
+    code: 'ER_DUP_ENTRY',
+    errno: 1062,
+    sqlState: '23000',
+    sqlMessage: "Duplicate entry '15835535784' for key 'user-info.PRIMARY'",
+    sql: 'INSERT INTO `user-info` (`phone`,`date`) VALUES (?,?);',
+    parameters: [ '15835535784', '2024-12-18 20:14:55' ]
+  },
+  original: Error: Duplicate entry '15835535784' for key 'user-info.PRIMARY'
+      at Packet.asError (C:\reactProject\AIGC-node\node_modules\mysql2\lib\packets\packet.js:740:17)
+      at Execute.execute (C:\reactProject\AIGC-node\node_modules\mysql2\lib\commands\command.js:29:26)
+      at Connection.handlePacket (C:\reactProject\AIGC-node\node_modules\mysql2\lib\base\connection.js:475:34)
+      at PacketParser.onPacket (C:\reactProject\AIGC-node\node_modules\mysql2\lib\base\connection.js:93:12)
+      at PacketParser.executeStart (C:\reactProject\AIGC-node\node_modules\mysql2\lib\packet_parser.js:75:16)
+      at Socket.<anonymous> (C:\reactProject\AIGC-node\node_modules\mysql2\lib\base\connection.js:100:25)
+      at Socket.emit (node:events:518:28)
+      at addChunk (node:internal/streams/readable:559:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+      at Readable.push (node:internal/streams/readable:390:5) {
+    code: 'ER_DUP_ENTRY',
+    errno: 1062,
+    sqlState: '23000',
+    sqlMessage: "Duplicate entry '15835535784' for key 'user-info.PRIMARY'",
+    sql: 'INSERT INTO `user-info` (`phone`,`date`) VALUES (?,?);',
+    parameters: [ '15835535784', '2024-12-18 20:14:55' ]
+  },
+  fields: { PRIMARY: '15835535784' },
+  sql: 'INSERT INTO `user-info` (`phone`,`date`) VALUES (?,?);'
+}
+[2024-12-18T20:15:42.345] [ERROR] error - Error
+    at Query.run (C:\reactProject\AIGC-node\node_modules\sequelize\lib\dialects\mysql\query.js:52:25)
+    at C:\reactProject\AIGC-node\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.insert (C:\reactProject\AIGC-node\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+    at async model.save (C:\reactProject\AIGC-node\node_modules\sequelize\lib\model.js:2490:35)
+    at async user-info.create (C:\reactProject\AIGC-node\node_modules\sequelize\lib\model.js:1362:12)
+    at async login (C:\reactProject\AIGC-node\controller\user.js:11:5)
+    at async errorhandler (C:\reactProject\AIGC-node\config\errorhandler.js:5:5)
+    at async responseHandler (C:\reactProject\AIGC-node\config\result.js:18:3)
+    at async cors (C:\reactProject\AIGC-node\node_modules\@koa\cors\index.js:109:16) {
+  name: 'SequelizeUniqueConstraintError',
+  errors: [
+    ValidationErrorItem {
+      message: 'PRIMARY must be unique',
+      type: 'unique violation',
+      path: 'PRIMARY',
+      value: '15835535784',
+      origin: 'DB',
+      instance: [user-info],
+      validatorKey: 'not_unique',
+      validatorName: null,
+      validatorArgs: []
+    }
+  ],
+  parent: Error: Duplicate entry '15835535784' for key 'user-info.PRIMARY'
+      at Packet.asError (C:\reactProject\AIGC-node\node_modules\mysql2\lib\packets\packet.js:740:17)
+      at Execute.execute (C:\reactProject\AIGC-node\node_modules\mysql2\lib\commands\command.js:29:26)
+      at Connection.handlePacket (C:\reactProject\AIGC-node\node_modules\mysql2\lib\base\connection.js:475:34)
+      at PacketParser.onPacket (C:\reactProject\AIGC-node\node_modules\mysql2\lib\base\connection.js:93:12)
+      at PacketParser.executeStart (C:\reactProject\AIGC-node\node_modules\mysql2\lib\packet_parser.js:75:16)
+      at Socket.<anonymous> (C:\reactProject\AIGC-node\node_modules\mysql2\lib\base\connection.js:100:25)
+      at Socket.emit (node:events:518:28)
+      at addChunk (node:internal/streams/readable:559:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+      at Readable.push (node:internal/streams/readable:390:5) {
+    code: 'ER_DUP_ENTRY',
+    errno: 1062,
+    sqlState: '23000',
+    sqlMessage: "Duplicate entry '15835535784' for key 'user-info.PRIMARY'",
+    sql: 'INSERT INTO `user-info` (`phone`,`date`) VALUES (?,?);',
+    parameters: [ '15835535784', '2024-12-18 20:14:55' ]
+  },
+  original: Error: Duplicate entry '15835535784' for key 'user-info.PRIMARY'
+      at Packet.asError (C:\reactProject\AIGC-node\node_modules\mysql2\lib\packets\packet.js:740:17)
+      at Execute.execute (C:\reactProject\AIGC-node\node_modules\mysql2\lib\commands\command.js:29:26)
+      at Connection.handlePacket (C:\reactProject\AIGC-node\node_modules\mysql2\lib\base\connection.js:475:34)
+      at PacketParser.onPacket (C:\reactProject\AIGC-node\node_modules\mysql2\lib\base\connection.js:93:12)
+      at PacketParser.executeStart (C:\reactProject\AIGC-node\node_modules\mysql2\lib\packet_parser.js:75:16)
+      at Socket.<anonymous> (C:\reactProject\AIGC-node\node_modules\mysql2\lib\base\connection.js:100:25)
+      at Socket.emit (node:events:518:28)
+      at addChunk (node:internal/streams/readable:559:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+      at Readable.push (node:internal/streams/readable:390:5) {
+    code: 'ER_DUP_ENTRY',
+    errno: 1062,
+    sqlState: '23000',
+    sqlMessage: "Duplicate entry '15835535784' for key 'user-info.PRIMARY'",
+    sql: 'INSERT INTO `user-info` (`phone`,`date`) VALUES (?,?);',
+    parameters: [ '15835535784', '2024-12-18 20:14:55' ]
+  },
+  fields: { PRIMARY: '15835535784' },
+  sql: 'INSERT INTO `user-info` (`phone`,`date`) VALUES (?,?);'
+}
+[2024-12-18T20:24:11.870] [ERROR] error - Error
+    at Query.run (C:\reactProject\AIGC-node\node_modules\sequelize\lib\dialects\mysql\query.js:52:25)
+    at C:\reactProject\AIGC-node\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.insert (C:\reactProject\AIGC-node\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+    at async model.save (C:\reactProject\AIGC-node\node_modules\sequelize\lib\model.js:2490:35)
+    at async user-info.create (C:\reactProject\AIGC-node\node_modules\sequelize\lib\model.js:1362:12)
+    at async login (C:\reactProject\AIGC-node\controller\user.js:11:5)
+    at async errorhandler (C:\reactProject\AIGC-node\config\errorhandler.js:5:5)
+    at async responseHandler (C:\reactProject\AIGC-node\config\result.js:18:3)
+    at async cors (C:\reactProject\AIGC-node\node_modules\@koa\cors\index.js:109:16) {
+  name: 'SequelizeUniqueConstraintError',
+  errors: [
+    ValidationErrorItem {
+      message: 'PRIMARY must be unique',
+      type: 'unique violation',
+      path: 'PRIMARY',
+      value: '15835535784',
+      origin: 'DB',
+      instance: [user-info],
+      validatorKey: 'not_unique',
+      validatorName: null,
+      validatorArgs: []
+    }
+  ],
+  parent: Error: Duplicate entry '15835535784' for key 'user-info.PRIMARY'
+      at Packet.asError (C:\reactProject\AIGC-node\node_modules\mysql2\lib\packets\packet.js:740:17)
+      at Execute.execute (C:\reactProject\AIGC-node\node_modules\mysql2\lib\commands\command.js:29:26)
+      at Connection.handlePacket (C:\reactProject\AIGC-node\node_modules\mysql2\lib\base\connection.js:475:34)
+      at PacketParser.onPacket (C:\reactProject\AIGC-node\node_modules\mysql2\lib\base\connection.js:93:12)
+      at PacketParser.executeStart (C:\reactProject\AIGC-node\node_modules\mysql2\lib\packet_parser.js:75:16)
+      at Socket.<anonymous> (C:\reactProject\AIGC-node\node_modules\mysql2\lib\base\connection.js:100:25)
+      at Socket.emit (node:events:518:28)
+      at addChunk (node:internal/streams/readable:559:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+      at Readable.push (node:internal/streams/readable:390:5) {
+    code: 'ER_DUP_ENTRY',
+    errno: 1062,
+    sqlState: '23000',
+    sqlMessage: "Duplicate entry '15835535784' for key 'user-info.PRIMARY'",
+    sql: 'INSERT INTO `user-info` (`phone`,`date`) VALUES (?,?);',
+    parameters: [ '15835535784', '2024-12-18 20:14:55' ]
+  },
+  original: Error: Duplicate entry '15835535784' for key 'user-info.PRIMARY'
+      at Packet.asError (C:\reactProject\AIGC-node\node_modules\mysql2\lib\packets\packet.js:740:17)
+      at Execute.execute (C:\reactProject\AIGC-node\node_modules\mysql2\lib\commands\command.js:29:26)
+      at Connection.handlePacket (C:\reactProject\AIGC-node\node_modules\mysql2\lib\base\connection.js:475:34)
+      at PacketParser.onPacket (C:\reactProject\AIGC-node\node_modules\mysql2\lib\base\connection.js:93:12)
+      at PacketParser.executeStart (C:\reactProject\AIGC-node\node_modules\mysql2\lib\packet_parser.js:75:16)
+      at Socket.<anonymous> (C:\reactProject\AIGC-node\node_modules\mysql2\lib\base\connection.js:100:25)
+      at Socket.emit (node:events:518:28)
+      at addChunk (node:internal/streams/readable:559:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+      at Readable.push (node:internal/streams/readable:390:5) {
+    code: 'ER_DUP_ENTRY',
+    errno: 1062,
+    sqlState: '23000',
+    sqlMessage: "Duplicate entry '15835535784' for key 'user-info.PRIMARY'",
+    sql: 'INSERT INTO `user-info` (`phone`,`date`) VALUES (?,?);',
+    parameters: [ '15835535784', '2024-12-18 20:14:55' ]
+  },
+  fields: { PRIMARY: '15835535784' },
+  sql: 'INSERT INTO `user-info` (`phone`,`date`) VALUES (?,?);'
+}
+[2024-12-18T20:24:15.394] [ERROR] error - Error
+    at Query.run (C:\reactProject\AIGC-node\node_modules\sequelize\lib\dialects\mysql\query.js:52:25)
+    at C:\reactProject\AIGC-node\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.insert (C:\reactProject\AIGC-node\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+    at async model.save (C:\reactProject\AIGC-node\node_modules\sequelize\lib\model.js:2490:35)
+    at async user-info.create (C:\reactProject\AIGC-node\node_modules\sequelize\lib\model.js:1362:12)
+    at async login (C:\reactProject\AIGC-node\controller\user.js:11:5)
+    at async errorhandler (C:\reactProject\AIGC-node\config\errorhandler.js:5:5)
+    at async responseHandler (C:\reactProject\AIGC-node\config\result.js:18:3)
+    at async cors (C:\reactProject\AIGC-node\node_modules\@koa\cors\index.js:109:16) {
+  name: 'SequelizeUniqueConstraintError',
+  errors: [
+    ValidationErrorItem {
+      message: 'PRIMARY must be unique',
+      type: 'unique violation',
+      path: 'PRIMARY',
+      value: '15835535784',
+      origin: 'DB',
+      instance: [user-info],
+      validatorKey: 'not_unique',
+      validatorName: null,
+      validatorArgs: []
+    }
+  ],
+  parent: Error: Duplicate entry '15835535784' for key 'user-info.PRIMARY'
+      at Packet.asError (C:\reactProject\AIGC-node\node_modules\mysql2\lib\packets\packet.js:740:17)
+      at Execute.execute (C:\reactProject\AIGC-node\node_modules\mysql2\lib\commands\command.js:29:26)
+      at Connection.handlePacket (C:\reactProject\AIGC-node\node_modules\mysql2\lib\base\connection.js:475:34)
+      at PacketParser.onPacket (C:\reactProject\AIGC-node\node_modules\mysql2\lib\base\connection.js:93:12)
+      at PacketParser.executeStart (C:\reactProject\AIGC-node\node_modules\mysql2\lib\packet_parser.js:75:16)
+      at Socket.<anonymous> (C:\reactProject\AIGC-node\node_modules\mysql2\lib\base\connection.js:100:25)
+      at Socket.emit (node:events:518:28)
+      at addChunk (node:internal/streams/readable:559:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+      at Readable.push (node:internal/streams/readable:390:5) {
+    code: 'ER_DUP_ENTRY',
+    errno: 1062,
+    sqlState: '23000',
+    sqlMessage: "Duplicate entry '15835535784' for key 'user-info.PRIMARY'",
+    sql: 'INSERT INTO `user-info` (`phone`,`date`) VALUES (?,?);',
+    parameters: [ '15835535784', '2024-12-18 20:14:55' ]
+  },
+  original: Error: Duplicate entry '15835535784' for key 'user-info.PRIMARY'
+      at Packet.asError (C:\reactProject\AIGC-node\node_modules\mysql2\lib\packets\packet.js:740:17)
+      at Execute.execute (C:\reactProject\AIGC-node\node_modules\mysql2\lib\commands\command.js:29:26)
+      at Connection.handlePacket (C:\reactProject\AIGC-node\node_modules\mysql2\lib\base\connection.js:475:34)
+      at PacketParser.onPacket (C:\reactProject\AIGC-node\node_modules\mysql2\lib\base\connection.js:93:12)
+      at PacketParser.executeStart (C:\reactProject\AIGC-node\node_modules\mysql2\lib\packet_parser.js:75:16)
+      at Socket.<anonymous> (C:\reactProject\AIGC-node\node_modules\mysql2\lib\base\connection.js:100:25)
+      at Socket.emit (node:events:518:28)
+      at addChunk (node:internal/streams/readable:559:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+      at Readable.push (node:internal/streams/readable:390:5) {
+    code: 'ER_DUP_ENTRY',
+    errno: 1062,
+    sqlState: '23000',
+    sqlMessage: "Duplicate entry '15835535784' for key 'user-info.PRIMARY'",
+    sql: 'INSERT INTO `user-info` (`phone`,`date`) VALUES (?,?);',
+    parameters: [ '15835535784', '2024-12-18 20:14:55' ]
+  },
+  fields: { PRIMARY: '15835535784' },
+  sql: 'INSERT INTO `user-info` (`phone`,`date`) VALUES (?,?);'
+}

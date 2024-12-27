@@ -1,0 +1,59 @@
+.login-background {
+  position: relative;
+  width: 100vw;
+  height: 100vw;
+  background: linear-gradient(to bottom, #0091ff, #ffffff);
+  display: flex;
+  justify-content: center;
+  .login-continer {
+    position: absolute;
+    top: 25vw;
+    width: 90vw;
+    height: 130vw;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(66, 66, 66, 0.1); // 示例阴影，你可以根据需要调整参数
+    background-color: #ffffff;
+    .title {
+      margin-top: 10vw;
+      font-size: 1.5rem;
+      text-align: center;
+    }
+    .form {
+      position: relative;
+      top: 10vw;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      .number {
+        width: 80vw;
+        height: 13vw;
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: 700;
+        background-color: #f1f0f0;
+        border-radius: 25vw;
+        box-shadow: 0 0 10px rgba(66, 66, 66, 0.1);
+      }
+      .login-btn{
+        position: absolute;
+        top: 80vw;
+        width: 80vw;
+        height: 13vw;
+        border-radius: 25vw;
+        font-size: 1.5rem;
+        font-weight: 500;
+        background-color: #0091ff;
+      }
+      .login-captcha{
+        position: absolute;
+        top: 35vw;
+        width: 80vw;
+        height: 13vw;
+        border-radius: 25vw;
+        font-size: 1.5rem;
+        font-weight: 500;
+        background-color: #0091ff;
+      }
+    }
+  }
+}

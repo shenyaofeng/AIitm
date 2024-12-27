@@ -1,0 +1,43 @@
+.chat {
+  position: fixed;
+  bottom: 11vw;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.chatI {
+  margin: 1vw;
+}
+.chatbox {
+  width: 84vw;
+  margin: 1vw;
+  border-radius: 20px;
+  box-shadow: 0 0 6px -1px gray;
+}
+.input {
+  width: 70vw;
+  margin-top: 0.5vw;
+  margin-bottom: 0.5vw;
+  padding-top: 0.8vw;
+  margin-left: 2vw;
+  border: none;
+}
+.input.ant-input:focus {
+  border: none;
+  box-shadow: none;
+}
+
+.icon {
+  position: absolute;
+  margin-top: 0.5vw;
+  margin-bottom: 0.5vw;
+  bottom: 1vw;
+  right: 14vw;
+}
+.ant-btn:focus {
+  box-shadow: none!important;
+  outline: none!important;
+}
+
