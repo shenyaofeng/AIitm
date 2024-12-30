@@ -6,15 +6,18 @@ import { Outlet } from 'react-router-dom';
 const barName = [
     {
         name: "对话",
-        icons: <MessageOutlined />
+        icons: <MessageOutlined />,
+        path: "/",
     },
     {
         name: "AI绘画",
-        icons: <FormOutlined />
+        icons: <FormOutlined />,
+        path:"/paint"
     },
     {
         name: "我的",
         icons: <UserOutlined />,
+        path:"/"
     },
 ]
 function NavBar() {
@@ -30,7 +33,11 @@ function NavBar() {
                 {/* 导航栏的名字 */}
                 {barName.map((item, index) => {
                     return (
-                        <div key={index} onClick={() => change(item.name)} className={classNames("bar", { font: curBar == item.name })}>{item.icons}{item.name}</div>
+                        <div key={index} 
+                        onClick={() => change(item.name)} 
+                        className={classNames("bar", { font: curBar == item.name })}>
+                            {item.icons}{item.name}
+                        </div>
                     )
                 })}
             </div>

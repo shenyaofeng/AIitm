@@ -19,6 +19,7 @@
     "log4js": "^6.9.1",
     "module-alias": "^2.2.3",
     "mysql2": "^3.11.5",
-    "sequelize": "^6.37.5"
+    "sequelize": "^6.37.5",
+    "zhipuai-sdk-nodejs-v4": "^0.1.12"
   }
 }

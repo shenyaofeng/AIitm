@@ -1,6 +1,6 @@
 import InputBox from "./component/inputBox";
 import ChatDefault from "./component/chatDefault";
-import "./Chat.css"
+import "./Chat.scss"
 const Chat = () => {
   return (
     <div className="chatI">
