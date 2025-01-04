@@ -14,6 +14,7 @@ class ZhipuAIController {
     // ctx.send(data);
     for await (const chunk of data) {
       console.log(chunk.toString());
+      ctx.send(123);
     }
   }
 }

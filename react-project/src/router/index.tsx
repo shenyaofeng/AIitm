@@ -16,6 +16,10 @@ const router = createBrowserRouter([
       {
         path: '/paint',
         element: <Paint />
+      },
+      {
+        path: '/me',
+        element: <div>我的</div>
       }
     ]
   },
