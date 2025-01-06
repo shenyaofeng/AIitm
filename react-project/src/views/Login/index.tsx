@@ -18,10 +18,12 @@ const Login = () => {
     setCaptcha(value);
     if(value === '123456'){
       setLogin(false)
+      setCapBtn(true)
     }
   };
   // 登陆按钮状态
   const [login, setLogin] = useState(true);
+  const [capBtn,setCapBtn] = useState(false)
   // const [inputPhone, setInputPhone] = useState("");
   // const tologin = () => {
   //   console.log(inputPhone)
@@ -77,6 +79,7 @@ const Login = () => {
                 type="primary"
                 className="login-captcha"
                 htmlType="submit"
+                disabled={capBtn}
               >
                 获取验证码
               </Button>
