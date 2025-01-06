@@ -1,3 +1,4 @@
+// #0091ff
 .login-background {
   position: relative;
   width: 100vw;
@@ -35,24 +36,24 @@
         box-shadow: 0 0 10px rgba(66, 66, 66, 0.1);
       }
       .login-btn{
-        position: absolute;
-        top: 80vw;
         width: 80vw;
         height: 13vw;
-        border-radius: 25vw;
+        text-align: center;
         font-size: 1.5rem;
-        font-weight: 500;
+        font-weight: 700;
         background-color: #0091ff;
+        border-radius: 25vw;
+        box-shadow: 0 0 10px rgba(66, 66, 66, 0.1);
       }
       .login-captcha{
-        position: absolute;
-        top: 35vw;
         width: 80vw;
         height: 13vw;
-        border-radius: 25vw;
+        text-align: center;
         font-size: 1.5rem;
-        font-weight: 500;
+        font-weight: 700;
         background-color: #0091ff;
+        border-radius: 25vw;
+        box-shadow: 0 0 10px rgba(66, 66, 66, 0.1);
       }
     }
   }
