@@ -30,7 +30,7 @@ function NavBar() {
     const switchRoute = (path:string) => {
         navigate(path)
     };
-    //根据当前路由给tabbar高亮
+    //根据当前路由给tabbar高亮,刷新页面不会丢失下面tabbar的高亮
     const location = useLocation()
     const activeKey = location.pathname
     return (
