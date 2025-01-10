@@ -1,20 +1,24 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { setToken,getToken } from "../../utils";
+
 
 type UserInfo = {
-  username: string;
+  username: string ;
 }
 
 const userStore = createSlice({
   name: "user",
-  initialState:{
-    userInfo: {} as UserInfo,
+  initialState: {
+    userInfo: { username: getToken() || "" } as UserInfo,
   },
-  reducers:{
+  reducers: {
     setUserInfo(state, action) {
-      state.userInfo.username = action.payload;
-    }
-  }
-})
+      console.log(action.payload.username);
+      state.userInfo = action.payload.username;
+      setToken(action.payload.username);
+    },
+  },
+});
 
 const { setUserInfo } = userStore.actions;
 

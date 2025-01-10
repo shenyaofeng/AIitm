@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./login.scss"
+import "./index.scss"
 // import axios from 'axios';
 import { Button, Form, Input, message } from "antd";
 import { useDispatch } from "react-redux";

@@ -5,6 +5,9 @@ import { Outlet, useLocation } from 'react-router-dom';
 import { TabBar } from "antd-mobile";
 import { useNavigate } from "react-router-dom";
 import { SmileOutline } from 'antd-mobile-icons'
+import { getToken } from '../../utils';
+import { Button } from 'antd-mobile'
+
 const barName = [
     {
         key: "/",
@@ -25,7 +28,12 @@ const barName = [
 
     },
 ]
-function NavBar() {
+const NavBar = () => {
+    const username = getToken()
+    // useEffect(()=>{
+        
+    // }, [])
+
     const navigate = useNavigate()
     //跳转页面
     const switchRoute = (path: string) => {
@@ -49,7 +57,14 @@ function NavBar() {
                     </div>
                 </div>
                 <div className='user'>
-                    
+                    {username ? `哈喽 ${username}` : 
+                    <Button size='small' color='primary'
+                        onClick={()=>{
+                            navigate('/login')
+                        }}
+                    >
+                        登陆
+                    </Button>}
                 </div>
             </div>
             <div className="container">
