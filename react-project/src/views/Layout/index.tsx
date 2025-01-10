@@ -1,5 +1,5 @@
 import './index.scss'
-// import { useState } from "react";
+import { useState } from "react";
 import { MessageOutlined, FormOutlined, UserOutlined } from '@ant-design/icons';
 import { Outlet, useLocation } from 'react-router-dom';
 import { TabBar } from "antd-mobile";
@@ -7,7 +7,9 @@ import { useNavigate } from "react-router-dom";
 import { SmileOutline } from 'antd-mobile-icons'
 import { getToken } from '../../utils';
 import { Button } from 'antd-mobile'
-
+import { useSelector } from 'react-redux';
+import { RootState } from '../../store/index';
+import { useEffect } from 'react';
 const barName = [
     {
         key: "/",
@@ -30,10 +32,15 @@ const barName = [
 ]
 const NavBar = () => {
     const username = getToken()
-    // useEffect(()=>{
-        
-    // }, [])
-
+    const barStatus = useSelector((state: RootState) => state.bar.barstatus)
+    const [bar, setBar] = useState(barStatus)
+    useEffect(() => {
+        if (barStatus){
+            setBar(barStatus)
+        }else{
+            setBar(barStatus)
+        }
+    }, [barStatus])
     const navigate = useNavigate()
     //跳转页面
     const switchRoute = (path: string) => {
@@ -72,11 +79,12 @@ const NavBar = () => {
             </div>
             <div className="footer">
                 {/* 导航栏的名字 */}
-                <TabBar onChange={switchRoute} activeKey={activeKey}>
+                {!bar && <TabBar onChange={switchRoute} activeKey={activeKey}>
                     {barName.map((item) => (
                         <TabBar.Item key={item.key} icon={item.icon} title={item.title} />
                     ))}
-                </TabBar>
+                </TabBar>}
+                
             </div>
         </div>
     )
