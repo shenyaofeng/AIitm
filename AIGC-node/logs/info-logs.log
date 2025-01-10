@@ -76,3 +76,7 @@
 [2024-12-30T16:52:03.899] [INFO] info - 输出日志：POST /aicompletions
 [2024-12-30T16:52:22.915] [INFO] info - 输出日志：POST /aiCompletions
 [2024-12-30T16:53:29.461] [INFO] info - 输出日志：POST /aicompletions
+[2025-01-09T01:09:57.594] [INFO] info - 输出日志：GET /
+[2025-01-09T01:09:57.614] [INFO] info - 输出日志：GET /favicon.ico
+[2025-01-09T01:11:18.940] [INFO] info - 输出日志：GET /login
+[2025-01-09T01:11:37.100] [INFO] info - 输出日志：GET /aicompletions

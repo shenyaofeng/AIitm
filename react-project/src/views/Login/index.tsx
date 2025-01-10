@@ -4,9 +4,9 @@ import "./login.scss"
 import { Button, Form, Input, message } from "antd";
 // http:192.168.43.147:7000;
 
-
-
 const Login = () => {
+  // 倒计时
+  const [tiem,setTime] = useState(10)
   //手机号
   const [phone, setPhone] = useState("");
   const phoneChange = (value:string) => {
@@ -19,11 +19,17 @@ const Login = () => {
     if(value === '123456'){
       setLogin(false)
       setCapBtn(true)
+      setCapBtn1(true)
+    } 
+    else{
+      setLogin(true)
+      setCapBtn1(false)
     }
   };
   // 登陆按钮状态
   const [login, setLogin] = useState(true);
   const [capBtn,setCapBtn] = useState(false)
+  const [capBtn1,setCapBtn1] = useState(false)
   // const [inputPhone, setInputPhone] = useState("");
   // const tologin = () => {
   //   console.log(inputPhone)
@@ -36,15 +42,43 @@ const Login = () => {
   //   });
   // }
   // 表单提交
-  const onFinish = () => {
+  const onFinish = (value:string) => {
     if(captcha === ''){
       message.success('发送成功,验证码为123456')
+      setCapBtn(true)
+      let time = 10
+      const timer = setInterval(()=>{
+        time--
+        setTime(time)
+        if(time === 0){
+          clearInterval(timer)
+          setCapBtn(false)
+          setTime(10)
+        }
+      },1000)
     }else if(captcha !== '' && captcha !== '123456'){
-      message.error('验证码错误,验证码为123456')
-    }else{
+      message.error('验证码错误请重新获取')
+    }
+    else{
+      console.log(value)
       message.success('登陆成功')
     }
   }
+
+  function btnText (){
+    if (capBtn ){
+      return `请${tiem}秒后重新获取`
+    }else{
+      return "获取验证码"
+    }
+  }
+  // const sendCode = () => {
+  //   console.log('发送验证码')
+  //   // const timer = setInterval(()=>{
+
+  //   // },1000)
+  // }
+
   return (
     <div className="login-background">
       <div className="login-continer">
@@ -74,17 +108,18 @@ const Login = () => {
               }]}>
               <Input className="number" placeholder="请输入验证码" value={captcha} onChange={(e: React.ChangeEvent<HTMLInputElement>) => captchaChange(e.target.value)}/>
             </Form.Item>
-            <Form.Item>
+            {!capBtn1 && <Form.Item name="sendBtn">
               <Button
                 type="primary"
                 className="login-captcha"
                 htmlType="submit"
                 disabled={capBtn}
               >
-                获取验证码
+                {btnText()}
               </Button>
-            </Form.Item>
-            <Form.Item>
+            </Form.Item>}
+            {}
+            <Form.Item name="loginBtn">
               <Button
                 type="primary"
                 className="login-btn"

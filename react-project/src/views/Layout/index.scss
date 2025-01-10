@@ -1,0 +1,40 @@
+.layout {
+  width: 100%;
+  .naver {
+    height: 10vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #dce3e8;
+    .title {
+      display: flex;
+      align-items: center;
+      margin-left: 5vw;
+      .smile {
+        height: auto;
+        font-size: 1.5rem;
+      }
+      .title1 {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+      .title2 {
+        font-size: 1.5rem;
+      }
+    }
+    .user {
+      margin-right: 13vw;
+    }
+  }
+  .container {
+    position: fixed;
+    top: 12vw;
+    bottom: 50px;
+    width: 100%;
+  }
+  .footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+}
