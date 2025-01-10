@@ -2,9 +2,16 @@ import { useState } from "react";
 import "./login.scss"
 // import axios from 'axios';
 import { Button, Form, Input, message } from "antd";
+import { useDispatch } from "react-redux";
+import { setUserInfo } from "../../store/modules/userStore"
+import { useNavigate } from "react-router-dom";
 // http:192.168.43.147:7000;
 
 const Login = () => {
+  //
+  const navigate = useNavigate();
+  //
+  const dispatch = useDispatch()
   // 倒计时
   const [tiem,setTime] = useState(10)
   //手机号
@@ -42,7 +49,7 @@ const Login = () => {
   //   });
   // }
   // 表单提交
-  const onFinish = (value:string) => {
+  const onFinish = () => {
     if(captcha === ''){
       message.success('发送成功,验证码为123456')
       setCapBtn(true)
@@ -60,8 +67,11 @@ const Login = () => {
       message.error('验证码错误请重新获取')
     }
     else{
-      console.log(value)
+      dispatch(setUserInfo({
+        username: phone
+      }))
       message.success('登陆成功')
+      navigate('/', { replace: true })
     }
   }
 
