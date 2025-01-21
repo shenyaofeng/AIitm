@@ -39,7 +39,6 @@ const Login = () => {
   const [capBtn1,setCapBtn1] = useState(false)
   // const [inputPhone, setInputPhone] = useState("");
   // const tologin = () => {
-  //   console.log(inputPhone)
   //   axios({
   //     method: 'post',
   //     url: 'http://127.0.0.1:7000/login',
@@ -82,13 +81,6 @@ const Login = () => {
       return "获取验证码"
     }
   }
-  // const sendCode = () => {
-  //   console.log('发送验证码')
-  //   // const timer = setInterval(()=>{
-
-  //   // },1000)
-  // }
-
   return (
     <div className="login-background">
       <div className="login-continer">

@@ -2,21 +2,19 @@ import { Input, Button } from 'antd';
 const { TextArea } = Input;
 import { SendOutlined } from '@ant-design/icons';
 import {useState} from "react";
-import {sendContent} from '../../../request/sendAPI'
+// import {sendContent} from '../../../request/sendAPI'
 import { setbarstatus } from '../../../store/modules/tabBarStore';
 import { useDispatch } from 'react-redux';
+import { AItext, userSendText } from '../../../store/modules/sendStore'
 const InputBox = () => {
   const dispatch = useDispatch()
   //输入框的值
   const [inputContent,setInputContent] = useState("")
   const toSend = async () => {
-    console.log('send')
-    console.log(inputContent)
-    const res = await sendContent()
-    console.log(res)
+    await dispatch(userSendText(inputContent))
+    await dispatch(AItext())
   }
   const setVisibleTabBar = () => {
-    console.log('setVisibleTabBar')
     dispatch(setbarstatus(true))
   }
   const setUnvisibleTabBar = () => {

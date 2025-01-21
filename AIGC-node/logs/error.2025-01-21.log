@@ -1,0 +1,2880 @@
+[2025-01-21T08:56:10.285] [ERROR] error - AxiosError: getaddrinfo ENOTFOUND open.bigmodel.cn
+    at AxiosError.from (C:\AIitem\AIGC-node\node_modules\axios\dist\node\axios.cjs:877:14)
+    at RedirectableRequest.handleRequestError (C:\AIitem\AIGC-node\node_modules\axios\dist\node\axios.cjs:3163:25)
+    at RedirectableRequest.emit (node:events:518:28)
+    at eventHandlers.<computed> (C:\AIitem\AIGC-node\node_modules\follow-redirects\index.js:49:24)
+    at ClientRequest.emit (node:events:518:28)
+    at TLSSocket.socketErrorListener (node:_http_client:500:9)
+    at TLSSocket.emit (node:events:518:28)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (C:\AIitem\AIGC-node\node_modules\axios\dist\node\axios.cjs:4252:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async createCompletions (C:\AIitem\AIGC-node\controller\zhipuai.js:8:18)
+    at async errorhandler (C:\AIitem\AIGC-node\config\errorhandler.js:5:5)
+    at async responseHandler (C:\AIitem\AIGC-node\config\result.js:18:3)
+    at async cors (C:\AIitem\AIGC-node\node_modules\@koa\cors\index.js:109:16)
+    at async bodyParser (C:\AIitem\AIGC-node\node_modules\koa-bodyparser\index.js:78:5) {
+  hostname: 'open.bigmodel.cn',
+  syscall: 'getaddrinfo',
+  code: 'ENOTFOUND',
+  errno: -3008,
+  config: {
+    transitional: {
+      silentJSONParsing: true,
+      forcedJSONParsing: true,
+      clarifyTimeoutError: false
+    },
+    adapter: [ 'xhr', 'http', 'fetch' ],
+    transformRequest: [ [Function: transformRequest] ],
+    transformResponse: [ [Function: transformResponse] ],
+    timeout: 0,
+    xsrfCookieName: 'XSRF-TOKEN',
+    xsrfHeaderName: 'X-XSRF-TOKEN',
+    maxContentLength: -1,
+    maxBodyLength: -1,
+    env: { FormData: [Function], Blob: [class Blob] },
+    validateStatus: [Function: validateStatus],
+    headers: Object [AxiosHeaders] {
+      Accept: 'application/json, text/plain, */*',
+      'Content-Type': 'application/json',
+      Authorization: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsInNpZ25fdHlwZSI6IlNJR04ifQ.eyJhcGlfa2V5IjoiMGNlNjNjMjQ3MDdlMWE3YzYyMzJmMjJiYjJkYmM1OTgiLCJleHAiOjE3Mzc0MjA5NzA0MjQwMDAsInRpbWVzdGFtcCI6MTczNzQyMDk3MDI0NDAwMCwiaWF0IjoxNzM3NDIwOTcwfQ.3cJzfsuNj3n04PFb8feuPasqQ4Ue1KBZGQg-F3r8EJ8',
+      'User-Agent': 'axios/1.7.9',
+      'Content-Length': '93',
+      'Accept-Encoding': 'gzip, compress, deflate, br'
+    },
+    baseURL: 'https://open.bigmodel.cn/api/paas/v4',
+    responseType: 'stream',
+    method: 'post',
+    url: '/chat/completions',
+    data: '{"model":"glm-4-0520","messages":[{"role":"user","content":"mate70是什么"}],"stream":true}'
+  },
+  request: <ref *1> Writable {
+    _events: {
+      close: undefined,
+      error: [Function: handleRequestError],
+      prefinish: undefined,
+      finish: undefined,
+      drain: undefined,
+      response: [Function: handleResponse],
+      socket: [Function: handleRequestSocket]
+    },
+    _writableState: WritableState {
+      highWaterMark: 16384,
+      length: 0,
+      corked: 0,
+      onwrite: [Function: bound onwrite],
+      writelen: 0,
+      bufferedIndex: 0,
+      pendingcb: 0,
+      [Symbol(kState)]: 17580812,
+      [Symbol(kBufferedValue)]: null
+    },
+    _maxListeners: undefined,
+    _options: {
+      maxRedirects: 21,
+      maxBodyLength: Infinity,
+      protocol: 'https:',
+      path: '/api/paas/v4/chat/completions',
+      method: 'POST',
+      headers: [Object: null prototype],
+      agents: [Object],
+      auth: undefined,
+      family: undefined,
+      beforeRedirect: [Function: dispatchBeforeRedirect],
+      beforeRedirects: [Object],
+      hostname: 'open.bigmodel.cn',
+      port: '',
+      agent: undefined,
+      nativeProtocols: [Object],
+      pathname: '/api/paas/v4/chat/completions'
+    },
+    _ended: false,
+    _ending: true,
+    _redirectCount: 0,
+    _redirects: [],
+    _requestBodyLength: 93,
+    _requestBodyBuffers: [ [Object] ],
+    _eventsCount: 3,
+    _onNativeResponse: [Function (anonymous)],
+    _currentRequest: ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 7,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      destroyed: false,
+      _last: false,
+      chunkedEncoding: false,
+      shouldKeepAlive: true,
+      maxRequestsOnConnectionReached: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: true,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      strictContentLength: false,
+      _contentLength: '93',
+      _hasBody: true,
+      _trailer: '',
+      finished: false,
+      _headerSent: true,
+      _closed: false,
+      socket: [TLSSocket],
+      _header: 'POST /api/paas/v4/chat/completions HTTP/1.1\r\n' +
+        'Accept: application/json, text/plain, */*\r\n' +
+        'Content-Type: application/json\r\n' +
+        'Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsInNpZ25fdHlwZSI6IlNJR04ifQ.eyJhcGlfa2V5IjoiMGNlNjNjMjQ3MDdlMWE3YzYyMzJmMjJiYjJkYmM1OTgiLCJleHAiOjE3Mzc0MjA5NzA0MjQwMDAsInRpbWVzdGFtcCI6MTczNzQyMDk3MDI0NDAwMCwiaWF0IjoxNzM3NDIwOTcwfQ.3cJzfsuNj3n04PFb8feuPasqQ4Ue1KBZGQg-F3r8EJ8\r\n' +
+        'User-Agent: axios/1.7.9\r\n' +
+        'Content-Length: 93\r\n' +
+        'Accept-Encoding: gzip, compress, deflate, br\r\n' +
+        'Host: open.bigmodel.cn\r\n' +
+        'Connection: keep-alive\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: nop],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'POST',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      joinDuplicateHeaders: undefined,
+      path: '/api/paas/v4/chat/completions',
+      _ended: false,
+      res: null,
+      aborted: false,
+      timeoutCb: [Function: emitRequestTimeout],
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: 'open.bigmodel.cn',
+      protocol: 'https:',
+      _redirectable: [Circular *1],
+      [Symbol(shapeMode)]: false,
+      [Symbol(kCapture)]: false,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kOutHeaders)]: [Object: null prototype],
+      [Symbol(errored)]: null,
+      [Symbol(kHighWaterMark)]: 16384,
+      [Symbol(kRejectNonStandardBodyWrites)]: false,
+      [Symbol(kUniqueHeaders)]: null
+    },
+    _currentUrl: 'https://open.bigmodel.cn/api/paas/v4/chat/completions',
+    [Symbol(shapeMode)]: true,
+    [Symbol(kCapture)]: false
+  },
+  cause: Error: getaddrinfo ENOTFOUND open.bigmodel.cn
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'open.bigmodel.cn'
+  }
+}
+[2025-01-21T08:56:22.203] [ERROR] error - AxiosError: getaddrinfo ENOTFOUND open.bigmodel.cn
+    at AxiosError.from (C:\AIitem\AIGC-node\node_modules\axios\dist\node\axios.cjs:877:14)
+    at RedirectableRequest.handleRequestError (C:\AIitem\AIGC-node\node_modules\axios\dist\node\axios.cjs:3163:25)
+    at RedirectableRequest.emit (node:events:518:28)
+    at eventHandlers.<computed> (C:\AIitem\AIGC-node\node_modules\follow-redirects\index.js:49:24)
+    at ClientRequest.emit (node:events:518:28)
+    at TLSSocket.socketErrorListener (node:_http_client:500:9)
+    at TLSSocket.emit (node:events:518:28)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (C:\AIitem\AIGC-node\node_modules\axios\dist\node\axios.cjs:4252:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async createCompletions (C:\AIitem\AIGC-node\controller\zhipuai.js:8:18)
+    at async errorhandler (C:\AIitem\AIGC-node\config\errorhandler.js:5:5)
+    at async responseHandler (C:\AIitem\AIGC-node\config\result.js:18:3)
+    at async cors (C:\AIitem\AIGC-node\node_modules\@koa\cors\index.js:109:16)
+    at async bodyParser (C:\AIitem\AIGC-node\node_modules\koa-bodyparser\index.js:78:5) {
+  hostname: 'open.bigmodel.cn',
+  syscall: 'getaddrinfo',
+  code: 'ENOTFOUND',
+  errno: -3008,
+  config: {
+    transitional: {
+      silentJSONParsing: true,
+      forcedJSONParsing: true,
+      clarifyTimeoutError: false
+    },
+    adapter: [ 'xhr', 'http', 'fetch' ],
+    transformRequest: [ [Function: transformRequest] ],
+    transformResponse: [ [Function: transformResponse] ],
+    timeout: 0,
+    xsrfCookieName: 'XSRF-TOKEN',
+    xsrfHeaderName: 'X-XSRF-TOKEN',
+    maxContentLength: -1,
+    maxBodyLength: -1,
+    env: { FormData: [Function], Blob: [class Blob] },
+    validateStatus: [Function: validateStatus],
+    headers: Object [AxiosHeaders] {
+      Accept: 'application/json, text/plain, */*',
+      'Content-Type': 'application/json',
+      Authorization: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsInNpZ25fdHlwZSI6IlNJR04ifQ.eyJhcGlfa2V5IjoiMGNlNjNjMjQ3MDdlMWE3YzYyMzJmMjJiYjJkYmM1OTgiLCJleHAiOjE3Mzc0MjA5NzA0MjQwMDAsInRpbWVzdGFtcCI6MTczNzQyMDk3MDI0NDAwMCwiaWF0IjoxNzM3NDIwOTcwfQ.3cJzfsuNj3n04PFb8feuPasqQ4Ue1KBZGQg-F3r8EJ8',
+      'User-Agent': 'axios/1.7.9',
+      'Content-Length': '93',
+      'Accept-Encoding': 'gzip, compress, deflate, br'
+    },
+    baseURL: 'https://open.bigmodel.cn/api/paas/v4',
+    responseType: 'stream',
+    method: 'post',
+    url: '/chat/completions',
+    data: '{"model":"glm-4-0520","messages":[{"role":"user","content":"mate70是什么"}],"stream":true}'
+  },
+  request: <ref *1> Writable {
+    _events: {
+      close: undefined,
+      error: [Function: handleRequestError],
+      prefinish: undefined,
+      finish: undefined,
+      drain: undefined,
+      response: [Function: handleResponse],
+      socket: [Function: handleRequestSocket]
+    },
+    _writableState: WritableState {
+      highWaterMark: 16384,
+      length: 0,
+      corked: 0,
+      onwrite: [Function: bound onwrite],
+      writelen: 0,
+      bufferedIndex: 0,
+      pendingcb: 0,
+      [Symbol(kState)]: 17580812,
+      [Symbol(kBufferedValue)]: null
+    },
+    _maxListeners: undefined,
+    _options: {
+      maxRedirects: 21,
+      maxBodyLength: Infinity,
+      protocol: 'https:',
+      path: '/api/paas/v4/chat/completions',
+      method: 'POST',
+      headers: [Object: null prototype],
+      agents: [Object],
+      auth: undefined,
+      family: undefined,
+      beforeRedirect: [Function: dispatchBeforeRedirect],
+      beforeRedirects: [Object],
+      hostname: 'open.bigmodel.cn',
+      port: '',
+      agent: undefined,
+      nativeProtocols: [Object],
+      pathname: '/api/paas/v4/chat/completions'
+    },
+    _ended: false,
+    _ending: true,
+    _redirectCount: 0,
+    _redirects: [],
+    _requestBodyLength: 93,
+    _requestBodyBuffers: [ [Object] ],
+    _eventsCount: 3,
+    _onNativeResponse: [Function (anonymous)],
+    _currentRequest: ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 7,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      destroyed: false,
+      _last: false,
+      chunkedEncoding: false,
+      shouldKeepAlive: true,
+      maxRequestsOnConnectionReached: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: true,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      strictContentLength: false,
+      _contentLength: '93',
+      _hasBody: true,
+      _trailer: '',
+      finished: false,
+      _headerSent: true,
+      _closed: false,
+      socket: [TLSSocket],
+      _header: 'POST /api/paas/v4/chat/completions HTTP/1.1\r\n' +
+        'Accept: application/json, text/plain, */*\r\n' +
+        'Content-Type: application/json\r\n' +
+        'Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsInNpZ25fdHlwZSI6IlNJR04ifQ.eyJhcGlfa2V5IjoiMGNlNjNjMjQ3MDdlMWE3YzYyMzJmMjJiYjJkYmM1OTgiLCJleHAiOjE3Mzc0MjA5NzA0MjQwMDAsInRpbWVzdGFtcCI6MTczNzQyMDk3MDI0NDAwMCwiaWF0IjoxNzM3NDIwOTcwfQ.3cJzfsuNj3n04PFb8feuPasqQ4Ue1KBZGQg-F3r8EJ8\r\n' +
+        'User-Agent: axios/1.7.9\r\n' +
+        'Content-Length: 93\r\n' +
+        'Accept-Encoding: gzip, compress, deflate, br\r\n' +
+        'Host: open.bigmodel.cn\r\n' +
+        'Connection: keep-alive\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: nop],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'POST',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      joinDuplicateHeaders: undefined,
+      path: '/api/paas/v4/chat/completions',
+      _ended: false,
+      res: null,
+      aborted: false,
+      timeoutCb: [Function: emitRequestTimeout],
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: 'open.bigmodel.cn',
+      protocol: 'https:',
+      _redirectable: [Circular *1],
+      [Symbol(shapeMode)]: false,
+      [Symbol(kCapture)]: false,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kOutHeaders)]: [Object: null prototype],
+      [Symbol(errored)]: null,
+      [Symbol(kHighWaterMark)]: 16384,
+      [Symbol(kRejectNonStandardBodyWrites)]: false,
+      [Symbol(kUniqueHeaders)]: null
+    },
+    _currentUrl: 'https://open.bigmodel.cn/api/paas/v4/chat/completions',
+    [Symbol(shapeMode)]: true,
+    [Symbol(kCapture)]: false
+  },
+  cause: Error: getaddrinfo ENOTFOUND open.bigmodel.cn
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'open.bigmodel.cn'
+  }
+}
+[2025-01-21T08:56:23.706] [ERROR] error - AxiosError: getaddrinfo ENOTFOUND open.bigmodel.cn
+    at AxiosError.from (C:\AIitem\AIGC-node\node_modules\axios\dist\node\axios.cjs:877:14)
+    at RedirectableRequest.handleRequestError (C:\AIitem\AIGC-node\node_modules\axios\dist\node\axios.cjs:3163:25)
+    at RedirectableRequest.emit (node:events:518:28)
+    at eventHandlers.<computed> (C:\AIitem\AIGC-node\node_modules\follow-redirects\index.js:49:24)
+    at ClientRequest.emit (node:events:518:28)
+    at TLSSocket.socketErrorListener (node:_http_client:500:9)
+    at TLSSocket.emit (node:events:518:28)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (C:\AIitem\AIGC-node\node_modules\axios\dist\node\axios.cjs:4252:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async createCompletions (C:\AIitem\AIGC-node\controller\zhipuai.js:8:18)
+    at async errorhandler (C:\AIitem\AIGC-node\config\errorhandler.js:5:5)
+    at async responseHandler (C:\AIitem\AIGC-node\config\result.js:18:3)
+    at async cors (C:\AIitem\AIGC-node\node_modules\@koa\cors\index.js:109:16)
+    at async bodyParser (C:\AIitem\AIGC-node\node_modules\koa-bodyparser\index.js:78:5) {
+  hostname: 'open.bigmodel.cn',
+  syscall: 'getaddrinfo',
+  code: 'ENOTFOUND',
+  errno: -3008,
+  config: {
+    transitional: {
+      silentJSONParsing: true,
+      forcedJSONParsing: true,
+      clarifyTimeoutError: false
+    },
+    adapter: [ 'xhr', 'http', 'fetch' ],
+    transformRequest: [ [Function: transformRequest] ],
+    transformResponse: [ [Function: transformResponse] ],
+    timeout: 0,
+    xsrfCookieName: 'XSRF-TOKEN',
+    xsrfHeaderName: 'X-XSRF-TOKEN',
+    maxContentLength: -1,
+    maxBodyLength: -1,
+    env: { FormData: [Function], Blob: [class Blob] },
+    validateStatus: [Function: validateStatus],
+    headers: Object [AxiosHeaders] {
+      Accept: 'application/json, text/plain, */*',
+      'Content-Type': 'application/json',
+      Authorization: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsInNpZ25fdHlwZSI6IlNJR04ifQ.eyJhcGlfa2V5IjoiMGNlNjNjMjQ3MDdlMWE3YzYyMzJmMjJiYjJkYmM1OTgiLCJleHAiOjE3Mzc0MjA5NzA0MjQwMDAsInRpbWVzdGFtcCI6MTczNzQyMDk3MDI0NDAwMCwiaWF0IjoxNzM3NDIwOTcwfQ.3cJzfsuNj3n04PFb8feuPasqQ4Ue1KBZGQg-F3r8EJ8',
+      'User-Agent': 'axios/1.7.9',
+      'Content-Length': '93',
+      'Accept-Encoding': 'gzip, compress, deflate, br'
+    },
+    baseURL: 'https://open.bigmodel.cn/api/paas/v4',
+    responseType: 'stream',
+    method: 'post',
+    url: '/chat/completions',
+    data: '{"model":"glm-4-0520","messages":[{"role":"user","content":"mate70是什么"}],"stream":true}'
+  },
+  request: <ref *1> Writable {
+    _events: {
+      close: undefined,
+      error: [Function: handleRequestError],
+      prefinish: undefined,
+      finish: undefined,
+      drain: undefined,
+      response: [Function: handleResponse],
+      socket: [Function: handleRequestSocket]
+    },
+    _writableState: WritableState {
+      highWaterMark: 16384,
+      length: 0,
+      corked: 0,
+      onwrite: [Function: bound onwrite],
+      writelen: 0,
+      bufferedIndex: 0,
+      pendingcb: 0,
+      [Symbol(kState)]: 17580812,
+      [Symbol(kBufferedValue)]: null
+    },
+    _maxListeners: undefined,
+    _options: {
+      maxRedirects: 21,
+      maxBodyLength: Infinity,
+      protocol: 'https:',
+      path: '/api/paas/v4/chat/completions',
+      method: 'POST',
+      headers: [Object: null prototype],
+      agents: [Object],
+      auth: undefined,
+      family: undefined,
+      beforeRedirect: [Function: dispatchBeforeRedirect],
+      beforeRedirects: [Object],
+      hostname: 'open.bigmodel.cn',
+      port: '',
+      agent: undefined,
+      nativeProtocols: [Object],
+      pathname: '/api/paas/v4/chat/completions'
+    },
+    _ended: false,
+    _ending: true,
+    _redirectCount: 0,
+    _redirects: [],
+    _requestBodyLength: 93,
+    _requestBodyBuffers: [ [Object] ],
+    _eventsCount: 3,
+    _onNativeResponse: [Function (anonymous)],
+    _currentRequest: ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 7,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      destroyed: false,
+      _last: false,
+      chunkedEncoding: false,
+      shouldKeepAlive: true,
+      maxRequestsOnConnectionReached: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: true,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      strictContentLength: false,
+      _contentLength: '93',
+      _hasBody: true,
+      _trailer: '',
+      finished: false,
+      _headerSent: true,
+      _closed: false,
+      socket: [TLSSocket],
+      _header: 'POST /api/paas/v4/chat/completions HTTP/1.1\r\n' +
+        'Accept: application/json, text/plain, */*\r\n' +
+        'Content-Type: application/json\r\n' +
+        'Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsInNpZ25fdHlwZSI6IlNJR04ifQ.eyJhcGlfa2V5IjoiMGNlNjNjMjQ3MDdlMWE3YzYyMzJmMjJiYjJkYmM1OTgiLCJleHAiOjE3Mzc0MjA5NzA0MjQwMDAsInRpbWVzdGFtcCI6MTczNzQyMDk3MDI0NDAwMCwiaWF0IjoxNzM3NDIwOTcwfQ.3cJzfsuNj3n04PFb8feuPasqQ4Ue1KBZGQg-F3r8EJ8\r\n' +
+        'User-Agent: axios/1.7.9\r\n' +
+        'Content-Length: 93\r\n' +
+        'Accept-Encoding: gzip, compress, deflate, br\r\n' +
+        'Host: open.bigmodel.cn\r\n' +
+        'Connection: keep-alive\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: nop],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'POST',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      joinDuplicateHeaders: undefined,
+      path: '/api/paas/v4/chat/completions',
+      _ended: false,
+      res: null,
+      aborted: false,
+      timeoutCb: [Function: emitRequestTimeout],
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: 'open.bigmodel.cn',
+      protocol: 'https:',
+      _redirectable: [Circular *1],
+      [Symbol(shapeMode)]: false,
+      [Symbol(kCapture)]: false,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kOutHeaders)]: [Object: null prototype],
+      [Symbol(errored)]: null,
+      [Symbol(kHighWaterMark)]: 16384,
+      [Symbol(kRejectNonStandardBodyWrites)]: false,
+      [Symbol(kUniqueHeaders)]: null
+    },
+    _currentUrl: 'https://open.bigmodel.cn/api/paas/v4/chat/completions',
+    [Symbol(shapeMode)]: true,
+    [Symbol(kCapture)]: false
+  },
+  cause: Error: getaddrinfo ENOTFOUND open.bigmodel.cn
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'open.bigmodel.cn'
+  }
+}
+[2025-01-21T08:56:24.426] [ERROR] error - AxiosError: getaddrinfo ENOTFOUND open.bigmodel.cn
+    at AxiosError.from (C:\AIitem\AIGC-node\node_modules\axios\dist\node\axios.cjs:877:14)
+    at RedirectableRequest.handleRequestError (C:\AIitem\AIGC-node\node_modules\axios\dist\node\axios.cjs:3163:25)
+    at RedirectableRequest.emit (node:events:518:28)
+    at eventHandlers.<computed> (C:\AIitem\AIGC-node\node_modules\follow-redirects\index.js:49:24)
+    at ClientRequest.emit (node:events:518:28)
+    at TLSSocket.socketErrorListener (node:_http_client:500:9)
+    at TLSSocket.emit (node:events:518:28)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (C:\AIitem\AIGC-node\node_modules\axios\dist\node\axios.cjs:4252:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async createCompletions (C:\AIitem\AIGC-node\controller\zhipuai.js:8:18)
+    at async errorhandler (C:\AIitem\AIGC-node\config\errorhandler.js:5:5)
+    at async responseHandler (C:\AIitem\AIGC-node\config\result.js:18:3)
+    at async cors (C:\AIitem\AIGC-node\node_modules\@koa\cors\index.js:109:16)
+    at async bodyParser (C:\AIitem\AIGC-node\node_modules\koa-bodyparser\index.js:78:5) {
+  hostname: 'open.bigmodel.cn',
+  syscall: 'getaddrinfo',
+  code: 'ENOTFOUND',
+  errno: -3008,
+  config: {
+    transitional: {
+      silentJSONParsing: true,
+      forcedJSONParsing: true,
+      clarifyTimeoutError: false
+    },
+    adapter: [ 'xhr', 'http', 'fetch' ],
+    transformRequest: [ [Function: transformRequest] ],
+    transformResponse: [ [Function: transformResponse] ],
+    timeout: 0,
+    xsrfCookieName: 'XSRF-TOKEN',
+    xsrfHeaderName: 'X-XSRF-TOKEN',
+    maxContentLength: -1,
+    maxBodyLength: -1,
+    env: { FormData: [Function], Blob: [class Blob] },
+    validateStatus: [Function: validateStatus],
+    headers: Object [AxiosHeaders] {
+      Accept: 'application/json, text/plain, */*',
+      'Content-Type': 'application/json',
+      Authorization: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsInNpZ25fdHlwZSI6IlNJR04ifQ.eyJhcGlfa2V5IjoiMGNlNjNjMjQ3MDdlMWE3YzYyMzJmMjJiYjJkYmM1OTgiLCJleHAiOjE3Mzc0MjA5NzA0MjQwMDAsInRpbWVzdGFtcCI6MTczNzQyMDk3MDI0NDAwMCwiaWF0IjoxNzM3NDIwOTcwfQ.3cJzfsuNj3n04PFb8feuPasqQ4Ue1KBZGQg-F3r8EJ8',
+      'User-Agent': 'axios/1.7.9',
+      'Content-Length': '93',
+      'Accept-Encoding': 'gzip, compress, deflate, br'
+    },
+    baseURL: 'https://open.bigmodel.cn/api/paas/v4',
+    responseType: 'stream',
+    method: 'post',
+    url: '/chat/completions',
+    data: '{"model":"glm-4-0520","messages":[{"role":"user","content":"mate70是什么"}],"stream":true}'
+  },
+  request: <ref *1> Writable {
+    _events: {
+      close: undefined,
+      error: [Function: handleRequestError],
+      prefinish: undefined,
+      finish: undefined,
+      drain: undefined,
+      response: [Function: handleResponse],
+      socket: [Function: handleRequestSocket]
+    },
+    _writableState: WritableState {
+      highWaterMark: 16384,
+      length: 0,
+      corked: 0,
+      onwrite: [Function: bound onwrite],
+      writelen: 0,
+      bufferedIndex: 0,
+      pendingcb: 0,
+      [Symbol(kState)]: 17580812,
+      [Symbol(kBufferedValue)]: null
+    },
+    _maxListeners: undefined,
+    _options: {
+      maxRedirects: 21,
+      maxBodyLength: Infinity,
+      protocol: 'https:',
+      path: '/api/paas/v4/chat/completions',
+      method: 'POST',
+      headers: [Object: null prototype],
+      agents: [Object],
+      auth: undefined,
+      family: undefined,
+      beforeRedirect: [Function: dispatchBeforeRedirect],
+      beforeRedirects: [Object],
+      hostname: 'open.bigmodel.cn',
+      port: '',
+      agent: undefined,
+      nativeProtocols: [Object],
+      pathname: '/api/paas/v4/chat/completions'
+    },
+    _ended: false,
+    _ending: true,
+    _redirectCount: 0,
+    _redirects: [],
+    _requestBodyLength: 93,
+    _requestBodyBuffers: [ [Object] ],
+    _eventsCount: 3,
+    _onNativeResponse: [Function (anonymous)],
+    _currentRequest: ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 7,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      destroyed: false,
+      _last: false,
+      chunkedEncoding: false,
+      shouldKeepAlive: true,
+      maxRequestsOnConnectionReached: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: true,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      strictContentLength: false,
+      _contentLength: '93',
+      _hasBody: true,
+      _trailer: '',
+      finished: false,
+      _headerSent: true,
+      _closed: false,
+      socket: [TLSSocket],
+      _header: 'POST /api/paas/v4/chat/completions HTTP/1.1\r\n' +
+        'Accept: application/json, text/plain, */*\r\n' +
+        'Content-Type: application/json\r\n' +
+        'Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsInNpZ25fdHlwZSI6IlNJR04ifQ.eyJhcGlfa2V5IjoiMGNlNjNjMjQ3MDdlMWE3YzYyMzJmMjJiYjJkYmM1OTgiLCJleHAiOjE3Mzc0MjA5NzA0MjQwMDAsInRpbWVzdGFtcCI6MTczNzQyMDk3MDI0NDAwMCwiaWF0IjoxNzM3NDIwOTcwfQ.3cJzfsuNj3n04PFb8feuPasqQ4Ue1KBZGQg-F3r8EJ8\r\n' +
+        'User-Agent: axios/1.7.9\r\n' +
+        'Content-Length: 93\r\n' +
+        'Accept-Encoding: gzip, compress, deflate, br\r\n' +
+        'Host: open.bigmodel.cn\r\n' +
+        'Connection: keep-alive\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: nop],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'POST',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      joinDuplicateHeaders: undefined,
+      path: '/api/paas/v4/chat/completions',
+      _ended: false,
+      res: null,
+      aborted: false,
+      timeoutCb: [Function: emitRequestTimeout],
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: 'open.bigmodel.cn',
+      protocol: 'https:',
+      _redirectable: [Circular *1],
+      [Symbol(shapeMode)]: false,
+      [Symbol(kCapture)]: false,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kOutHeaders)]: [Object: null prototype],
+      [Symbol(errored)]: null,
+      [Symbol(kHighWaterMark)]: 16384,
+      [Symbol(kRejectNonStandardBodyWrites)]: false,
+      [Symbol(kUniqueHeaders)]: null
+    },
+    _currentUrl: 'https://open.bigmodel.cn/api/paas/v4/chat/completions',
+    [Symbol(shapeMode)]: true,
+    [Symbol(kCapture)]: false
+  },
+  cause: Error: getaddrinfo ENOTFOUND open.bigmodel.cn
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'open.bigmodel.cn'
+  }
+}
+[2025-01-21T08:56:52.725] [ERROR] error - AxiosError: getaddrinfo ENOTFOUND open.bigmodel.cn
+    at AxiosError.from (C:\AIitem\AIGC-node\node_modules\axios\dist\node\axios.cjs:877:14)
+    at RedirectableRequest.handleRequestError (C:\AIitem\AIGC-node\node_modules\axios\dist\node\axios.cjs:3163:25)
+    at RedirectableRequest.emit (node:events:518:28)
+    at eventHandlers.<computed> (C:\AIitem\AIGC-node\node_modules\follow-redirects\index.js:49:24)
+    at ClientRequest.emit (node:events:518:28)
+    at TLSSocket.socketErrorListener (node:_http_client:500:9)
+    at TLSSocket.emit (node:events:518:28)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (C:\AIitem\AIGC-node\node_modules\axios\dist\node\axios.cjs:4252:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async createCompletions (C:\AIitem\AIGC-node\controller\zhipuai.js:8:18)
+    at async errorhandler (C:\AIitem\AIGC-node\config\errorhandler.js:5:5)
+    at async responseHandler (C:\AIitem\AIGC-node\config\result.js:18:3)
+    at async cors (C:\AIitem\AIGC-node\node_modules\@koa\cors\index.js:109:16)
+    at async bodyParser (C:\AIitem\AIGC-node\node_modules\koa-bodyparser\index.js:78:5) {
+  hostname: 'open.bigmodel.cn',
+  syscall: 'getaddrinfo',
+  code: 'ENOTFOUND',
+  errno: -3008,
+  config: {
+    transitional: {
+      silentJSONParsing: true,
+      forcedJSONParsing: true,
+      clarifyTimeoutError: false
+    },
+    adapter: [ 'xhr', 'http', 'fetch' ],
+    transformRequest: [ [Function: transformRequest] ],
+    transformResponse: [ [Function: transformResponse] ],
+    timeout: 0,
+    xsrfCookieName: 'XSRF-TOKEN',
+    xsrfHeaderName: 'X-XSRF-TOKEN',
+    maxContentLength: -1,
+    maxBodyLength: -1,
+    env: { FormData: [Function], Blob: [class Blob] },
+    validateStatus: [Function: validateStatus],
+    headers: Object [AxiosHeaders] {
+      Accept: 'application/json, text/plain, */*',
+      'Content-Type': 'application/json',
+      Authorization: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsInNpZ25fdHlwZSI6IlNJR04ifQ.eyJhcGlfa2V5IjoiMGNlNjNjMjQ3MDdlMWE3YzYyMzJmMjJiYjJkYmM1OTgiLCJleHAiOjE3Mzc0MjEwMTI4NzkwMDAsInRpbWVzdGFtcCI6MTczNzQyMTAxMjY5OTAwMCwiaWF0IjoxNzM3NDIxMDEyfQ.nQlCcBBGoXcFpSvCc12KKM-xhyv9i982zWnx0JW8-go',
+      'User-Agent': 'axios/1.7.9',
+      'Content-Length': '93',
+      'Accept-Encoding': 'gzip, compress, deflate, br'
+    },
+    baseURL: 'https://open.bigmodel.cn/api/paas/v4',
+    responseType: 'stream',
+    method: 'post',
+    url: '/chat/completions',
+    data: '{"model":"glm-4-0520","messages":[{"role":"user","content":"mate70是什么"}],"stream":true}'
+  },
+  request: <ref *1> Writable {
+    _events: {
+      close: undefined,
+      error: [Function: handleRequestError],
+      prefinish: undefined,
+      finish: undefined,
+      drain: undefined,
+      response: [Function: handleResponse],
+      socket: [Function: handleRequestSocket]
+    },
+    _writableState: WritableState {
+      highWaterMark: 16384,
+      length: 0,
+      corked: 0,
+      onwrite: [Function: bound onwrite],
+      writelen: 0,
+      bufferedIndex: 0,
+      pendingcb: 0,
+      [Symbol(kState)]: 17580812,
+      [Symbol(kBufferedValue)]: null
+    },
+    _maxListeners: undefined,
+    _options: {
+      maxRedirects: 21,
+      maxBodyLength: Infinity,
+      protocol: 'https:',
+      path: '/api/paas/v4/chat/completions',
+      method: 'POST',
+      headers: [Object: null prototype],
+      agents: [Object],
+      auth: undefined,
+      family: undefined,
+      beforeRedirect: [Function: dispatchBeforeRedirect],
+      beforeRedirects: [Object],
+      hostname: 'open.bigmodel.cn',
+      port: '',
+      agent: undefined,
+      nativeProtocols: [Object],
+      pathname: '/api/paas/v4/chat/completions'
+    },
+    _ended: false,
+    _ending: true,
+    _redirectCount: 0,
+    _redirects: [],
+    _requestBodyLength: 93,
+    _requestBodyBuffers: [ [Object] ],
+    _eventsCount: 3,
+    _onNativeResponse: [Function (anonymous)],
+    _currentRequest: ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 7,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      destroyed: false,
+      _last: false,
+      chunkedEncoding: false,
+      shouldKeepAlive: true,
+      maxRequestsOnConnectionReached: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: true,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      strictContentLength: false,
+      _contentLength: '93',
+      _hasBody: true,
+      _trailer: '',
+      finished: false,
+      _headerSent: true,
+      _closed: false,
+      socket: [TLSSocket],
+      _header: 'POST /api/paas/v4/chat/completions HTTP/1.1\r\n' +
+        'Accept: application/json, text/plain, */*\r\n' +
+        'Content-Type: application/json\r\n' +
+        'Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsInNpZ25fdHlwZSI6IlNJR04ifQ.eyJhcGlfa2V5IjoiMGNlNjNjMjQ3MDdlMWE3YzYyMzJmMjJiYjJkYmM1OTgiLCJleHAiOjE3Mzc0MjEwMTI4NzkwMDAsInRpbWVzdGFtcCI6MTczNzQyMTAxMjY5OTAwMCwiaWF0IjoxNzM3NDIxMDEyfQ.nQlCcBBGoXcFpSvCc12KKM-xhyv9i982zWnx0JW8-go\r\n' +
+        'User-Agent: axios/1.7.9\r\n' +
+        'Content-Length: 93\r\n' +
+        'Accept-Encoding: gzip, compress, deflate, br\r\n' +
+        'Host: open.bigmodel.cn\r\n' +
+        'Connection: keep-alive\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: nop],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'POST',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      joinDuplicateHeaders: undefined,
+      path: '/api/paas/v4/chat/completions',
+      _ended: false,
+      res: null,
+      aborted: false,
+      timeoutCb: [Function: emitRequestTimeout],
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: 'open.bigmodel.cn',
+      protocol: 'https:',
+      _redirectable: [Circular *1],
+      [Symbol(shapeMode)]: false,
+      [Symbol(kCapture)]: false,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kOutHeaders)]: [Object: null prototype],
+      [Symbol(errored)]: null,
+      [Symbol(kHighWaterMark)]: 16384,
+      [Symbol(kRejectNonStandardBodyWrites)]: false,
+      [Symbol(kUniqueHeaders)]: null
+    },
+    _currentUrl: 'https://open.bigmodel.cn/api/paas/v4/chat/completions',
+    [Symbol(shapeMode)]: true,
+    [Symbol(kCapture)]: false
+  },
+  cause: Error: getaddrinfo ENOTFOUND open.bigmodel.cn
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'open.bigmodel.cn'
+  }
+}
+[2025-01-21T08:57:55.753] [ERROR] error - AxiosError: getaddrinfo ENOTFOUND open.bigmodel.cn
+    at AxiosError.from (C:\AIitem\AIGC-node\node_modules\axios\dist\node\axios.cjs:877:14)
+    at RedirectableRequest.handleRequestError (C:\AIitem\AIGC-node\node_modules\axios\dist\node\axios.cjs:3163:25)
+    at RedirectableRequest.emit (node:events:518:28)
+    at eventHandlers.<computed> (C:\AIitem\AIGC-node\node_modules\follow-redirects\index.js:49:24)
+    at ClientRequest.emit (node:events:518:28)
+    at TLSSocket.socketErrorListener (node:_http_client:500:9)
+    at TLSSocket.emit (node:events:518:28)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (C:\AIitem\AIGC-node\node_modules\axios\dist\node\axios.cjs:4252:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async createCompletions (C:\AIitem\AIGC-node\controller\zhipuai.js:8:18)
+    at async errorhandler (C:\AIitem\AIGC-node\config\errorhandler.js:5:5)
+    at async responseHandler (C:\AIitem\AIGC-node\config\result.js:18:3)
+    at async cors (C:\AIitem\AIGC-node\node_modules\@koa\cors\index.js:109:16)
+    at async bodyParser (C:\AIitem\AIGC-node\node_modules\koa-bodyparser\index.js:78:5) {
+  hostname: 'open.bigmodel.cn',
+  syscall: 'getaddrinfo',
+  code: 'ENOTFOUND',
+  errno: -3008,
+  config: {
+    transitional: {
+      silentJSONParsing: true,
+      forcedJSONParsing: true,
+      clarifyTimeoutError: false
+    },
+    adapter: [ 'xhr', 'http', 'fetch' ],
+    transformRequest: [ [Function: transformRequest] ],
+    transformResponse: [ [Function: transformResponse] ],
+    timeout: 0,
+    xsrfCookieName: 'XSRF-TOKEN',
+    xsrfHeaderName: 'X-XSRF-TOKEN',
+    maxContentLength: -1,
+    maxBodyLength: -1,
+    env: { FormData: [Function], Blob: [class Blob] },
+    validateStatus: [Function: validateStatus],
+    headers: Object [AxiosHeaders] {
+      Accept: 'application/json, text/plain, */*',
+      'Content-Type': 'application/json',
+      Authorization: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsInNpZ25fdHlwZSI6IlNJR04ifQ.eyJhcGlfa2V5IjoiMGNlNjNjMjQ3MDdlMWE3YzYyMzJmMjJiYjJkYmM1OTgiLCJleHAiOjE3Mzc0MjEwNzU5MDIwMDAsInRpbWVzdGFtcCI6MTczNzQyMTA3NTcyMjAwMCwiaWF0IjoxNzM3NDIxMDc1fQ.sQDIklg8-UG1nCXTLg_EHqST1rD5lyNKWu3ZZyhq63k',
+      'User-Agent': 'axios/1.7.9',
+      'Content-Length': '84',
+      'Accept-Encoding': 'gzip, compress, deflate, br'
+    },
+    baseURL: 'https://open.bigmodel.cn/api/paas/v4',
+    responseType: 'stream',
+    method: 'post',
+    url: '/chat/completions',
+    data: '{"model":"glm-4-0520","messages":[{"role":"user","content":"你好"}],"stream":true}'
+  },
+  request: <ref *1> Writable {
+    _events: {
+      close: undefined,
+      error: [Function: handleRequestError],
+      prefinish: undefined,
+      finish: undefined,
+      drain: undefined,
+      response: [Function: handleResponse],
+      socket: [Function: handleRequestSocket]
+    },
+    _writableState: WritableState {
+      highWaterMark: 16384,
+      length: 0,
+      corked: 0,
+      onwrite: [Function: bound onwrite],
+      writelen: 0,
+      bufferedIndex: 0,
+      pendingcb: 0,
+      [Symbol(kState)]: 17580812,
+      [Symbol(kBufferedValue)]: null
+    },
+    _maxListeners: undefined,
+    _options: {
+      maxRedirects: 21,
+      maxBodyLength: Infinity,
+      protocol: 'https:',
+      path: '/api/paas/v4/chat/completions',
+      method: 'POST',
+      headers: [Object: null prototype],
+      agents: [Object],
+      auth: undefined,
+      family: undefined,
+      beforeRedirect: [Function: dispatchBeforeRedirect],
+      beforeRedirects: [Object],
+      hostname: 'open.bigmodel.cn',
+      port: '',
+      agent: undefined,
+      nativeProtocols: [Object],
+      pathname: '/api/paas/v4/chat/completions'
+    },
+    _ended: false,
+    _ending: true,
+    _redirectCount: 0,
+    _redirects: [],
+    _requestBodyLength: 84,
+    _requestBodyBuffers: [ [Object] ],
+    _eventsCount: 3,
+    _onNativeResponse: [Function (anonymous)],
+    _currentRequest: ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 7,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      destroyed: false,
+      _last: false,
+      chunkedEncoding: false,
+      shouldKeepAlive: true,
+      maxRequestsOnConnectionReached: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: true,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      strictContentLength: false,
+      _contentLength: '84',
+      _hasBody: true,
+      _trailer: '',
+      finished: false,
+      _headerSent: true,
+      _closed: false,
+      socket: [TLSSocket],
+      _header: 'POST /api/paas/v4/chat/completions HTTP/1.1\r\n' +
+        'Accept: application/json, text/plain, */*\r\n' +
+        'Content-Type: application/json\r\n' +
+        'Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsInNpZ25fdHlwZSI6IlNJR04ifQ.eyJhcGlfa2V5IjoiMGNlNjNjMjQ3MDdlMWE3YzYyMzJmMjJiYjJkYmM1OTgiLCJleHAiOjE3Mzc0MjEwNzU5MDIwMDAsInRpbWVzdGFtcCI6MTczNzQyMTA3NTcyMjAwMCwiaWF0IjoxNzM3NDIxMDc1fQ.sQDIklg8-UG1nCXTLg_EHqST1rD5lyNKWu3ZZyhq63k\r\n' +
+        'User-Agent: axios/1.7.9\r\n' +
+        'Content-Length: 84\r\n' +
+        'Accept-Encoding: gzip, compress, deflate, br\r\n' +
+        'Host: open.bigmodel.cn\r\n' +
+        'Connection: keep-alive\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: nop],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'POST',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      joinDuplicateHeaders: undefined,
+      path: '/api/paas/v4/chat/completions',
+      _ended: false,
+      res: null,
+      aborted: false,
+      timeoutCb: [Function: emitRequestTimeout],
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: 'open.bigmodel.cn',
+      protocol: 'https:',
+      _redirectable: [Circular *1],
+      [Symbol(shapeMode)]: false,
+      [Symbol(kCapture)]: false,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kOutHeaders)]: [Object: null prototype],
+      [Symbol(errored)]: null,
+      [Symbol(kHighWaterMark)]: 16384,
+      [Symbol(kRejectNonStandardBodyWrites)]: false,
+      [Symbol(kUniqueHeaders)]: null
+    },
+    _currentUrl: 'https://open.bigmodel.cn/api/paas/v4/chat/completions',
+    [Symbol(shapeMode)]: true,
+    [Symbol(kCapture)]: false
+  },
+  cause: Error: getaddrinfo ENOTFOUND open.bigmodel.cn
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'open.bigmodel.cn'
+  }
+}
+[2025-01-21T10:08:39.845] [ERROR] error - SyntaxError: Unexpected token 'd', "data: {"id"... is not valid JSON
+    at JSON.parse (<anonymous>)
+    at createCompletions (C:\AIitem\AIGC-node\controller\zhipuai.js:20:29)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async errorhandler (C:\AIitem\AIGC-node\config\errorhandler.js:5:5)
+    at async responseHandler (C:\AIitem\AIGC-node\config\result.js:18:3)
+    at async cors (C:\AIitem\AIGC-node\node_modules\@koa\cors\index.js:109:16)
+    at async bodyParser (C:\AIitem\AIGC-node\node_modules\koa-bodyparser\index.js:78:5)
+[2025-01-21T10:09:35.751] [ERROR] error - SyntaxError: Unexpected non-whitespace character after JSON at position 150
+    at JSON.parse (<anonymous>)
+    at createCompletions (C:\AIitem\AIGC-node\controller\zhipuai.js:20:29)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async errorhandler (C:\AIitem\AIGC-node\config\errorhandler.js:5:5)
+    at async responseHandler (C:\AIitem\AIGC-node\config\result.js:18:3)
+    at async cors (C:\AIitem\AIGC-node\node_modules\@koa\cors\index.js:109:16)
+    at async bodyParser (C:\AIitem\AIGC-node\node_modules\koa-bodyparser\index.js:78:5)
+[2025-01-21T10:17:49.660] [ERROR] error - AxiosError: getaddrinfo ENOTFOUND open.bigmodel.cn
+    at AxiosError.from (C:\AIitem\AIGC-node\node_modules\axios\dist\node\axios.cjs:877:14)
+    at RedirectableRequest.handleRequestError (C:\AIitem\AIGC-node\node_modules\axios\dist\node\axios.cjs:3163:25)
+    at RedirectableRequest.emit (node:events:518:28)
+    at eventHandlers.<computed> (C:\AIitem\AIGC-node\node_modules\follow-redirects\index.js:49:24)
+    at ClientRequest.emit (node:events:518:28)
+    at TLSSocket.socketErrorListener (node:_http_client:500:9)
+    at TLSSocket.emit (node:events:518:28)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (C:\AIitem\AIGC-node\node_modules\axios\dist\node\axios.cjs:4252:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async createCompletions (C:\AIitem\AIGC-node\controller\zhipuai.js:8:18)
+    at async errorhandler (C:\AIitem\AIGC-node\config\errorhandler.js:5:5)
+    at async responseHandler (C:\AIitem\AIGC-node\config\result.js:18:3)
+    at async cors (C:\AIitem\AIGC-node\node_modules\@koa\cors\index.js:109:16)
+    at async bodyParser (C:\AIitem\AIGC-node\node_modules\koa-bodyparser\index.js:78:5) {
+  hostname: 'open.bigmodel.cn',
+  syscall: 'getaddrinfo',
+  code: 'ENOTFOUND',
+  errno: -3008,
+  config: {
+    transitional: {
+      silentJSONParsing: true,
+      forcedJSONParsing: true,
+      clarifyTimeoutError: false
+    },
+    adapter: [ 'xhr', 'http', 'fetch' ],
+    transformRequest: [ [Function: transformRequest] ],
+    transformResponse: [ [Function: transformResponse] ],
+    timeout: 0,
+    xsrfCookieName: 'XSRF-TOKEN',
+    xsrfHeaderName: 'X-XSRF-TOKEN',
+    maxContentLength: -1,
+    maxBodyLength: -1,
+    env: { FormData: [Function], Blob: [class Blob] },
+    validateStatus: [Function: validateStatus],
+    headers: Object [AxiosHeaders] {
+      Accept: 'application/json, text/plain, */*',
+      'Content-Type': 'application/json',
+      Authorization: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsInNpZ25fdHlwZSI6IlNJR04ifQ.eyJhcGlfa2V5IjoiMGNlNjNjMjQ3MDdlMWE3YzYyMzJmMjJiYjJkYmM1OTgiLCJleHAiOjE3Mzc0MjU4Njk4MDcwMDAsInRpbWVzdGFtcCI6MTczNzQyNTg2OTYyNzAwMCwiaWF0IjoxNzM3NDI1ODY5fQ.ncK2fhkMK7ouhKMWjjGc_cY6bxr7pA38bbtkucs2rl0',
+      'User-Agent': 'axios/1.7.9',
+      'Content-Length': '218',
+      'Accept-Encoding': 'gzip, compress, deflate, br'
+    },
+    baseURL: 'https://open.bigmodel.cn/api/paas/v4',
+    responseType: 'stream',
+    method: 'post',
+    url: '/chat/completions',
+    data: '{"model":"glm-4-plus","messages":[{"role":"user","content":"你能帮我查一下2024年1月22日从北京南站到上海的火车票吗？"}],"stream":true,"tools":[{"type":"web_search","web_search":{"enable":true}}]}'
+  },
+  request: <ref *1> Writable {
+    _events: {
+      close: undefined,
+      error: [Function: handleRequestError],
+      prefinish: undefined,
+      finish: undefined,
+      drain: undefined,
+      response: [Function: handleResponse],
+      socket: [Function: handleRequestSocket]
+    },
+    _writableState: WritableState {
+      highWaterMark: 16384,
+      length: 0,
+      corked: 0,
+      onwrite: [Function: bound onwrite],
+      writelen: 0,
+      bufferedIndex: 0,
+      pendingcb: 0,
+      [Symbol(kState)]: 17580812,
+      [Symbol(kBufferedValue)]: null
+    },
+    _maxListeners: undefined,
+    _options: {
+      maxRedirects: 21,
+      maxBodyLength: Infinity,
+      protocol: 'https:',
+      path: '/api/paas/v4/chat/completions',
+      method: 'POST',
+      headers: [Object: null prototype],
+      agents: [Object],
+      auth: undefined,
+      family: undefined,
+      beforeRedirect: [Function: dispatchBeforeRedirect],
+      beforeRedirects: [Object],
+      hostname: 'open.bigmodel.cn',
+      port: '',
+      agent: undefined,
+      nativeProtocols: [Object],
+      pathname: '/api/paas/v4/chat/completions'
+    },
+    _ended: false,
+    _ending: true,
+    _redirectCount: 0,
+    _redirects: [],
+    _requestBodyLength: 218,
+    _requestBodyBuffers: [ [Object] ],
+    _eventsCount: 3,
+    _onNativeResponse: [Function (anonymous)],
+    _currentRequest: ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 7,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      destroyed: false,
+      _last: false,
+      chunkedEncoding: false,
+      shouldKeepAlive: true,
+      maxRequestsOnConnectionReached: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: true,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      strictContentLength: false,
+      _contentLength: '218',
+      _hasBody: true,
+      _trailer: '',
+      finished: false,
+      _headerSent: true,
+      _closed: false,
+      socket: [TLSSocket],
+      _header: 'POST /api/paas/v4/chat/completions HTTP/1.1\r\n' +
+        'Accept: application/json, text/plain, */*\r\n' +
+        'Content-Type: application/json\r\n' +
+        'Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsInNpZ25fdHlwZSI6IlNJR04ifQ.eyJhcGlfa2V5IjoiMGNlNjNjMjQ3MDdlMWE3YzYyMzJmMjJiYjJkYmM1OTgiLCJleHAiOjE3Mzc0MjU4Njk4MDcwMDAsInRpbWVzdGFtcCI6MTczNzQyNTg2OTYyNzAwMCwiaWF0IjoxNzM3NDI1ODY5fQ.ncK2fhkMK7ouhKMWjjGc_cY6bxr7pA38bbtkucs2rl0\r\n' +
+        'User-Agent: axios/1.7.9\r\n' +
+        'Content-Length: 218\r\n' +
+        'Accept-Encoding: gzip, compress, deflate, br\r\n' +
+        'Host: open.bigmodel.cn\r\n' +
+        'Connection: keep-alive\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: nop],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'POST',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      joinDuplicateHeaders: undefined,
+      path: '/api/paas/v4/chat/completions',
+      _ended: false,
+      res: null,
+      aborted: false,
+      timeoutCb: [Function: emitRequestTimeout],
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: 'open.bigmodel.cn',
+      protocol: 'https:',
+      _redirectable: [Circular *1],
+      [Symbol(shapeMode)]: false,
+      [Symbol(kCapture)]: false,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kOutHeaders)]: [Object: null prototype],
+      [Symbol(errored)]: null,
+      [Symbol(kHighWaterMark)]: 16384,
+      [Symbol(kRejectNonStandardBodyWrites)]: false,
+      [Symbol(kUniqueHeaders)]: null
+    },
+    _currentUrl: 'https://open.bigmodel.cn/api/paas/v4/chat/completions',
+    [Symbol(shapeMode)]: true,
+    [Symbol(kCapture)]: false
+  },
+  cause: Error: getaddrinfo ENOTFOUND open.bigmodel.cn
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'open.bigmodel.cn'
+  }
+}
+[2025-01-21T10:18:05.676] [ERROR] error - AxiosError: getaddrinfo ENOTFOUND open.bigmodel.cn
+    at AxiosError.from (C:\AIitem\AIGC-node\node_modules\axios\dist\node\axios.cjs:877:14)
+    at RedirectableRequest.handleRequestError (C:\AIitem\AIGC-node\node_modules\axios\dist\node\axios.cjs:3163:25)
+    at RedirectableRequest.emit (node:events:518:28)
+    at eventHandlers.<computed> (C:\AIitem\AIGC-node\node_modules\follow-redirects\index.js:49:24)
+    at ClientRequest.emit (node:events:518:28)
+    at TLSSocket.socketErrorListener (node:_http_client:500:9)
+    at TLSSocket.emit (node:events:518:28)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (C:\AIitem\AIGC-node\node_modules\axios\dist\node\axios.cjs:4252:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async createCompletions (C:\AIitem\AIGC-node\controller\zhipuai.js:8:18)
+    at async errorhandler (C:\AIitem\AIGC-node\config\errorhandler.js:5:5)
+    at async responseHandler (C:\AIitem\AIGC-node\config\result.js:18:3)
+    at async cors (C:\AIitem\AIGC-node\node_modules\@koa\cors\index.js:109:16)
+    at async bodyParser (C:\AIitem\AIGC-node\node_modules\koa-bodyparser\index.js:78:5) {
+  hostname: 'open.bigmodel.cn',
+  syscall: 'getaddrinfo',
+  code: 'ENOTFOUND',
+  errno: -3008,
+  config: {
+    transitional: {
+      silentJSONParsing: true,
+      forcedJSONParsing: true,
+      clarifyTimeoutError: false
+    },
+    adapter: [ 'xhr', 'http', 'fetch' ],
+    transformRequest: [ [Function: transformRequest] ],
+    transformResponse: [ [Function: transformResponse] ],
+    timeout: 0,
+    xsrfCookieName: 'XSRF-TOKEN',
+    xsrfHeaderName: 'X-XSRF-TOKEN',
+    maxContentLength: -1,
+    maxBodyLength: -1,
+    env: { FormData: [Function], Blob: [class Blob] },
+    validateStatus: [Function: validateStatus],
+    headers: Object [AxiosHeaders] {
+      Accept: 'application/json, text/plain, */*',
+      'Content-Type': 'application/json',
+      Authorization: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsInNpZ25fdHlwZSI6IlNJR04ifQ.eyJhcGlfa2V5IjoiMGNlNjNjMjQ3MDdlMWE3YzYyMzJmMjJiYjJkYmM1OTgiLCJleHAiOjE3Mzc0MjU4Njk4MDcwMDAsInRpbWVzdGFtcCI6MTczNzQyNTg2OTYyNzAwMCwiaWF0IjoxNzM3NDI1ODY5fQ.ncK2fhkMK7ouhKMWjjGc_cY6bxr7pA38bbtkucs2rl0',
+      'User-Agent': 'axios/1.7.9',
+      'Content-Length': '218',
+      'Accept-Encoding': 'gzip, compress, deflate, br'
+    },
+    baseURL: 'https://open.bigmodel.cn/api/paas/v4',
+    responseType: 'stream',
+    method: 'post',
+    url: '/chat/completions',
+    data: '{"model":"glm-4-plus","messages":[{"role":"user","content":"你能帮我查一下2024年1月22日从北京南站到上海的火车票吗？"}],"stream":true,"tools":[{"type":"web_search","web_search":{"enable":true}}]}'
+  },
+  request: <ref *1> Writable {
+    _events: {
+      close: undefined,
+      error: [Function: handleRequestError],
+      prefinish: undefined,
+      finish: undefined,
+      drain: undefined,
+      response: [Function: handleResponse],
+      socket: [Function: handleRequestSocket]
+    },
+    _writableState: WritableState {
+      highWaterMark: 16384,
+      length: 0,
+      corked: 0,
+      onwrite: [Function: bound onwrite],
+      writelen: 0,
+      bufferedIndex: 0,
+      pendingcb: 0,
+      [Symbol(kState)]: 17580812,
+      [Symbol(kBufferedValue)]: null
+    },
+    _maxListeners: undefined,
+    _options: {
+      maxRedirects: 21,
+      maxBodyLength: Infinity,
+      protocol: 'https:',
+      path: '/api/paas/v4/chat/completions',
+      method: 'POST',
+      headers: [Object: null prototype],
+      agents: [Object],
+      auth: undefined,
+      family: undefined,
+      beforeRedirect: [Function: dispatchBeforeRedirect],
+      beforeRedirects: [Object],
+      hostname: 'open.bigmodel.cn',
+      port: '',
+      agent: undefined,
+      nativeProtocols: [Object],
+      pathname: '/api/paas/v4/chat/completions'
+    },
+    _ended: false,
+    _ending: true,
+    _redirectCount: 0,
+    _redirects: [],
+    _requestBodyLength: 218,
+    _requestBodyBuffers: [ [Object] ],
+    _eventsCount: 3,
+    _onNativeResponse: [Function (anonymous)],
+    _currentRequest: ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 7,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      destroyed: false,
+      _last: false,
+      chunkedEncoding: false,
+      shouldKeepAlive: true,
+      maxRequestsOnConnectionReached: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: true,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      strictContentLength: false,
+      _contentLength: '218',
+      _hasBody: true,
+      _trailer: '',
+      finished: false,
+      _headerSent: true,
+      _closed: false,
+      socket: [TLSSocket],
+      _header: 'POST /api/paas/v4/chat/completions HTTP/1.1\r\n' +
+        'Accept: application/json, text/plain, */*\r\n' +
+        'Content-Type: application/json\r\n' +
+        'Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsInNpZ25fdHlwZSI6IlNJR04ifQ.eyJhcGlfa2V5IjoiMGNlNjNjMjQ3MDdlMWE3YzYyMzJmMjJiYjJkYmM1OTgiLCJleHAiOjE3Mzc0MjU4Njk4MDcwMDAsInRpbWVzdGFtcCI6MTczNzQyNTg2OTYyNzAwMCwiaWF0IjoxNzM3NDI1ODY5fQ.ncK2fhkMK7ouhKMWjjGc_cY6bxr7pA38bbtkucs2rl0\r\n' +
+        'User-Agent: axios/1.7.9\r\n' +
+        'Content-Length: 218\r\n' +
+        'Accept-Encoding: gzip, compress, deflate, br\r\n' +
+        'Host: open.bigmodel.cn\r\n' +
+        'Connection: keep-alive\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: nop],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'POST',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      joinDuplicateHeaders: undefined,
+      path: '/api/paas/v4/chat/completions',
+      _ended: false,
+      res: null,
+      aborted: false,
+      timeoutCb: [Function: emitRequestTimeout],
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: 'open.bigmodel.cn',
+      protocol: 'https:',
+      _redirectable: [Circular *1],
+      [Symbol(shapeMode)]: false,
+      [Symbol(kCapture)]: false,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kOutHeaders)]: [Object: null prototype],
+      [Symbol(errored)]: null,
+      [Symbol(kHighWaterMark)]: 16384,
+      [Symbol(kRejectNonStandardBodyWrites)]: false,
+      [Symbol(kUniqueHeaders)]: null
+    },
+    _currentUrl: 'https://open.bigmodel.cn/api/paas/v4/chat/completions',
+    [Symbol(shapeMode)]: true,
+    [Symbol(kCapture)]: false
+  },
+  cause: Error: getaddrinfo ENOTFOUND open.bigmodel.cn
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'open.bigmodel.cn'
+  }
+}
+[2025-01-21T10:18:31.709] [ERROR] error - AxiosError: getaddrinfo ENOTFOUND open.bigmodel.cn
+    at AxiosError.from (C:\AIitem\AIGC-node\node_modules\axios\dist\node\axios.cjs:877:14)
+    at RedirectableRequest.handleRequestError (C:\AIitem\AIGC-node\node_modules\axios\dist\node\axios.cjs:3163:25)
+    at RedirectableRequest.emit (node:events:518:28)
+    at eventHandlers.<computed> (C:\AIitem\AIGC-node\node_modules\follow-redirects\index.js:49:24)
+    at ClientRequest.emit (node:events:518:28)
+    at TLSSocket.socketErrorListener (node:_http_client:500:9)
+    at TLSSocket.emit (node:events:518:28)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (C:\AIitem\AIGC-node\node_modules\axios\dist\node\axios.cjs:4252:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async createCompletions (C:\AIitem\AIGC-node\controller\zhipuai.js:8:18)
+    at async errorhandler (C:\AIitem\AIGC-node\config\errorhandler.js:5:5)
+    at async responseHandler (C:\AIitem\AIGC-node\config\result.js:18:3)
+    at async cors (C:\AIitem\AIGC-node\node_modules\@koa\cors\index.js:109:16)
+    at async bodyParser (C:\AIitem\AIGC-node\node_modules\koa-bodyparser\index.js:78:5) {
+  hostname: 'open.bigmodel.cn',
+  syscall: 'getaddrinfo',
+  code: 'ENOTFOUND',
+  errno: -3008,
+  config: {
+    transitional: {
+      silentJSONParsing: true,
+      forcedJSONParsing: true,
+      clarifyTimeoutError: false
+    },
+    adapter: [ 'xhr', 'http', 'fetch' ],
+    transformRequest: [ [Function: transformRequest] ],
+    transformResponse: [ [Function: transformResponse] ],
+    timeout: 0,
+    xsrfCookieName: 'XSRF-TOKEN',
+    xsrfHeaderName: 'X-XSRF-TOKEN',
+    maxContentLength: -1,
+    maxBodyLength: -1,
+    env: { FormData: [Function], Blob: [class Blob] },
+    validateStatus: [Function: validateStatus],
+    headers: Object [AxiosHeaders] {
+      Accept: 'application/json, text/plain, */*',
+      'Content-Type': 'application/json',
+      Authorization: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsInNpZ25fdHlwZSI6IlNJR04ifQ.eyJhcGlfa2V5IjoiMGNlNjNjMjQ3MDdlMWE3YzYyMzJmMjJiYjJkYmM1OTgiLCJleHAiOjE3Mzc0MjU5MTE4NTQwMDAsInRpbWVzdGFtcCI6MTczNzQyNTkxMTY3NDAwMCwiaWF0IjoxNzM3NDI1OTExfQ.OOOxKnw2aAyL9aX9kwiDz5IZCdGW-ouKkV_iKuSPtMY',
+      'User-Agent': 'axios/1.7.9',
+      'Content-Length': '157',
+      'Accept-Encoding': 'gzip, compress, deflate, br'
+    },
+    baseURL: 'https://open.bigmodel.cn/api/paas/v4',
+    responseType: 'stream',
+    method: 'post',
+    url: '/chat/completions',
+    data: '{"model":"glm-4-plus","messages":[{"role":"user","content":"你能帮我查一下2024年1月22日从北京南站到上海的火车票吗？"}],"stream":true}'
+  },
+  request: <ref *1> Writable {
+    _events: {
+      close: undefined,
+      error: [Function: handleRequestError],
+      prefinish: undefined,
+      finish: undefined,
+      drain: undefined,
+      response: [Function: handleResponse],
+      socket: [Function: handleRequestSocket]
+    },
+    _writableState: WritableState {
+      highWaterMark: 16384,
+      length: 0,
+      corked: 0,
+      onwrite: [Function: bound onwrite],
+      writelen: 0,
+      bufferedIndex: 0,
+      pendingcb: 0,
+      [Symbol(kState)]: 17580812,
+      [Symbol(kBufferedValue)]: null
+    },
+    _maxListeners: undefined,
+    _options: {
+      maxRedirects: 21,
+      maxBodyLength: Infinity,
+      protocol: 'https:',
+      path: '/api/paas/v4/chat/completions',
+      method: 'POST',
+      headers: [Object: null prototype],
+      agents: [Object],
+      auth: undefined,
+      family: undefined,
+      beforeRedirect: [Function: dispatchBeforeRedirect],
+      beforeRedirects: [Object],
+      hostname: 'open.bigmodel.cn',
+      port: '',
+      agent: undefined,
+      nativeProtocols: [Object],
+      pathname: '/api/paas/v4/chat/completions'
+    },
+    _ended: false,
+    _ending: true,
+    _redirectCount: 0,
+    _redirects: [],
+    _requestBodyLength: 157,
+    _requestBodyBuffers: [ [Object] ],
+    _eventsCount: 3,
+    _onNativeResponse: [Function (anonymous)],
+    _currentRequest: ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 7,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      destroyed: false,
+      _last: false,
+      chunkedEncoding: false,
+      shouldKeepAlive: true,
+      maxRequestsOnConnectionReached: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: true,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      strictContentLength: false,
+      _contentLength: '157',
+      _hasBody: true,
+      _trailer: '',
+      finished: false,
+      _headerSent: true,
+      _closed: false,
+      socket: [TLSSocket],
+      _header: 'POST /api/paas/v4/chat/completions HTTP/1.1\r\n' +
+        'Accept: application/json, text/plain, */*\r\n' +
+        'Content-Type: application/json\r\n' +
+        'Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsInNpZ25fdHlwZSI6IlNJR04ifQ.eyJhcGlfa2V5IjoiMGNlNjNjMjQ3MDdlMWE3YzYyMzJmMjJiYjJkYmM1OTgiLCJleHAiOjE3Mzc0MjU5MTE4NTQwMDAsInRpbWVzdGFtcCI6MTczNzQyNTkxMTY3NDAwMCwiaWF0IjoxNzM3NDI1OTExfQ.OOOxKnw2aAyL9aX9kwiDz5IZCdGW-ouKkV_iKuSPtMY\r\n' +
+        'User-Agent: axios/1.7.9\r\n' +
+        'Content-Length: 157\r\n' +
+        'Accept-Encoding: gzip, compress, deflate, br\r\n' +
+        'Host: open.bigmodel.cn\r\n' +
+        'Connection: keep-alive\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: nop],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'POST',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      joinDuplicateHeaders: undefined,
+      path: '/api/paas/v4/chat/completions',
+      _ended: false,
+      res: null,
+      aborted: false,
+      timeoutCb: [Function: emitRequestTimeout],
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: 'open.bigmodel.cn',
+      protocol: 'https:',
+      _redirectable: [Circular *1],
+      [Symbol(shapeMode)]: false,
+      [Symbol(kCapture)]: false,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kOutHeaders)]: [Object: null prototype],
+      [Symbol(errored)]: null,
+      [Symbol(kHighWaterMark)]: 16384,
+      [Symbol(kRejectNonStandardBodyWrites)]: false,
+      [Symbol(kUniqueHeaders)]: null
+    },
+    _currentUrl: 'https://open.bigmodel.cn/api/paas/v4/chat/completions',
+    [Symbol(shapeMode)]: true,
+    [Symbol(kCapture)]: false
+  },
+  cause: Error: getaddrinfo ENOTFOUND open.bigmodel.cn
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'open.bigmodel.cn'
+  }
+}
+[2025-01-21T10:19:04.733] [ERROR] error - AxiosError: getaddrinfo ENOTFOUND open.bigmodel.cn
+    at AxiosError.from (C:\AIitem\AIGC-node\node_modules\axios\dist\node\axios.cjs:877:14)
+    at RedirectableRequest.handleRequestError (C:\AIitem\AIGC-node\node_modules\axios\dist\node\axios.cjs:3163:25)
+    at RedirectableRequest.emit (node:events:518:28)
+    at eventHandlers.<computed> (C:\AIitem\AIGC-node\node_modules\follow-redirects\index.js:49:24)
+    at ClientRequest.emit (node:events:518:28)
+    at TLSSocket.socketErrorListener (node:_http_client:500:9)
+    at TLSSocket.emit (node:events:518:28)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (C:\AIitem\AIGC-node\node_modules\axios\dist\node\axios.cjs:4252:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async createCompletions (C:\AIitem\AIGC-node\controller\zhipuai.js:8:18)
+    at async errorhandler (C:\AIitem\AIGC-node\config\errorhandler.js:5:5)
+    at async responseHandler (C:\AIitem\AIGC-node\config\result.js:18:3)
+    at async cors (C:\AIitem\AIGC-node\node_modules\@koa\cors\index.js:109:16)
+    at async bodyParser (C:\AIitem\AIGC-node\node_modules\koa-bodyparser\index.js:78:5) {
+  hostname: 'open.bigmodel.cn',
+  syscall: 'getaddrinfo',
+  code: 'ENOTFOUND',
+  errno: -3008,
+  config: {
+    transitional: {
+      silentJSONParsing: true,
+      forcedJSONParsing: true,
+      clarifyTimeoutError: false
+    },
+    adapter: [ 'xhr', 'http', 'fetch' ],
+    transformRequest: [ [Function: transformRequest] ],
+    transformResponse: [ [Function: transformResponse] ],
+    timeout: 0,
+    xsrfCookieName: 'XSRF-TOKEN',
+    xsrfHeaderName: 'X-XSRF-TOKEN',
+    maxContentLength: -1,
+    maxBodyLength: -1,
+    env: { FormData: [Function], Blob: [class Blob] },
+    validateStatus: [Function: validateStatus],
+    headers: Object [AxiosHeaders] {
+      Accept: 'application/json, text/plain, */*',
+      'Content-Type': 'application/json',
+      Authorization: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsInNpZ25fdHlwZSI6IlNJR04ifQ.eyJhcGlfa2V5IjoiMGNlNjNjMjQ3MDdlMWE3YzYyMzJmMjJiYjJkYmM1OTgiLCJleHAiOjE3Mzc0MjU5NDQ4NzgwMDAsInRpbWVzdGFtcCI6MTczNzQyNTk0NDY5ODAwMCwiaWF0IjoxNzM3NDI1OTQ0fQ.KKPazbDD6zM62ARPBLdE9OJFuOgRre6zsmUH0ed7Iyc',
+      'User-Agent': 'axios/1.7.9',
+      'Content-Length': '93',
+      'Accept-Encoding': 'gzip, compress, deflate, br'
+    },
+    baseURL: 'https://open.bigmodel.cn/api/paas/v4',
+    responseType: 'stream',
+    method: 'post',
+    url: '/chat/completions',
+    data: '{"model":"glm-4-plus","messages":[{"role":"user","content":"Mate70是什么"}],"stream":true}'
+  },
+  request: <ref *1> Writable {
+    _events: {
+      close: undefined,
+      error: [Function: handleRequestError],
+      prefinish: undefined,
+      finish: undefined,
+      drain: undefined,
+      response: [Function: handleResponse],
+      socket: [Function: handleRequestSocket]
+    },
+    _writableState: WritableState {
+      highWaterMark: 16384,
+      length: 0,
+      corked: 0,
+      onwrite: [Function: bound onwrite],
+      writelen: 0,
+      bufferedIndex: 0,
+      pendingcb: 0,
+      [Symbol(kState)]: 17580812,
+      [Symbol(kBufferedValue)]: null
+    },
+    _maxListeners: undefined,
+    _options: {
+      maxRedirects: 21,
+      maxBodyLength: Infinity,
+      protocol: 'https:',
+      path: '/api/paas/v4/chat/completions',
+      method: 'POST',
+      headers: [Object: null prototype],
+      agents: [Object],
+      auth: undefined,
+      family: undefined,
+      beforeRedirect: [Function: dispatchBeforeRedirect],
+      beforeRedirects: [Object],
+      hostname: 'open.bigmodel.cn',
+      port: '',
+      agent: undefined,
+      nativeProtocols: [Object],
+      pathname: '/api/paas/v4/chat/completions'
+    },
+    _ended: false,
+    _ending: true,
+    _redirectCount: 0,
+    _redirects: [],
+    _requestBodyLength: 93,
+    _requestBodyBuffers: [ [Object] ],
+    _eventsCount: 3,
+    _onNativeResponse: [Function (anonymous)],
+    _currentRequest: ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 7,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      destroyed: false,
+      _last: false,
+      chunkedEncoding: false,
+      shouldKeepAlive: true,
+      maxRequestsOnConnectionReached: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: true,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      strictContentLength: false,
+      _contentLength: '93',
+      _hasBody: true,
+      _trailer: '',
+      finished: false,
+      _headerSent: true,
+      _closed: false,
+      socket: [TLSSocket],
+      _header: 'POST /api/paas/v4/chat/completions HTTP/1.1\r\n' +
+        'Accept: application/json, text/plain, */*\r\n' +
+        'Content-Type: application/json\r\n' +
+        'Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsInNpZ25fdHlwZSI6IlNJR04ifQ.eyJhcGlfa2V5IjoiMGNlNjNjMjQ3MDdlMWE3YzYyMzJmMjJiYjJkYmM1OTgiLCJleHAiOjE3Mzc0MjU5NDQ4NzgwMDAsInRpbWVzdGFtcCI6MTczNzQyNTk0NDY5ODAwMCwiaWF0IjoxNzM3NDI1OTQ0fQ.KKPazbDD6zM62ARPBLdE9OJFuOgRre6zsmUH0ed7Iyc\r\n' +
+        'User-Agent: axios/1.7.9\r\n' +
+        'Content-Length: 93\r\n' +
+        'Accept-Encoding: gzip, compress, deflate, br\r\n' +
+        'Host: open.bigmodel.cn\r\n' +
+        'Connection: keep-alive\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: nop],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'POST',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      joinDuplicateHeaders: undefined,
+      path: '/api/paas/v4/chat/completions',
+      _ended: false,
+      res: null,
+      aborted: false,
+      timeoutCb: [Function: emitRequestTimeout],
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: 'open.bigmodel.cn',
+      protocol: 'https:',
+      _redirectable: [Circular *1],
+      [Symbol(shapeMode)]: false,
+      [Symbol(kCapture)]: false,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kOutHeaders)]: [Object: null prototype],
+      [Symbol(errored)]: null,
+      [Symbol(kHighWaterMark)]: 16384,
+      [Symbol(kRejectNonStandardBodyWrites)]: false,
+      [Symbol(kUniqueHeaders)]: null
+    },
+    _currentUrl: 'https://open.bigmodel.cn/api/paas/v4/chat/completions',
+    [Symbol(shapeMode)]: true,
+    [Symbol(kCapture)]: false
+  },
+  cause: Error: getaddrinfo ENOTFOUND open.bigmodel.cn
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'open.bigmodel.cn'
+  }
+}
+[2025-01-21T11:04:18.900] [ERROR] error - AxiosError: getaddrinfo ENOTFOUND open.bigmodel.cn
+    at AxiosError.from (C:\AIitem\AIGC-node\node_modules\axios\dist\node\axios.cjs:877:14)
+    at RedirectableRequest.handleRequestError (C:\AIitem\AIGC-node\node_modules\axios\dist\node\axios.cjs:3163:25)
+    at RedirectableRequest.emit (node:events:518:28)
+    at eventHandlers.<computed> (C:\AIitem\AIGC-node\node_modules\follow-redirects\index.js:49:24)
+    at ClientRequest.emit (node:events:518:28)
+    at TLSSocket.socketErrorListener (node:_http_client:500:9)
+    at TLSSocket.emit (node:events:518:28)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (C:\AIitem\AIGC-node\node_modules\axios\dist\node\axios.cjs:4252:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async createCompletions (C:\AIitem\AIGC-node\controller\zhipuai.js:8:18)
+    at async errorhandler (C:\AIitem\AIGC-node\config\errorhandler.js:5:5)
+    at async responseHandler (C:\AIitem\AIGC-node\config\result.js:18:3)
+    at async cors (C:\AIitem\AIGC-node\node_modules\@koa\cors\index.js:109:16)
+    at async bodyParser (C:\AIitem\AIGC-node\node_modules\koa-bodyparser\index.js:78:5) {
+  hostname: 'open.bigmodel.cn',
+  syscall: 'getaddrinfo',
+  code: 'ENOTFOUND',
+  errno: -3008,
+  config: {
+    transitional: {
+      silentJSONParsing: true,
+      forcedJSONParsing: true,
+      clarifyTimeoutError: false
+    },
+    adapter: [ 'xhr', 'http', 'fetch' ],
+    transformRequest: [ [Function: transformRequest] ],
+    transformResponse: [ [Function: transformResponse] ],
+    timeout: 0,
+    xsrfCookieName: 'XSRF-TOKEN',
+    xsrfHeaderName: 'X-XSRF-TOKEN',
+    maxContentLength: -1,
+    maxBodyLength: -1,
+    env: { FormData: [Function], Blob: [class Blob] },
+    validateStatus: [Function: validateStatus],
+    headers: Object [AxiosHeaders] {
+      Accept: 'application/json, text/plain, */*',
+      'Content-Type': 'application/json',
+      Authorization: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsInNpZ25fdHlwZSI6IlNJR04ifQ.eyJhcGlfa2V5IjoiMGNlNjNjMjQ3MDdlMWE3YzYyMzJmMjJiYjJkYmM1OTgiLCJleHAiOjE3Mzc0Mjg2NDc3NDEwMDAsInRpbWVzdGFtcCI6MTczNzQyODY0NzU2MTAwMCwiaWF0IjoxNzM3NDI4NjQ3fQ.Vwt6lZpIN58Jvf9bzmqwbKfj4DX4SD1SeTOIjyVFvgw',
+      'User-Agent': 'axios/1.7.9',
+      'Content-Length': '175',
+      'Accept-Encoding': 'gzip, compress, deflate, br'
+    },
+    baseURL: 'https://open.bigmodel.cn/api/paas/v4',
+    responseType: 'stream',
+    method: 'post',
+    url: '/chat/completions',
+    data: '{"model":"glm-4-plus","messages":[{"role":"user","content":"mate70是什么"}],"stream":true,"tools":[{"type":"web_search","web_search":{"enable":true,"search_result":true}}]}'
+  },
+  request: <ref *1> Writable {
+    _events: {
+      close: undefined,
+      error: [Function: handleRequestError],
+      prefinish: undefined,
+      finish: undefined,
+      drain: undefined,
+      response: [Function: handleResponse],
+      socket: [Function: handleRequestSocket]
+    },
+    _writableState: WritableState {
+      highWaterMark: 16384,
+      length: 0,
+      corked: 0,
+      onwrite: [Function: bound onwrite],
+      writelen: 0,
+      bufferedIndex: 0,
+      pendingcb: 0,
+      [Symbol(kState)]: 17580812,
+      [Symbol(kBufferedValue)]: null
+    },
+    _maxListeners: undefined,
+    _options: {
+      maxRedirects: 21,
+      maxBodyLength: Infinity,
+      protocol: 'https:',
+      path: '/api/paas/v4/chat/completions',
+      method: 'POST',
+      headers: [Object: null prototype],
+      agents: [Object],
+      auth: undefined,
+      family: undefined,
+      beforeRedirect: [Function: dispatchBeforeRedirect],
+      beforeRedirects: [Object],
+      hostname: 'open.bigmodel.cn',
+      port: '',
+      agent: undefined,
+      nativeProtocols: [Object],
+      pathname: '/api/paas/v4/chat/completions'
+    },
+    _ended: false,
+    _ending: true,
+    _redirectCount: 0,
+    _redirects: [],
+    _requestBodyLength: 175,
+    _requestBodyBuffers: [ [Object] ],
+    _eventsCount: 3,
+    _onNativeResponse: [Function (anonymous)],
+    _currentRequest: ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 7,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      destroyed: false,
+      _last: false,
+      chunkedEncoding: false,
+      shouldKeepAlive: true,
+      maxRequestsOnConnectionReached: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: true,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      strictContentLength: false,
+      _contentLength: '175',
+      _hasBody: true,
+      _trailer: '',
+      finished: false,
+      _headerSent: true,
+      _closed: false,
+      socket: [TLSSocket],
+      _header: 'POST /api/paas/v4/chat/completions HTTP/1.1\r\n' +
+        'Accept: application/json, text/plain, */*\r\n' +
+        'Content-Type: application/json\r\n' +
+        'Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsInNpZ25fdHlwZSI6IlNJR04ifQ.eyJhcGlfa2V5IjoiMGNlNjNjMjQ3MDdlMWE3YzYyMzJmMjJiYjJkYmM1OTgiLCJleHAiOjE3Mzc0Mjg2NDc3NDEwMDAsInRpbWVzdGFtcCI6MTczNzQyODY0NzU2MTAwMCwiaWF0IjoxNzM3NDI4NjQ3fQ.Vwt6lZpIN58Jvf9bzmqwbKfj4DX4SD1SeTOIjyVFvgw\r\n' +
+        'User-Agent: axios/1.7.9\r\n' +
+        'Content-Length: 175\r\n' +
+        'Accept-Encoding: gzip, compress, deflate, br\r\n' +
+        'Host: open.bigmodel.cn\r\n' +
+        'Connection: keep-alive\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: nop],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'POST',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      joinDuplicateHeaders: undefined,
+      path: '/api/paas/v4/chat/completions',
+      _ended: false,
+      res: null,
+      aborted: false,
+      timeoutCb: [Function: emitRequestTimeout],
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: 'open.bigmodel.cn',
+      protocol: 'https:',
+      _redirectable: [Circular *1],
+      [Symbol(shapeMode)]: false,
+      [Symbol(kCapture)]: false,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kOutHeaders)]: [Object: null prototype],
+      [Symbol(errored)]: null,
+      [Symbol(kHighWaterMark)]: 16384,
+      [Symbol(kRejectNonStandardBodyWrites)]: false,
+      [Symbol(kUniqueHeaders)]: null
+    },
+    _currentUrl: 'https://open.bigmodel.cn/api/paas/v4/chat/completions',
+    [Symbol(shapeMode)]: true,
+    [Symbol(kCapture)]: false
+  },
+  cause: Error: getaddrinfo ENOTFOUND open.bigmodel.cn
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'open.bigmodel.cn'
+  }
+}
+[2025-01-21T11:34:55.297] [ERROR] error - AxiosError: getaddrinfo ENOTFOUND open.bigmodel.cn
+    at AxiosError.from (C:\AIitem\AIGC-node\node_modules\axios\dist\node\axios.cjs:877:14)
+    at RedirectableRequest.handleRequestError (C:\AIitem\AIGC-node\node_modules\axios\dist\node\axios.cjs:3163:25)
+    at RedirectableRequest.emit (node:events:518:28)
+    at eventHandlers.<computed> (C:\AIitem\AIGC-node\node_modules\follow-redirects\index.js:49:24)
+    at ClientRequest.emit (node:events:518:28)
+    at TLSSocket.socketErrorListener (node:_http_client:500:9)
+    at TLSSocket.emit (node:events:518:28)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (C:\AIitem\AIGC-node\node_modules\axios\dist\node\axios.cjs:4252:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async createCompletions (C:\AIitem\AIGC-node\controller\zhipuai.js:8:18)
+    at async errorhandler (C:\AIitem\AIGC-node\config\errorhandler.js:5:5)
+    at async responseHandler (C:\AIitem\AIGC-node\config\result.js:18:3)
+    at async cors (C:\AIitem\AIGC-node\node_modules\@koa\cors\index.js:109:16)
+    at async bodyParser (C:\AIitem\AIGC-node\node_modules\koa-bodyparser\index.js:78:5) {
+  hostname: 'open.bigmodel.cn',
+  syscall: 'getaddrinfo',
+  code: 'ENOTFOUND',
+  errno: -3008,
+  config: {
+    transitional: {
+      silentJSONParsing: true,
+      forcedJSONParsing: true,
+      clarifyTimeoutError: false
+    },
+    adapter: [ 'xhr', 'http', 'fetch' ],
+    transformRequest: [ [Function: transformRequest] ],
+    transformResponse: [ [Function: transformResponse] ],
+    timeout: 0,
+    xsrfCookieName: 'XSRF-TOKEN',
+    xsrfHeaderName: 'X-XSRF-TOKEN',
+    maxContentLength: -1,
+    maxBodyLength: -1,
+    env: { FormData: [Function], Blob: [class Blob] },
+    validateStatus: [Function: validateStatus],
+    headers: Object [AxiosHeaders] {
+      Accept: 'application/json, text/plain, */*',
+      'Content-Type': 'application/json',
+      Authorization: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsInNpZ25fdHlwZSI6IlNJR04ifQ.eyJhcGlfa2V5IjoiMGNlNjNjMjQ3MDdlMWE3YzYyMzJmMjJiYjJkYmM1OTgiLCJleHAiOjE3Mzc0MzA0OTU0NjEwMDAsInRpbWVzdGFtcCI6MTczNzQzMDQ5NTI4MTAwMCwiaWF0IjoxNzM3NDMwNDk1fQ.WW_BMxdj8ZoXrDWRP3UD1GkAVuo-Ww6Z92Q354oeUoc',
+      'User-Agent': 'axios/1.7.9',
+      'Content-Length': '175',
+      'Accept-Encoding': 'gzip, compress, deflate, br'
+    },
+    baseURL: 'https://open.bigmodel.cn/api/paas/v4',
+    responseType: 'stream',
+    method: 'post',
+    url: '/chat/completions',
+    data: '{"model":"glm-4-plus","messages":[{"role":"user","content":"mate70是什么"}],"stream":true,"tools":[{"type":"web_search","web_search":{"enable":true,"search_result":true}}]}'
+  },
+  request: <ref *1> Writable {
+    _events: {
+      close: undefined,
+      error: [Function: handleRequestError],
+      prefinish: undefined,
+      finish: undefined,
+      drain: undefined,
+      response: [Function: handleResponse],
+      socket: [Function: handleRequestSocket]
+    },
+    _writableState: WritableState {
+      highWaterMark: 16384,
+      length: 0,
+      corked: 0,
+      onwrite: [Function: bound onwrite],
+      writelen: 0,
+      bufferedIndex: 0,
+      pendingcb: 0,
+      [Symbol(kState)]: 17580812,
+      [Symbol(kBufferedValue)]: null
+    },
+    _maxListeners: undefined,
+    _options: {
+      maxRedirects: 21,
+      maxBodyLength: Infinity,
+      protocol: 'https:',
+      path: '/api/paas/v4/chat/completions',
+      method: 'POST',
+      headers: [Object: null prototype],
+      agents: [Object],
+      auth: undefined,
+      family: undefined,
+      beforeRedirect: [Function: dispatchBeforeRedirect],
+      beforeRedirects: [Object],
+      hostname: 'open.bigmodel.cn',
+      port: '',
+      agent: undefined,
+      nativeProtocols: [Object],
+      pathname: '/api/paas/v4/chat/completions'
+    },
+    _ended: false,
+    _ending: true,
+    _redirectCount: 0,
+    _redirects: [],
+    _requestBodyLength: 175,
+    _requestBodyBuffers: [ [Object] ],
+    _eventsCount: 3,
+    _onNativeResponse: [Function (anonymous)],
+    _currentRequest: ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 7,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      destroyed: false,
+      _last: false,
+      chunkedEncoding: false,
+      shouldKeepAlive: true,
+      maxRequestsOnConnectionReached: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: true,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      strictContentLength: false,
+      _contentLength: '175',
+      _hasBody: true,
+      _trailer: '',
+      finished: false,
+      _headerSent: true,
+      _closed: false,
+      socket: [TLSSocket],
+      _header: 'POST /api/paas/v4/chat/completions HTTP/1.1\r\n' +
+        'Accept: application/json, text/plain, */*\r\n' +
+        'Content-Type: application/json\r\n' +
+        'Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsInNpZ25fdHlwZSI6IlNJR04ifQ.eyJhcGlfa2V5IjoiMGNlNjNjMjQ3MDdlMWE3YzYyMzJmMjJiYjJkYmM1OTgiLCJleHAiOjE3Mzc0MzA0OTU0NjEwMDAsInRpbWVzdGFtcCI6MTczNzQzMDQ5NTI4MTAwMCwiaWF0IjoxNzM3NDMwNDk1fQ.WW_BMxdj8ZoXrDWRP3UD1GkAVuo-Ww6Z92Q354oeUoc\r\n' +
+        'User-Agent: axios/1.7.9\r\n' +
+        'Content-Length: 175\r\n' +
+        'Accept-Encoding: gzip, compress, deflate, br\r\n' +
+        'Host: open.bigmodel.cn\r\n' +
+        'Connection: keep-alive\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: nop],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'POST',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      joinDuplicateHeaders: undefined,
+      path: '/api/paas/v4/chat/completions',
+      _ended: false,
+      res: null,
+      aborted: false,
+      timeoutCb: [Function: emitRequestTimeout],
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: 'open.bigmodel.cn',
+      protocol: 'https:',
+      _redirectable: [Circular *1],
+      [Symbol(shapeMode)]: false,
+      [Symbol(kCapture)]: false,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kOutHeaders)]: [Object: null prototype],
+      [Symbol(errored)]: null,
+      [Symbol(kHighWaterMark)]: 16384,
+      [Symbol(kRejectNonStandardBodyWrites)]: false,
+      [Symbol(kUniqueHeaders)]: null
+    },
+    _currentUrl: 'https://open.bigmodel.cn/api/paas/v4/chat/completions',
+    [Symbol(shapeMode)]: true,
+    [Symbol(kCapture)]: false
+  },
+  cause: Error: getaddrinfo ENOTFOUND open.bigmodel.cn
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'open.bigmodel.cn'
+  }
+}
+[2025-01-21T11:35:17.282] [ERROR] error - AxiosError: getaddrinfo ENOTFOUND open.bigmodel.cn
+    at AxiosError.from (C:\AIitem\AIGC-node\node_modules\axios\dist\node\axios.cjs:877:14)
+    at RedirectableRequest.handleRequestError (C:\AIitem\AIGC-node\node_modules\axios\dist\node\axios.cjs:3163:25)
+    at RedirectableRequest.emit (node:events:518:28)
+    at eventHandlers.<computed> (C:\AIitem\AIGC-node\node_modules\follow-redirects\index.js:49:24)
+    at ClientRequest.emit (node:events:518:28)
+    at TLSSocket.socketErrorListener (node:_http_client:500:9)
+    at TLSSocket.emit (node:events:518:28)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (C:\AIitem\AIGC-node\node_modules\axios\dist\node\axios.cjs:4252:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async createCompletions (C:\AIitem\AIGC-node\controller\zhipuai.js:8:18)
+    at async errorhandler (C:\AIitem\AIGC-node\config\errorhandler.js:5:5)
+    at async responseHandler (C:\AIitem\AIGC-node\config\result.js:18:3)
+    at async cors (C:\AIitem\AIGC-node\node_modules\@koa\cors\index.js:109:16)
+    at async bodyParser (C:\AIitem\AIGC-node\node_modules\koa-bodyparser\index.js:78:5) {
+  hostname: 'open.bigmodel.cn',
+  syscall: 'getaddrinfo',
+  code: 'ENOTFOUND',
+  errno: -3008,
+  config: {
+    transitional: {
+      silentJSONParsing: true,
+      forcedJSONParsing: true,
+      clarifyTimeoutError: false
+    },
+    adapter: [ 'xhr', 'http', 'fetch' ],
+    transformRequest: [ [Function: transformRequest] ],
+    transformResponse: [ [Function: transformResponse] ],
+    timeout: 0,
+    xsrfCookieName: 'XSRF-TOKEN',
+    xsrfHeaderName: 'X-XSRF-TOKEN',
+    maxContentLength: -1,
+    maxBodyLength: -1,
+    env: { FormData: [Function], Blob: [class Blob] },
+    validateStatus: [Function: validateStatus],
+    headers: Object [AxiosHeaders] {
+      Accept: 'application/json, text/plain, */*',
+      'Content-Type': 'application/json',
+      Authorization: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsInNpZ25fdHlwZSI6IlNJR04ifQ.eyJhcGlfa2V5IjoiMGNlNjNjMjQ3MDdlMWE3YzYyMzJmMjJiYjJkYmM1OTgiLCJleHAiOjE3Mzc0MzA0OTU0NjEwMDAsInRpbWVzdGFtcCI6MTczNzQzMDQ5NTI4MTAwMCwiaWF0IjoxNzM3NDMwNDk1fQ.WW_BMxdj8ZoXrDWRP3UD1GkAVuo-Ww6Z92Q354oeUoc',
+      'User-Agent': 'axios/1.7.9',
+      'Content-Length': '175',
+      'Accept-Encoding': 'gzip, compress, deflate, br'
+    },
+    baseURL: 'https://open.bigmodel.cn/api/paas/v4',
+    responseType: 'stream',
+    method: 'post',
+    url: '/chat/completions',
+    data: '{"model":"glm-4-plus","messages":[{"role":"user","content":"mate70是什么"}],"stream":true,"tools":[{"type":"web_search","web_search":{"enable":true,"search_result":true}}]}'
+  },
+  request: <ref *1> Writable {
+    _events: {
+      close: undefined,
+      error: [Function: handleRequestError],
+      prefinish: undefined,
+      finish: undefined,
+      drain: undefined,
+      response: [Function: handleResponse],
+      socket: [Function: handleRequestSocket]
+    },
+    _writableState: WritableState {
+      highWaterMark: 16384,
+      length: 0,
+      corked: 0,
+      onwrite: [Function: bound onwrite],
+      writelen: 0,
+      bufferedIndex: 0,
+      pendingcb: 0,
+      [Symbol(kState)]: 17580812,
+      [Symbol(kBufferedValue)]: null
+    },
+    _maxListeners: undefined,
+    _options: {
+      maxRedirects: 21,
+      maxBodyLength: Infinity,
+      protocol: 'https:',
+      path: '/api/paas/v4/chat/completions',
+      method: 'POST',
+      headers: [Object: null prototype],
+      agents: [Object],
+      auth: undefined,
+      family: undefined,
+      beforeRedirect: [Function: dispatchBeforeRedirect],
+      beforeRedirects: [Object],
+      hostname: 'open.bigmodel.cn',
+      port: '',
+      agent: undefined,
+      nativeProtocols: [Object],
+      pathname: '/api/paas/v4/chat/completions'
+    },
+    _ended: false,
+    _ending: true,
+    _redirectCount: 0,
+    _redirects: [],
+    _requestBodyLength: 175,
+    _requestBodyBuffers: [ [Object] ],
+    _eventsCount: 3,
+    _onNativeResponse: [Function (anonymous)],
+    _currentRequest: ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 7,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      destroyed: false,
+      _last: false,
+      chunkedEncoding: false,
+      shouldKeepAlive: true,
+      maxRequestsOnConnectionReached: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: true,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      strictContentLength: false,
+      _contentLength: '175',
+      _hasBody: true,
+      _trailer: '',
+      finished: false,
+      _headerSent: true,
+      _closed: false,
+      socket: [TLSSocket],
+      _header: 'POST /api/paas/v4/chat/completions HTTP/1.1\r\n' +
+        'Accept: application/json, text/plain, */*\r\n' +
+        'Content-Type: application/json\r\n' +
+        'Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsInNpZ25fdHlwZSI6IlNJR04ifQ.eyJhcGlfa2V5IjoiMGNlNjNjMjQ3MDdlMWE3YzYyMzJmMjJiYjJkYmM1OTgiLCJleHAiOjE3Mzc0MzA0OTU0NjEwMDAsInRpbWVzdGFtcCI6MTczNzQzMDQ5NTI4MTAwMCwiaWF0IjoxNzM3NDMwNDk1fQ.WW_BMxdj8ZoXrDWRP3UD1GkAVuo-Ww6Z92Q354oeUoc\r\n' +
+        'User-Agent: axios/1.7.9\r\n' +
+        'Content-Length: 175\r\n' +
+        'Accept-Encoding: gzip, compress, deflate, br\r\n' +
+        'Host: open.bigmodel.cn\r\n' +
+        'Connection: keep-alive\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: nop],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'POST',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      joinDuplicateHeaders: undefined,
+      path: '/api/paas/v4/chat/completions',
+      _ended: false,
+      res: null,
+      aborted: false,
+      timeoutCb: [Function: emitRequestTimeout],
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: 'open.bigmodel.cn',
+      protocol: 'https:',
+      _redirectable: [Circular *1],
+      [Symbol(shapeMode)]: false,
+      [Symbol(kCapture)]: false,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kOutHeaders)]: [Object: null prototype],
+      [Symbol(errored)]: null,
+      [Symbol(kHighWaterMark)]: 16384,
+      [Symbol(kRejectNonStandardBodyWrites)]: false,
+      [Symbol(kUniqueHeaders)]: null
+    },
+    _currentUrl: 'https://open.bigmodel.cn/api/paas/v4/chat/completions',
+    [Symbol(shapeMode)]: true,
+    [Symbol(kCapture)]: false
+  },
+  cause: Error: getaddrinfo ENOTFOUND open.bigmodel.cn
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'open.bigmodel.cn'
+  }
+}
+[2025-01-21T11:35:41.794] [ERROR] error - AxiosError: getaddrinfo ENOTFOUND open.bigmodel.cn
+    at AxiosError.from (C:\AIitem\AIGC-node\node_modules\axios\dist\node\axios.cjs:877:14)
+    at RedirectableRequest.handleRequestError (C:\AIitem\AIGC-node\node_modules\axios\dist\node\axios.cjs:3163:25)
+    at RedirectableRequest.emit (node:events:518:28)
+    at eventHandlers.<computed> (C:\AIitem\AIGC-node\node_modules\follow-redirects\index.js:49:24)
+    at ClientRequest.emit (node:events:518:28)
+    at TLSSocket.socketErrorListener (node:_http_client:500:9)
+    at TLSSocket.emit (node:events:518:28)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (C:\AIitem\AIGC-node\node_modules\axios\dist\node\axios.cjs:4252:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async createCompletions (C:\AIitem\AIGC-node\controller\zhipuai.js:8:18)
+    at async errorhandler (C:\AIitem\AIGC-node\config\errorhandler.js:5:5)
+    at async responseHandler (C:\AIitem\AIGC-node\config\result.js:18:3)
+    at async cors (C:\AIitem\AIGC-node\node_modules\@koa\cors\index.js:109:16)
+    at async bodyParser (C:\AIitem\AIGC-node\node_modules\koa-bodyparser\index.js:78:5) {
+  hostname: 'open.bigmodel.cn',
+  syscall: 'getaddrinfo',
+  code: 'ENOTFOUND',
+  errno: -3008,
+  config: {
+    transitional: {
+      silentJSONParsing: true,
+      forcedJSONParsing: true,
+      clarifyTimeoutError: false
+    },
+    adapter: [ 'xhr', 'http', 'fetch' ],
+    transformRequest: [ [Function: transformRequest] ],
+    transformResponse: [ [Function: transformResponse] ],
+    timeout: 0,
+    xsrfCookieName: 'XSRF-TOKEN',
+    xsrfHeaderName: 'X-XSRF-TOKEN',
+    maxContentLength: -1,
+    maxBodyLength: -1,
+    env: { FormData: [Function], Blob: [class Blob] },
+    validateStatus: [Function: validateStatus],
+    headers: Object [AxiosHeaders] {
+      Accept: 'application/json, text/plain, */*',
+      'Content-Type': 'application/json',
+      Authorization: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsInNpZ25fdHlwZSI6IlNJR04ifQ.eyJhcGlfa2V5IjoiMGNlNjNjMjQ3MDdlMWE3YzYyMzJmMjJiYjJkYmM1OTgiLCJleHAiOjE3Mzc0MzA0OTU0NjEwMDAsInRpbWVzdGFtcCI6MTczNzQzMDQ5NTI4MTAwMCwiaWF0IjoxNzM3NDMwNDk1fQ.WW_BMxdj8ZoXrDWRP3UD1GkAVuo-Ww6Z92Q354oeUoc',
+      'User-Agent': 'axios/1.7.9',
+      'Content-Length': '175',
+      'Accept-Encoding': 'gzip, compress, deflate, br'
+    },
+    baseURL: 'https://open.bigmodel.cn/api/paas/v4',
+    responseType: 'stream',
+    method: 'post',
+    url: '/chat/completions',
+    data: '{"model":"glm-4-plus","messages":[{"role":"user","content":"mate70是什么"}],"stream":true,"tools":[{"type":"web_search","web_search":{"enable":true,"search_result":true}}]}'
+  },
+  request: <ref *1> Writable {
+    _events: {
+      close: undefined,
+      error: [Function: handleRequestError],
+      prefinish: undefined,
+      finish: undefined,
+      drain: undefined,
+      response: [Function: handleResponse],
+      socket: [Function: handleRequestSocket]
+    },
+    _writableState: WritableState {
+      highWaterMark: 16384,
+      length: 0,
+      corked: 0,
+      onwrite: [Function: bound onwrite],
+      writelen: 0,
+      bufferedIndex: 0,
+      pendingcb: 0,
+      [Symbol(kState)]: 17580812,
+      [Symbol(kBufferedValue)]: null
+    },
+    _maxListeners: undefined,
+    _options: {
+      maxRedirects: 21,
+      maxBodyLength: Infinity,
+      protocol: 'https:',
+      path: '/api/paas/v4/chat/completions',
+      method: 'POST',
+      headers: [Object: null prototype],
+      agents: [Object],
+      auth: undefined,
+      family: undefined,
+      beforeRedirect: [Function: dispatchBeforeRedirect],
+      beforeRedirects: [Object],
+      hostname: 'open.bigmodel.cn',
+      port: '',
+      agent: undefined,
+      nativeProtocols: [Object],
+      pathname: '/api/paas/v4/chat/completions'
+    },
+    _ended: false,
+    _ending: true,
+    _redirectCount: 0,
+    _redirects: [],
+    _requestBodyLength: 175,
+    _requestBodyBuffers: [ [Object] ],
+    _eventsCount: 3,
+    _onNativeResponse: [Function (anonymous)],
+    _currentRequest: ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 7,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      destroyed: false,
+      _last: false,
+      chunkedEncoding: false,
+      shouldKeepAlive: true,
+      maxRequestsOnConnectionReached: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: true,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      strictContentLength: false,
+      _contentLength: '175',
+      _hasBody: true,
+      _trailer: '',
+      finished: false,
+      _headerSent: true,
+      _closed: false,
+      socket: [TLSSocket],
+      _header: 'POST /api/paas/v4/chat/completions HTTP/1.1\r\n' +
+        'Accept: application/json, text/plain, */*\r\n' +
+        'Content-Type: application/json\r\n' +
+        'Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsInNpZ25fdHlwZSI6IlNJR04ifQ.eyJhcGlfa2V5IjoiMGNlNjNjMjQ3MDdlMWE3YzYyMzJmMjJiYjJkYmM1OTgiLCJleHAiOjE3Mzc0MzA0OTU0NjEwMDAsInRpbWVzdGFtcCI6MTczNzQzMDQ5NTI4MTAwMCwiaWF0IjoxNzM3NDMwNDk1fQ.WW_BMxdj8ZoXrDWRP3UD1GkAVuo-Ww6Z92Q354oeUoc\r\n' +
+        'User-Agent: axios/1.7.9\r\n' +
+        'Content-Length: 175\r\n' +
+        'Accept-Encoding: gzip, compress, deflate, br\r\n' +
+        'Host: open.bigmodel.cn\r\n' +
+        'Connection: keep-alive\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: nop],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'POST',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      joinDuplicateHeaders: undefined,
+      path: '/api/paas/v4/chat/completions',
+      _ended: false,
+      res: null,
+      aborted: false,
+      timeoutCb: [Function: emitRequestTimeout],
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: 'open.bigmodel.cn',
+      protocol: 'https:',
+      _redirectable: [Circular *1],
+      [Symbol(shapeMode)]: false,
+      [Symbol(kCapture)]: false,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kOutHeaders)]: [Object: null prototype],
+      [Symbol(errored)]: null,
+      [Symbol(kHighWaterMark)]: 16384,
+      [Symbol(kRejectNonStandardBodyWrites)]: false,
+      [Symbol(kUniqueHeaders)]: null
+    },
+    _currentUrl: 'https://open.bigmodel.cn/api/paas/v4/chat/completions',
+    [Symbol(shapeMode)]: true,
+    [Symbol(kCapture)]: false
+  },
+  cause: Error: getaddrinfo ENOTFOUND open.bigmodel.cn
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'open.bigmodel.cn'
+  }
+}
+[2025-01-21T11:36:02.475] [ERROR] error - AxiosError: getaddrinfo ENOTFOUND open.bigmodel.cn
+    at AxiosError.from (C:\AIitem\AIGC-node\node_modules\axios\dist\node\axios.cjs:877:14)
+    at RedirectableRequest.handleRequestError (C:\AIitem\AIGC-node\node_modules\axios\dist\node\axios.cjs:3163:25)
+    at RedirectableRequest.emit (node:events:518:28)
+    at eventHandlers.<computed> (C:\AIitem\AIGC-node\node_modules\follow-redirects\index.js:49:24)
+    at ClientRequest.emit (node:events:518:28)
+    at TLSSocket.socketErrorListener (node:_http_client:500:9)
+    at TLSSocket.emit (node:events:518:28)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (C:\AIitem\AIGC-node\node_modules\axios\dist\node\axios.cjs:4252:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async createCompletions (C:\AIitem\AIGC-node\controller\zhipuai.js:8:18)
+    at async errorhandler (C:\AIitem\AIGC-node\config\errorhandler.js:5:5)
+    at async responseHandler (C:\AIitem\AIGC-node\config\result.js:18:3)
+    at async cors (C:\AIitem\AIGC-node\node_modules\@koa\cors\index.js:109:16)
+    at async bodyParser (C:\AIitem\AIGC-node\node_modules\koa-bodyparser\index.js:78:5) {
+  hostname: 'open.bigmodel.cn',
+  syscall: 'getaddrinfo',
+  code: 'ENOTFOUND',
+  errno: -3008,
+  config: {
+    transitional: {
+      silentJSONParsing: true,
+      forcedJSONParsing: true,
+      clarifyTimeoutError: false
+    },
+    adapter: [ 'xhr', 'http', 'fetch' ],
+    transformRequest: [ [Function: transformRequest] ],
+    transformResponse: [ [Function: transformResponse] ],
+    timeout: 0,
+    xsrfCookieName: 'XSRF-TOKEN',
+    xsrfHeaderName: 'X-XSRF-TOKEN',
+    maxContentLength: -1,
+    maxBodyLength: -1,
+    env: { FormData: [Function], Blob: [class Blob] },
+    validateStatus: [Function: validateStatus],
+    headers: Object [AxiosHeaders] {
+      Accept: 'application/json, text/plain, */*',
+      'Content-Type': 'application/json',
+      Authorization: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsInNpZ25fdHlwZSI6IlNJR04ifQ.eyJhcGlfa2V5IjoiMGNlNjNjMjQ3MDdlMWE3YzYyMzJmMjJiYjJkYmM1OTgiLCJleHAiOjE3Mzc0MzA0OTU0NjEwMDAsInRpbWVzdGFtcCI6MTczNzQzMDQ5NTI4MTAwMCwiaWF0IjoxNzM3NDMwNDk1fQ.WW_BMxdj8ZoXrDWRP3UD1GkAVuo-Ww6Z92Q354oeUoc',
+      'User-Agent': 'axios/1.7.9',
+      'Content-Length': '175',
+      'Accept-Encoding': 'gzip, compress, deflate, br'
+    },
+    baseURL: 'https://open.bigmodel.cn/api/paas/v4',
+    responseType: 'stream',
+    method: 'post',
+    url: '/chat/completions',
+    data: '{"model":"glm-4-plus","messages":[{"role":"user","content":"mate70是什么"}],"stream":true,"tools":[{"type":"web_search","web_search":{"enable":true,"search_result":true}}]}'
+  },
+  request: <ref *1> Writable {
+    _events: {
+      close: undefined,
+      error: [Function: handleRequestError],
+      prefinish: undefined,
+      finish: undefined,
+      drain: undefined,
+      response: [Function: handleResponse],
+      socket: [Function: handleRequestSocket]
+    },
+    _writableState: WritableState {
+      highWaterMark: 16384,
+      length: 0,
+      corked: 0,
+      onwrite: [Function: bound onwrite],
+      writelen: 0,
+      bufferedIndex: 0,
+      pendingcb: 0,
+      [Symbol(kState)]: 17580812,
+      [Symbol(kBufferedValue)]: null
+    },
+    _maxListeners: undefined,
+    _options: {
+      maxRedirects: 21,
+      maxBodyLength: Infinity,
+      protocol: 'https:',
+      path: '/api/paas/v4/chat/completions',
+      method: 'POST',
+      headers: [Object: null prototype],
+      agents: [Object],
+      auth: undefined,
+      family: undefined,
+      beforeRedirect: [Function: dispatchBeforeRedirect],
+      beforeRedirects: [Object],
+      hostname: 'open.bigmodel.cn',
+      port: '',
+      agent: undefined,
+      nativeProtocols: [Object],
+      pathname: '/api/paas/v4/chat/completions'
+    },
+    _ended: false,
+    _ending: true,
+    _redirectCount: 0,
+    _redirects: [],
+    _requestBodyLength: 175,
+    _requestBodyBuffers: [ [Object] ],
+    _eventsCount: 3,
+    _onNativeResponse: [Function (anonymous)],
+    _currentRequest: ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 7,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      destroyed: false,
+      _last: false,
+      chunkedEncoding: false,
+      shouldKeepAlive: true,
+      maxRequestsOnConnectionReached: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: true,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      strictContentLength: false,
+      _contentLength: '175',
+      _hasBody: true,
+      _trailer: '',
+      finished: false,
+      _headerSent: true,
+      _closed: false,
+      socket: [TLSSocket],
+      _header: 'POST /api/paas/v4/chat/completions HTTP/1.1\r\n' +
+        'Accept: application/json, text/plain, */*\r\n' +
+        'Content-Type: application/json\r\n' +
+        'Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsInNpZ25fdHlwZSI6IlNJR04ifQ.eyJhcGlfa2V5IjoiMGNlNjNjMjQ3MDdlMWE3YzYyMzJmMjJiYjJkYmM1OTgiLCJleHAiOjE3Mzc0MzA0OTU0NjEwMDAsInRpbWVzdGFtcCI6MTczNzQzMDQ5NTI4MTAwMCwiaWF0IjoxNzM3NDMwNDk1fQ.WW_BMxdj8ZoXrDWRP3UD1GkAVuo-Ww6Z92Q354oeUoc\r\n' +
+        'User-Agent: axios/1.7.9\r\n' +
+        'Content-Length: 175\r\n' +
+        'Accept-Encoding: gzip, compress, deflate, br\r\n' +
+        'Host: open.bigmodel.cn\r\n' +
+        'Connection: keep-alive\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: nop],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'POST',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      joinDuplicateHeaders: undefined,
+      path: '/api/paas/v4/chat/completions',
+      _ended: false,
+      res: null,
+      aborted: false,
+      timeoutCb: [Function: emitRequestTimeout],
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: 'open.bigmodel.cn',
+      protocol: 'https:',
+      _redirectable: [Circular *1],
+      [Symbol(shapeMode)]: false,
+      [Symbol(kCapture)]: false,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kOutHeaders)]: [Object: null prototype],
+      [Symbol(errored)]: null,
+      [Symbol(kHighWaterMark)]: 16384,
+      [Symbol(kRejectNonStandardBodyWrites)]: false,
+      [Symbol(kUniqueHeaders)]: null
+    },
+    _currentUrl: 'https://open.bigmodel.cn/api/paas/v4/chat/completions',
+    [Symbol(shapeMode)]: true,
+    [Symbol(kCapture)]: false
+  },
+  cause: Error: getaddrinfo ENOTFOUND open.bigmodel.cn
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'open.bigmodel.cn'
+  }
+}
+[2025-01-21T11:36:16.689] [ERROR] error - AxiosError: getaddrinfo ENOTFOUND open.bigmodel.cn
+    at AxiosError.from (C:\AIitem\AIGC-node\node_modules\axios\dist\node\axios.cjs:877:14)
+    at RedirectableRequest.handleRequestError (C:\AIitem\AIGC-node\node_modules\axios\dist\node\axios.cjs:3163:25)
+    at RedirectableRequest.emit (node:events:518:28)
+    at eventHandlers.<computed> (C:\AIitem\AIGC-node\node_modules\follow-redirects\index.js:49:24)
+    at ClientRequest.emit (node:events:518:28)
+    at TLSSocket.socketErrorListener (node:_http_client:500:9)
+    at TLSSocket.emit (node:events:518:28)
+    at emitErrorNT (node:internal/streams/destroy:169:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (C:\AIitem\AIGC-node\node_modules\axios\dist\node\axios.cjs:4252:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async createCompletions (C:\AIitem\AIGC-node\controller\zhipuai.js:8:18)
+    at async errorhandler (C:\AIitem\AIGC-node\config\errorhandler.js:5:5)
+    at async responseHandler (C:\AIitem\AIGC-node\config\result.js:18:3)
+    at async cors (C:\AIitem\AIGC-node\node_modules\@koa\cors\index.js:109:16)
+    at async bodyParser (C:\AIitem\AIGC-node\node_modules\koa-bodyparser\index.js:78:5) {
+  hostname: 'open.bigmodel.cn',
+  syscall: 'getaddrinfo',
+  code: 'ENOTFOUND',
+  errno: -3008,
+  config: {
+    transitional: {
+      silentJSONParsing: true,
+      forcedJSONParsing: true,
+      clarifyTimeoutError: false
+    },
+    adapter: [ 'xhr', 'http', 'fetch' ],
+    transformRequest: [ [Function: transformRequest] ],
+    transformResponse: [ [Function: transformResponse] ],
+    timeout: 0,
+    xsrfCookieName: 'XSRF-TOKEN',
+    xsrfHeaderName: 'X-XSRF-TOKEN',
+    maxContentLength: -1,
+    maxBodyLength: -1,
+    env: { FormData: [Function], Blob: [class Blob] },
+    validateStatus: [Function: validateStatus],
+    headers: Object [AxiosHeaders] {
+      Accept: 'application/json, text/plain, */*',
+      'Content-Type': 'application/json',
+      Authorization: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsInNpZ25fdHlwZSI6IlNJR04ifQ.eyJhcGlfa2V5IjoiMGNlNjNjMjQ3MDdlMWE3YzYyMzJmMjJiYjJkYmM1OTgiLCJleHAiOjE3Mzc0MzA0OTU0NjEwMDAsInRpbWVzdGFtcCI6MTczNzQzMDQ5NTI4MTAwMCwiaWF0IjoxNzM3NDMwNDk1fQ.WW_BMxdj8ZoXrDWRP3UD1GkAVuo-Ww6Z92Q354oeUoc',
+      'User-Agent': 'axios/1.7.9',
+      'Content-Length': '175',
+      'Accept-Encoding': 'gzip, compress, deflate, br'
+    },
+    baseURL: 'https://open.bigmodel.cn/api/paas/v4',
+    responseType: 'stream',
+    method: 'post',
+    url: '/chat/completions',
+    data: '{"model":"glm-4-plus","messages":[{"role":"user","content":"mate70是什么"}],"stream":true,"tools":[{"type":"web_search","web_search":{"enable":true,"search_result":true}}]}'
+  },
+  request: <ref *1> Writable {
+    _events: {
+      close: undefined,
+      error: [Function: handleRequestError],
+      prefinish: undefined,
+      finish: undefined,
+      drain: undefined,
+      response: [Function: handleResponse],
+      socket: [Function: handleRequestSocket]
+    },
+    _writableState: WritableState {
+      highWaterMark: 16384,
+      length: 0,
+      corked: 0,
+      onwrite: [Function: bound onwrite],
+      writelen: 0,
+      bufferedIndex: 0,
+      pendingcb: 0,
+      [Symbol(kState)]: 17580812,
+      [Symbol(kBufferedValue)]: null
+    },
+    _maxListeners: undefined,
+    _options: {
+      maxRedirects: 21,
+      maxBodyLength: Infinity,
+      protocol: 'https:',
+      path: '/api/paas/v4/chat/completions',
+      method: 'POST',
+      headers: [Object: null prototype],
+      agents: [Object],
+      auth: undefined,
+      family: undefined,
+      beforeRedirect: [Function: dispatchBeforeRedirect],
+      beforeRedirects: [Object],
+      hostname: 'open.bigmodel.cn',
+      port: '',
+      agent: undefined,
+      nativeProtocols: [Object],
+      pathname: '/api/paas/v4/chat/completions'
+    },
+    _ended: false,
+    _ending: true,
+    _redirectCount: 0,
+    _redirects: [],
+    _requestBodyLength: 175,
+    _requestBodyBuffers: [ [Object] ],
+    _eventsCount: 3,
+    _onNativeResponse: [Function (anonymous)],
+    _currentRequest: ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 7,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      destroyed: false,
+      _last: false,
+      chunkedEncoding: false,
+      shouldKeepAlive: true,
+      maxRequestsOnConnectionReached: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: true,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      strictContentLength: false,
+      _contentLength: '175',
+      _hasBody: true,
+      _trailer: '',
+      finished: false,
+      _headerSent: true,
+      _closed: false,
+      socket: [TLSSocket],
+      _header: 'POST /api/paas/v4/chat/completions HTTP/1.1\r\n' +
+        'Accept: application/json, text/plain, */*\r\n' +
+        'Content-Type: application/json\r\n' +
+        'Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsInNpZ25fdHlwZSI6IlNJR04ifQ.eyJhcGlfa2V5IjoiMGNlNjNjMjQ3MDdlMWE3YzYyMzJmMjJiYjJkYmM1OTgiLCJleHAiOjE3Mzc0MzA0OTU0NjEwMDAsInRpbWVzdGFtcCI6MTczNzQzMDQ5NTI4MTAwMCwiaWF0IjoxNzM3NDMwNDk1fQ.WW_BMxdj8ZoXrDWRP3UD1GkAVuo-Ww6Z92Q354oeUoc\r\n' +
+        'User-Agent: axios/1.7.9\r\n' +
+        'Content-Length: 175\r\n' +
+        'Accept-Encoding: gzip, compress, deflate, br\r\n' +
+        'Host: open.bigmodel.cn\r\n' +
+        'Connection: keep-alive\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: nop],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'POST',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      joinDuplicateHeaders: undefined,
+      path: '/api/paas/v4/chat/completions',
+      _ended: false,
+      res: null,
+      aborted: false,
+      timeoutCb: [Function: emitRequestTimeout],
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: 'open.bigmodel.cn',
+      protocol: 'https:',
+      _redirectable: [Circular *1],
+      [Symbol(shapeMode)]: false,
+      [Symbol(kCapture)]: false,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kOutHeaders)]: [Object: null prototype],
+      [Symbol(errored)]: null,
+      [Symbol(kHighWaterMark)]: 16384,
+      [Symbol(kRejectNonStandardBodyWrites)]: false,
+      [Symbol(kUniqueHeaders)]: null
+    },
+    _currentUrl: 'https://open.bigmodel.cn/api/paas/v4/chat/completions',
+    [Symbol(shapeMode)]: true,
+    [Symbol(kCapture)]: false
+  },
+  cause: Error: getaddrinfo ENOTFOUND open.bigmodel.cn
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'open.bigmodel.cn'
+  }
+}

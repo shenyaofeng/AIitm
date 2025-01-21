@@ -6,15 +6,27 @@ class ZhipuAIController {
   async createCompletions(ctx) {
     console.log("123");
     const data = await ai.createCompletions({
-      model: "glm-4-0520",
-      messages: [{ role: "user", content: "你好" }],
+      model: "glm-4-plus",
+      messages: [
+        {
+          role: "user",
+          content: "你好",
+        },
+      ],
       stream: true,
+      tools: [
+        {
+          type: "web_search",
+          web_search:{
+            enable:true,
+            search_result:true
+          }
+        },
+      ],
     });
-    // console.log(data);
-    // ctx.send(data);
     for await (const chunk of data) {
-      console.log(chunk.toString());
       ctx.send(123);
+      ctx.res.write(chunk.toString());
     }
   }
 }
