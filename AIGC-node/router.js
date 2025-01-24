@@ -1,5 +1,6 @@
 const Router = require("@koa/router"); //路由
 const router = new Router();
+const authority = require("@/config/auth");
 //用户登陆相关
 const zhipu = require("@/controller/zhipuai");
 const user = require("@/controller/user");
@@ -7,6 +8,6 @@ const user = require("@/controller/user");
 router.post("/user/register", user.register);
 //登陆接口
 router.post("/user/login", user.login);
-router.post("/aicompletions", zhipu.createCompletions);
+router.post("/aicompletions",authority, zhipu.createCompletions);
 // router.post("/user/register", );
 module.exports = router;

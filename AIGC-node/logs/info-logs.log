@@ -181,3 +181,13 @@
 [2025-01-24T16:52:53.545] [INFO] info - 输出日志：POST /user/login
 [2025-01-24T16:52:58.272] [INFO] info - 输出日志：POST /user/login
 [2025-01-24T16:53:47.824] [INFO] info - 输出日志：POST /user/login
+[2025-01-24T18:21:44.139] [INFO] info - 输出日志：POST /aicompletions
+[2025-01-24T18:25:12.044] [INFO] info - 输出日志：POST /aicompletions
+[2025-01-24T18:39:08.898] [INFO] info - 输出日志：POST /user/login
+[2025-01-24T21:00:45.194] [INFO] info - 输出日志：POST /user/login
+[2025-01-24T21:01:12.182] [INFO] info - 输出日志：POST /aicompletions
+[2025-01-24T21:11:44.311] [INFO] info - 输出日志：POST /aicompletions
+[2025-01-24T21:12:20.380] [INFO] info - 输出日志：POST /aicompletions
+[2025-01-24T21:30:53.321] [INFO] info - 输出日志：POST /user/login
+[2025-01-24T21:31:11.213] [INFO] info - 输出日志：POST /aicompletions
+[2025-01-24T21:33:27.534] [INFO] info - 输出日志：POST /user/login

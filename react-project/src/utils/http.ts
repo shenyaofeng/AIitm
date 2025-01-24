@@ -1,6 +1,6 @@
 // axios 基础封装
 import axios from "axios";
-
+import { getToken } from "../utils/index"
 //创建实例127.0.0.1:7000
 const httpInstance = axios.create({
   baseURL: "http://127.0.0.1:7000", //基地址
@@ -11,6 +11,13 @@ const httpInstance = axios.create({
 httpInstance.interceptors.request.use(
   function (config) {
     // 在发送请求之前做些什么
+    // 携带token
+    console.log(config);
+    const token = getToken();
+    console.log(token);
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
     return config;
   },
   function (error) {

@@ -1,5 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { replace } from "lodash";
+import { getToken } from "../../utils";
+import { message } from "antd";
+import { useNavigate } from "react-router-dom";
+
+
 type Message = {
   role: string;
   content: string;
@@ -36,7 +41,6 @@ const chatBotMessage = createSlice({
         content: state.receiveText,
         finish_reason: "",
       });
-      console.log();
     },
   },
 });
@@ -46,9 +50,18 @@ const { handleText, AISendText, userSendText } = chatBotMessage.actions;
 //异步action
 const AItext = () => {
   return async (dispatch: any) => {
+    const token = getToken();
     const response = await fetch("http://127.0.0.1:7000/aicompletions", {
       method: "POST",
+      headers: {
+        Authorization: `${token}`,
+      },
     });
+
+    // if(response.data.code === 401){
+    //   message.error("登录失效，请重新登录")
+    //   return
+    // }
     const reader = await response.body.getReader();
     while (await reader) {
       const { value, done } = await reader.read();
@@ -57,6 +70,11 @@ const AItext = () => {
       }
       const decoder = new TextDecoder("utf-8");
       const text = await decoder.decode(value);
+      if (text.includes("token失效")){
+        await message.error("登录失效，请重新登录")
+        window.location.href = "/login"
+        return
+      } 
       console.log(text);
       if (
         text.includes("data") &&
