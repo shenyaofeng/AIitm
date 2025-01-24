@@ -6,13 +6,20 @@ import { useState} from "react";
 import { setbarstatus } from '../../../store/modules/tabBarStore';
 import { useDispatch } from 'react-redux';
 import { AItext, userSendText } from '../../../store/modules/sendStore'
+import { getToken } from '../../../utils';
 const InputBox = () => {
   const dispatch = useDispatch()
   //输入框的值
   const [inputContent,setInputContent] = useState("")
   const toSend = async () => {
-    await dispatch(userSendText(inputContent))
-    await dispatch(AItext())
+    if(getToken()){
+      await dispatch(userSendText(inputContent))
+      await dispatch(AItext())
+    }else{
+      alert("请先登录")
+      window.location.href = "/login"
+    }
+    
   }
 
   const setVisibleTabBar = () => {
