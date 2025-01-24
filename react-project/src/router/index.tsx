@@ -1,7 +1,8 @@
 import Chat from '../views/Chat/index.tsx'
 import Paint from '../views/Paint/index.tsx'
 import Layout from '../views/Layout/index.tsx'
-import Login from '../views/Login/index.tsx'
+import Login from '../views/Login/index1.tsx'
+import Register from '../views/Register/index.tsx'
 import { createBrowserRouter } from 'react-router-dom'
 
 const router = createBrowserRouter([
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
   {
     path: '/login',
     element: <Login />
+  },
+  {
+    path: '/register',
+    element: <Register />
   }
 ])
 

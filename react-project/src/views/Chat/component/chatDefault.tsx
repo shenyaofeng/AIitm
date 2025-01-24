@@ -1,6 +1,12 @@
 import "../chatDefault.scss"
 import { RedoOutlined } from '@ant-design/icons';
 import { Carousel } from 'antd';
+import { useEffect, useState } from "react";
+// import {sendContent} from '../../../request/sendAPI'
+
+import { useSelector } from 'react-redux';
+import { RootState } from '../../../store/index';
+import ReactMarkdown from 'react-markdown';
 const contentStyle: React.CSSProperties = {
   margin: 0,
   height: '160px',
@@ -11,6 +17,16 @@ const contentStyle: React.CSSProperties = {
   borderRadius: '10px',
 };
 const ChatDefault = () => {
+
+  const x = useSelector((state: RootState) => state.content.receiveText)
+  useEffect(() => {
+    if (x) {
+      setText(x)
+    }
+  }, [x])
+
+  const [text, setText] = useState("")
+
   return (
     <div>
       <div className="start-page-view">

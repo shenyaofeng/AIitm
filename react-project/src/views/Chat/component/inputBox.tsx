@@ -1,7 +1,7 @@
 import { Input, Button } from 'antd';
 const { TextArea } = Input;
 import { SendOutlined } from '@ant-design/icons';
-import {useState} from "react";
+import { useState} from "react";
 // import {sendContent} from '../../../request/sendAPI'
 import { setbarstatus } from '../../../store/modules/tabBarStore';
 import { useDispatch } from 'react-redux';
@@ -14,6 +14,7 @@ const InputBox = () => {
     await dispatch(userSendText(inputContent))
     await dispatch(AItext())
   }
+
   const setVisibleTabBar = () => {
     dispatch(setbarstatus(true))
   }

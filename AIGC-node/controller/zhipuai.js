@@ -10,7 +10,7 @@ class ZhipuAIController {
       messages: [
         {
           role: "user",
-          content: "你好",
+          content: "mate70是什么",
         },
       ],
       stream: true,

@@ -22,6 +22,7 @@ const chatBotMessage = createSlice({
     //   message.push({ role: "user", content: content });
     // },
     userSendText(state, action) {
+      state.receiveText = "";
       console.log(action.payload);
       state.message.push({
         role: "user",
@@ -35,6 +36,7 @@ const chatBotMessage = createSlice({
         content: state.receiveText,
         finish_reason: "",
       });
+      console.log();
     },
   },
 });
@@ -55,6 +57,7 @@ const AItext = () => {
       }
       const decoder = new TextDecoder("utf-8");
       const text = await decoder.decode(value);
+      console.log(text);
       if (
         text.includes("data") &&
         !text.includes("usage") &&
