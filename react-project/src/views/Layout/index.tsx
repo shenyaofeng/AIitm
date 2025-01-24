@@ -5,7 +5,7 @@ import { Outlet, useLocation } from 'react-router-dom';
 import { TabBar } from "antd-mobile";
 import { useNavigate } from "react-router-dom";
 import { SmileOutline } from 'antd-mobile-icons'
-import { getToken } from '../../utils';
+import { getUsername } from '../../utils';
 import { Button } from 'antd-mobile'
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store/index';
@@ -31,7 +31,7 @@ const barName = [
     },
 ]
 const NavBar = () => {
-    const username = getToken()
+    const username = getUsername()
     const barStatus = useSelector((state: RootState) => state.bar.barstatus)
     const [bar, setBar] = useState(barStatus)
     useEffect(() => {
@@ -64,7 +64,7 @@ const NavBar = () => {
                     </div>
                 </div>
                 <div className='user'>
-                    {username ? `哈喽 ${username}` : 
+                    {username ? (username.length <= 4 ? `哈喽 ${username}` : `哈喽 ${username.slice(0, 4)}...`) : 
                     <Button size='small' color='primary'
                         onClick={()=>{
                             navigate('/login')

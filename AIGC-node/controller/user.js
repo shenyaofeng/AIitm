@@ -19,7 +19,7 @@ class UserController {
           ctx.send("登录失败密码错误", 500, "fail", "登录失败密码错误", 502);
         } else {
           // 验证成功
-          ctx.send({data:"登录成功",token:generateToken(username)}, 200, "success", 200);
+          ctx.send({data:"登录成功",token:generateToken(username),username}, 200, "success", 200);
         }
       } else {
         ctx.send(

@@ -1,3 +1,17 @@
-import {setToken, getToken, removeToken} from './user'
+import {
+  setToken,
+  getToken,
+  removeToken,
+  setUsername,
+  getUsername,
+  removeUsername,
+} from "./user";
 
-export {setToken, getToken, removeToken}
+export {
+  setToken,
+  getToken,
+  removeToken,
+  setUsername,
+  getUsername,
+  removeUsername,
+};

@@ -3,6 +3,8 @@ import "./index.scss"
 import { Button, Form, Input, message } from "antd";
 import { useNavigate, Link } from "react-router-dom";
 import { loginAPI } from '../../API/user/login'
+import { setToken } from '../../utils/index'
+import { setUsername } from '../../utils/index'
 // http:192.168.43.147:7000;
 
 interface LoginFormValues {
@@ -18,6 +20,8 @@ const Login = () => {
     })
     console.log(res)
     if(res.data.code === 200){
+      setToken(res.data.data.token)
+      setUsername(values.username)
       message.success('登陆成功')
       navigate('/', { replace: true })
     }else{
