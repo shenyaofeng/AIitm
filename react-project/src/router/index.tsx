@@ -4,6 +4,7 @@ import Layout from '../views/Layout/index.tsx'
 import Login from '../views/Login/index1.tsx'
 import Register from '../views/Register/index.tsx'
 import { createBrowserRouter } from 'react-router-dom'
+import {AuthRoute}  from '../components/AuthRoute.tsx'
 
 const router = createBrowserRouter([
   {
@@ -16,7 +17,10 @@ const router = createBrowserRouter([
       },
       {
         path: '/paint',
-        element: <Paint />
+        element: (
+          <AuthRoute><Paint /></AuthRoute>
+          
+        )
       },
       {
         path: '/me',
