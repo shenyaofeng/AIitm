@@ -1,7 +1,78 @@
 .layout {
   width: 100%;
+  height: 100vh; // 设置布局的高度为视口高度
+  display: flex;
+  flex-direction: column; // 使用垂直方向的弹性布局
+  @media screen and (max-width: 600px) {
+    .container {
+      position: relative; // 相对定位，确保容器在布局中占据正确的位置
+      flex: 1; // 占据剩余的空间
+      overflow-y: auto; // 允许垂直滚动
+      margin-top: 100px;
+      margin-bottom: 50px;
+      bottom: 50px;
+      width: 100%;
+    }
+    .footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      height: 50px; // 假设 footer 的高度为 50px
+      background-color: white;
+      .custom-tabbar-item {
+        .adm-tab-bar-item-icon {
+          font-size: 1.5rem; // 调整图标大小
+        }
+        .adm-tab-bar-item-title {
+          font-size: 1rem; // 调整字体大小
+        }
+      }
+    }
+    .footer1 {
+      position: fixed;
+      bottom: 50px;
+      width: 100%;
+      height: 50px;
+      background-color: white;
+    }
+  }
+  @media screen and (min-width: 600px) {
+    .container {
+      position: relative; // 相对定位，确保容器在布局中占据正确的位置
+      flex: 1; // 占据剩余的空间
+      overflow-y: auto; // 允许垂直滚动
+      margin-top: 10vw;
+      margin-bottom: 190px;
+      width: 100%;
+    }
+    .footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      height: 50px; // 假设 footer 的高度为 50px
+      background-color: white;
+      .custom-tabbar-item {
+        .adm-tab-bar-item-icon {
+          font-size: 1.5rem; // 调整图标大小
+        }
+        .adm-tab-bar-item-title {
+          font-size: 1rem; // 调整字体大小
+        }
+      }
+    }
+    .footer1 {
+      position: fixed;
+      bottom: 50px;
+      width: 100%;
+      height: 150px;
+      background-color: white;
+    }
+  }
   .naver {
-    height: 10vw;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -22,24 +93,12 @@
         font-size: 1.5rem;
       }
     }
-    .user{
-      font-size: 1.0rem;
+    .user {
+      font-size: 1rem;
       font-weight: bold;
     }
     .user {
       margin-right: 13vw;
     }
-  }
-  .container {
-    position: fixed;
-    top: 12vw;
-    bottom: 50px;
-    height: 160vw;
-    width: 100%;
-  }
-  .footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
   }
 }

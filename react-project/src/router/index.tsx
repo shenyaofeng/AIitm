@@ -19,7 +19,6 @@ const router = createBrowserRouter([
         path: '/paint',
         element: (
           <AuthRoute><Paint /></AuthRoute>
-          
         )
       },
       {

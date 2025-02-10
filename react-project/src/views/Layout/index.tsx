@@ -77,14 +77,15 @@ const NavBar = () => {
             <div className="container">
                 <Outlet />
             </div>
+            <div className='footer1'>
+            </div>
             <div className="footer">
                 {/* 导航栏的名字 */}
                 {!bar && <TabBar onChange={switchRoute} activeKey={activeKey}>
                     {barName.map((item) => (
-                        <TabBar.Item key={item.key} icon={item.icon} title={item.title} />
+                        <TabBar.Item key={item.key} icon={item.icon} title={item.title} className="custom-tabbar-item" />
                     ))}
                 </TabBar>}
-                
             </div>
         </div>
     )
