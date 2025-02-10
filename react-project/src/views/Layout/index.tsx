@@ -4,7 +4,7 @@ import { MessageOutlined, FormOutlined, UserOutlined } from '@ant-design/icons';
 import { Outlet, useLocation } from 'react-router-dom';
 import { TabBar } from "antd-mobile";
 import { useNavigate } from "react-router-dom";
-import { SmileOutline } from 'antd-mobile-icons'
+import { SmileOutline, AddOutline, UnorderedListOutline } from 'antd-mobile-icons'
 import { getUsername } from '../../utils';
 import { Button } from 'antd-mobile'
 import { useSelector } from 'react-redux';
@@ -15,19 +15,16 @@ const barName = [
         key: "/",
         title: "对话",
         icon: <MessageOutlined />,
-
     },
     {
         key: "/paint",
         title: "AI绘画",
         icon: <FormOutlined />,
-
     },
     {
         key: "/me",
         title: "我的",
         icon: <UserOutlined />,
-
     },
 ]
 const NavBar = () => {
@@ -35,9 +32,9 @@ const NavBar = () => {
     const barStatus = useSelector((state: RootState) => state.bar.barstatus)
     const [bar, setBar] = useState(barStatus)
     useEffect(() => {
-        if (barStatus){
+        if (barStatus) {
             setBar(barStatus)
-        }else{
+        } else {
             setBar(barStatus)
         }
     }, [barStatus])
@@ -63,15 +60,21 @@ const NavBar = () => {
                         助手
                     </div>
                 </div>
+                <div>
+                    <AddOutline />
+                </div>
+                <div>
+                    <UnorderedListOutline />
+                </div>
                 <div className='user'>
-                    {username ? (username.length <= 4 ? `哈喽 ${username}` : `哈喽 ${username.slice(0, 4)}...`) : 
-                    <Button size='small' color='primary'
-                        onClick={()=>{
-                            navigate('/login')
-                        }}
-                    >
-                        登陆
-                    </Button>}
+                    {username ? (username.length <= 4 ? `哈喽 ${username}` : `哈喽 ${username.slice(0, 4)}...`) :
+                        <Button size='small' color='primary'
+                            onClick={() => {
+                                navigate('/login')
+                            }}
+                        >
+                            登陆
+                        </Button>}
                 </div>
             </div>
             <div className="container">
