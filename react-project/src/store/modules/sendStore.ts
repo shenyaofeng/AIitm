@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { replace } from "lodash";
 import { getToken } from "../../utils";
 import { message } from "antd";
-import { useNavigate } from "react-router-dom";
+import { AppDispatch } from "../index";
 
 
 type Message = {
@@ -49,7 +49,7 @@ const chatBotMessage = createSlice({
 const { handleText, AISendText, userSendText } = chatBotMessage.actions;
 //异步action
 const AItext = () => {
-  return async (dispatch: any) => {
+  return async (dispatch: AppDispatch) => {
     const token = getToken();
     const response = await fetch("http://127.0.0.1:7000/aicompletions", {
       method: "POST",
@@ -57,7 +57,12 @@ const AItext = () => {
         Authorization: `${token}`,
       },
     });
-
+    // 检查 response.body 是否为 null
+    if (response.body === null) {
+      console.error("响应体为空");
+      return;
+    }
+    // 使用 response.body 进行后续操作
     const reader = await response.body.getReader();
     while (await reader) {
       const { value, done } = await reader.read();
@@ -66,11 +71,11 @@ const AItext = () => {
       }
       const decoder = new TextDecoder("utf-8");
       const text = await decoder.decode(value);
-      if (text.includes("token失效")){
-        await message.error("登录失效，请重新登录")
-        window.location.href = "/login"
-        return
-      } 
+      if (text.includes("token失效")) {
+        await message.error("登录失效，请重新登录");
+        window.location.href = "/login";
+        return;
+      }
       console.log(text);
       if (
         text.includes("data") &&
@@ -86,8 +91,8 @@ const AItext = () => {
           console.log(z1.choices[0].delta.content);
           dispatch(handleText(z1.choices[0].delta.content));
         }
-      }else{
-        return dispatch(AISendText())
+      } else {
+        return dispatch(AISendText());
       }
     }
   };

@@ -1,9 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-// type Barstatus = {
-//   barstatus: boolean;
-// };
-
 const barstatusStore = createSlice({
   name: "bar",
   initialState: {
