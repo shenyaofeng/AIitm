@@ -16,7 +16,7 @@ class UserController {
       if (user) {
         // 验证密码是否正确
         if (user.password !== password) {
-          ctx.send("登录失败密码错误", 500, "fail", "登录失败密码错误", 502);
+          ctx.send("登录失败密码错误", 500, "fail", 502, 502);
         } else {
           // 验证成功
           ctx.send({data:"登录成功",token:generateToken(username),username}, 200, "success", 200);
@@ -26,7 +26,7 @@ class UserController {
           "登录失败该用户未注册",
           500,
           "fail",
-          "登录失败该用户未注册",
+          503,
           503
         );
       }
@@ -44,10 +44,16 @@ class UserController {
         username: username,
         password: password,
       });
-      ctx.send(ctx.request.body);
+      ctx.send(
+        { data: "注册成功", username },
+        200,
+        "success",
+        200,
+        201
+      );
     } catch (error) {
       // ctx.status = 500; // 设置状态码为 500，表示服务器内部错误
-      ctx.send(`注册失败:${error.message}`, 500, "fail", error.message, 501);
+      ctx.send({data:`注册失败:${error.message}`}, 500, "fail", error.message, 501);
     }
   }
 }
