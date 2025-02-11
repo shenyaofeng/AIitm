@@ -1,5 +1,5 @@
 module.exports = {
   zhipuai: {
-    apiKey: "0ce63c24707e1a7c6232f22bb2dbc598.v2FWfq8DvdDui3FB",
+    apiKey: "62b5b9a96d8d4739bd1d785599cc3aa3.lYKnNBsPIrhewlIq",
   },
 };

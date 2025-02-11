@@ -7,19 +7,21 @@ import { setbarstatus } from '../../../store/modules/tabBarStore';
 import { useDispatch } from 'react-redux';
 import { AItext, userSendText } from '../../../store/modules/sendStore'
 import { getToken } from '../../../utils';
+import { sendAPI } from '../../../API/user/register';
 const InputBox = () => {
   const dispatch = useDispatch()
   //输入框的值
   const [inputContent,setInputContent] = useState("")
   const toSend = async () => {
     if(getToken()){
+      await sendAPI({data:inputContent})
       await dispatch(userSendText(inputContent))
+      setInputContent("")
       await dispatch(AItext())
     }else{
       alert("请先登录")
       window.location.href = "/login"
     }
-    
   }
 
   const setVisibleTabBar = () => {
@@ -36,6 +38,7 @@ const InputBox = () => {
         onChange={(e) => setInputContent(e.target.value)}
         onFocus={setVisibleTabBar}
         onBlur={setUnvisibleTabBar}
+        value={inputContent}
       />
         <Button className='icon' type="primary" shape="circle">
         <SendOutlined onClick={toSend}/>

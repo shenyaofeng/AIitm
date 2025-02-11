@@ -17,15 +17,22 @@ const chatBotMessage = createSlice({
     //存储的聊天记录
     message: [] as Message[],
     receiveText: "",
+    situation:false,
+    sendInput:""
   },
   reducers: {
+    // 发送的内容
+    sendInput(state,action){
+      state.sendInput = action.payload
+    },
+    //回复情况
+    situation(state,action){
+      state.situation = action.payload
+    },
     //接收大模型的数据
     handleText(state, action) {
       state.receiveText += action.payload;
     },
-    // sendText(content) {
-    //   message.push({ role: "user", content: content });
-    // },
     userSendText(state, action) {
       state.receiveText = "";
       console.log(action.payload);
@@ -46,7 +53,8 @@ const chatBotMessage = createSlice({
 });
 
 //解构出来actionCreators函数
-const { handleText, AISendText, userSendText } = chatBotMessage.actions;
+const { handleText, AISendText, userSendText, situation } =
+  chatBotMessage.actions;
 //异步action
 const AItext = () => {
   return async (dispatch: AppDispatch) => {
@@ -54,8 +62,17 @@ const AItext = () => {
     const response = await fetch("http://127.0.0.1:7000/aicompletions", {
       method: "POST",
       headers: {
-        Authorization: `${token}`,
+        Authorization: `${token}`
       },
+      body: JSON.stringify({
+        messages: [
+          {
+            role: "user",
+            content: "你好",
+          },
+        ],
+        stream: true,
+      }),
     });
     // 检查 response.body 是否为 null
     if (response.body === null) {
@@ -64,6 +81,7 @@ const AItext = () => {
     }
     // 使用 response.body 进行后续操作
     const reader = await response.body.getReader();
+    dispatch(situation(true));
     while (await reader) {
       const { value, done } = await reader.read();
       if (done) {
@@ -92,7 +110,9 @@ const AItext = () => {
           dispatch(handleText(z1.choices[0].delta.content));
         }
       } else {
-        return dispatch(AISendText());
+        dispatch(AISendText());
+        dispatch(situation(false));
+        return; 
       }
     }
   };
@@ -101,7 +121,7 @@ const AItext = () => {
 //获取reducer
 const reducer = chatBotMessage.reducer;
 //按需导出actionCreators函数
-export { handleText, AISendText, AItext ,userSendText};
+export { handleText, AISendText, AItext, userSendText, situation };
 
 //默认导出reducer
 export default reducer;

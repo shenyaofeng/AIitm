@@ -3,5 +3,9 @@
   "references": [
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
-  ]
+  ],
+  "compilerOptions": {
+    // 其他配置项...
+    "typeRoots": ["node_modules/@types", "src/types"] // 确保包含类型声明文件所在的目录
+  }
 }
