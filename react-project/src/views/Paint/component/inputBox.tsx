@@ -5,16 +5,35 @@ import { useState } from "react";
 // import {sendContent} from '../../../request/sendAPI'
 import { setbarstatus } from '../../../store/modules/tabBarStore';
 import { useDispatch } from 'react-redux';
-const InputBox = () => {
+import { CreateImagesAPI } from '../../../API/AI/createImages';
+import { getToken } from '../../../utils';
+import React from 'react';
+interface InputBoxProps {
+  tabs: React.ReactNode;
+  onResponse: (data: string) => void;
+}
+const InputBox: React.FC<InputBoxProps> = ({ tabs, onResponse }) => {
   const dispatch = useDispatch()
+  
   //输入框的值
   const [inputContent, setInputContent] = useState("")
-
+  // 显示tabbar
   const setVisibleTabBar = () => {
     dispatch(setbarstatus(true))
   }
+  // 隐藏tabbar
   const setUnvisibleTabBar = () => {
     dispatch(setbarstatus(false))
+  }
+  const toSend = async () => {
+    if (getToken()) {
+      const res = await CreateImagesAPI({ prompt: inputContent + tabs })
+      onResponse(res.data.data.url); 
+      console.log(res.data.data.url)
+    } else {
+      alert("请先登录")
+      window.location.href = "/login"
+    }
   }
   return (
     <div className='chatbox'>
@@ -24,9 +43,10 @@ const InputBox = () => {
         onChange={(e) => setInputContent(e.target.value)}
         onFocus={setVisibleTabBar}
         onBlur={setUnvisibleTabBar}
+        value={inputContent}
       />
       <Button className='icon' type="primary" shape="circle">
-        <SendOutlined  />
+        <SendOutlined onClick={toSend}/>
       </Button>
     </div>
   )

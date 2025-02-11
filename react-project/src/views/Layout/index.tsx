@@ -10,6 +10,7 @@ import { Button } from 'antd-mobile'
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store/index';
 import { useEffect } from 'react';
+// import { message } from 'antd';
 const barName = [
     {
         key: "/",
@@ -43,6 +44,13 @@ const NavBar = () => {
     const switchRoute = (path: string) => {
         navigate(path)
     };
+    const addNews = () => {
+        // if(){
+        //     message.error("已经是新页面")
+        // }else{
+            
+        // }
+    }
     //根据当前路由给tabbar高亮,刷新页面不会丢失下面tabbar的高亮
     const location = useLocation()
     const activeKey = location.pathname
@@ -60,10 +68,10 @@ const NavBar = () => {
                         助手
                     </div>
                 </div>
-                <div>
+                <div className="add" onClick={addNews}>
                     <AddOutline />
                 </div>
-                <div>
+                <div className="more">
                     <UnorderedListOutline />
                 </div>
                 <div className='user'>

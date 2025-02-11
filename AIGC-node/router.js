@@ -8,7 +8,10 @@ const user = require("@/controller/user");
 router.post("/user/register", user.register);
 //登陆接口
 router.post("/user/login", user.login);
+//文生文
 router.post("/aicompletions",authority, zhipu.createCompletions);
+//文生图
+router.post("/aiimages", zhipu.createImages);
 router.post("/send", zhipu.sendInput);
 router.post("/user/register", );
 module.exports = router;

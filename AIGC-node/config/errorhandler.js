@@ -10,7 +10,13 @@ const errorhandler = async (ctx, next) => {
     //参数相关错误
     if(errorData.code){
       ctx.send(null,errorData.code,errorData.msg)
-    }else{
+    }
+    else if( errorData.error){
+      // ai相关错误
+      const {code,message} = errorData.error;
+      ctx.send(null,200,"success",message,code)
+    }
+    else{
       const error = errorData.message || "未知错误";
       const status = errorData.status || errorData.statusCode || 500;
       ctx.send(null, status, "服务器异常", error);

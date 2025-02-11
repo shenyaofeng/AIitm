@@ -9,6 +9,7 @@ class ZhipuAIController {
     global.data = data;
     ctx.send(123);
   }
+  // 文生文
   async createCompletions(ctx) {
     console.log(ctx.request.body);
     const data = await ai.createCompletions({
@@ -34,6 +35,20 @@ class ZhipuAIController {
       ctx.send(123);
       ctx.res.write(chunk.toString());
     }
+  }
+  // 文生图
+  async createImages(ctx) {
+    const { prompt } = ctx.request.body;
+    console.log(prompt);
+    const imageData = await ai.createImages({
+      model: "cogview-4",
+      prompt,
+    });
+    console.log(imageData);
+    ctx.send({
+      url:imageData.data[0].url,
+      prompt:"继续"
+    });
   }
 }
 
