@@ -1,0 +1,27 @@
+// #0091ff
+.me {
+  position: relative;
+  width: 100vw;
+  height: 100vw;
+  display: flex;
+  justify-content: center;
+  .login-continer {
+    position: absolute;
+    top: 25vw;
+    width: 90vw;
+    height: 130vw;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(66, 66, 66, 0.1); // 示例阴影，你可以根据需要调整参数
+    background-color: #ffffff;
+    .title {
+      margin-top: 10vw;
+      font-size: 1.5rem;
+      text-align: center;
+    }
+    .return {
+      margin-top: 10vw;
+      font-size: 1.5rem;
+      text-align: center;
+    }
+  }
+}
