@@ -13,10 +13,11 @@ interface InputBoxProps {
   onResponse: (data: string) => void;
 }
 const InputBox: React.FC<InputBoxProps> = ({ tabs, onResponse }) => {
+  // 按钮状态
+  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
   const dispatch = useDispatch()
-  
   //输入框的值
-  const [inputContent, setInputContent] = useState("")
+  const [inputContent, setInputContent] = useState("请输入中文描述,比如画一位女子,身穿汉服,手拿佩剑,眼神凌厉")
   // 显示tabbar
   const setVisibleTabBar = () => {
     dispatch(setbarstatus(true))
@@ -27,9 +28,11 @@ const InputBox: React.FC<InputBoxProps> = ({ tabs, onResponse }) => {
   }
   const toSend = async () => {
     if (getToken()) {
+      setIsButtonDisabled(true);
       const res = await CreateImagesAPI({ prompt: inputContent + tabs })
       onResponse(res.data.data.url); 
       console.log(res.data.data.url)
+      setIsButtonDisabled(false);
     } else {
       alert("请先登录")
       window.location.href = "/login"
@@ -45,7 +48,7 @@ const InputBox: React.FC<InputBoxProps> = ({ tabs, onResponse }) => {
         onBlur={setUnvisibleTabBar}
         value={inputContent}
       />
-      <Button className='icon' type="primary" shape="circle">
+      <Button className='icon' type="primary" shape="circle" disabled={isButtonDisabled}>
         <SendOutlined onClick={toSend}/>
       </Button>
     </div>

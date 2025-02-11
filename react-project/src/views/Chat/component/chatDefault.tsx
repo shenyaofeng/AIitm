@@ -27,7 +27,9 @@ const ChatDefault = () => {
     }
   }, [x])
   const y = useSelector((state: RootState) => state.content.message)
+
   const situation = useSelector((state: RootState) => state.content.situation)
+  
   const [text, setText] = useState("")
 
   return (

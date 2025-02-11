@@ -17,6 +17,7 @@ const chatBotMessage = createSlice({
     //存储的聊天记录
     message: [] as Message[],
     receiveText: "",
+    //是否在回复中
     situation:false,
     sendInput:""
   },
@@ -74,6 +75,7 @@ const AItext = () => {
         stream: true,
       }),
     });
+    console.log(response);
     // 检查 response.body 是否为 null
     if (response.body === null) {
       console.error("响应体为空");
@@ -97,7 +99,6 @@ const AItext = () => {
       console.log(text);
       if (
         text.includes("data") &&
-        !text.includes("usage") &&
         !text.includes("[DONE]") &&
         text.includes("choices")
       ) {

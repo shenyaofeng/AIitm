@@ -54,9 +54,9 @@ const Paint = () => {
     <div className="chatI">
       生成风格
       {tabs}
-      <div className="creativeImage">
+      {responseData && <div className="creativeImage">
         <img className="image" src={responseData}></img>
-      </div>
+      </div>}
       <div className="chat">
         <InputBox tabs={selectedTitle} onResponse={handleResponse} />
       </div>
