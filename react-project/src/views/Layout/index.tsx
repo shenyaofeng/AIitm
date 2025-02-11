@@ -10,7 +10,8 @@ import { Button } from 'antd-mobile'
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store/index';
 import { useEffect } from 'react';
-// import { message } from 'antd';
+// import { getToken } from '../../utils';
+import { message } from 'antd';
 const barName = [
     {
         key: "/",
@@ -44,12 +45,14 @@ const NavBar = () => {
     const switchRoute = (path: string) => {
         navigate(path)
     };
+    //添加新页面
+    const y = useSelector((state: RootState) => state.content.message)
     const addNews = () => {
-        // if(){
-        //     message.error("已经是新页面")
-        // }else{
-            
-        // }
+        if (!y[0]){
+            message.error("已经是新页面")
+        }else{
+            window.location.reload()
+        }
     }
     //根据当前路由给tabbar高亮,刷新页面不会丢失下面tabbar的高亮
     const location = useLocation()
