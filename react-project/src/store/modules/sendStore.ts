@@ -19,7 +19,8 @@ const chatBotMessage = createSlice({
     receiveText: "",
     //是否在回复中
     situation:false,
-    sendInput:""
+    sendInput:"",
+    history:-1
   },
   reducers: {
     // 发送的内容
@@ -50,11 +51,14 @@ const chatBotMessage = createSlice({
         finish_reason: "",
       });
     },
+    History(state,action){
+      state.history = action.payload
+    }
   },
 });
 
 //解构出来actionCreators函数
-const { handleText, AISendText, userSendText, situation } =
+const { handleText, AISendText, userSendText, situation, History } =
   chatBotMessage.actions;
 //异步action
 const AItext = () => {
@@ -121,7 +125,7 @@ const AItext = () => {
 //获取reducer
 const reducer = chatBotMessage.reducer;
 //按需导出actionCreators函数
-export { handleText, AISendText, AItext, userSendText, situation };
+export { handleText, AISendText, AItext, userSendText, situation, History };
 
 //默认导出reducer
 export default reducer;

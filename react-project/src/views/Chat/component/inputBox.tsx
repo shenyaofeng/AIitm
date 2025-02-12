@@ -27,6 +27,7 @@ const InputBox = () => {
   }
   const situation = useSelector((state: RootState) => state.content.situation)
 
+  const history = Number(useSelector((state: RootState) => state.content.history))
   const setVisibleTabBar = () => {
     dispatch(setbarstatus(true))
   }
@@ -43,7 +44,7 @@ const InputBox = () => {
         onBlur={setUnvisibleTabBar}
         value={inputContent}
       />
-      <Button className='icon' type="primary" shape="circle" disabled={situation}>
+      <Button className='icon' type="primary" shape="circle" disabled={situation || history != -1}>
         <SendOutlined onClick={toSend} />
       </Button>
     </div>
