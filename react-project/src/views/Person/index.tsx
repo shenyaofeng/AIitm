@@ -23,6 +23,7 @@ const Person = () => {
                     message.success('退出成功')
                     removeToken()
                     removeUsername()
+                    localStorage.removeItem('imgUrl')
                   },
                 })
               }}

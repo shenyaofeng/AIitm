@@ -31,7 +31,6 @@ const barName = [
     },
 ]
 const NavBar = () => {
-    //
     const dispatch = useDispatch()
     const [visible, setVisible] = useState(false)
     const username = getUsername()

@@ -4,6 +4,7 @@ import "../Chat/Chat.scss"
 import { CapsuleTabs } from 'antd-mobile'
 import { Tag } from 'antd-mobile'
 import './index.scss'
+import { useEffect } from "react";
 const Paint = () => {
   const [selectedTitle, setSelectedTitle] = useState<string>('无风格'); // 初始化选中的标题
   //
@@ -29,6 +30,12 @@ const Paint = () => {
     // 处理响应数据
     setResponseData(response);
   };
+  useEffect(() => {
+    const url = localStorage.getItem("imgUrl")
+    if(url){
+      setResponseData(url)
+    }
+  },[])
   const tabs = (
     <CapsuleTabs defaultActiveKey='1' onChange={handleTabChange} style={{ backgroundColor: '#f0f0f0' }}>
       <CapsuleTabs.Tab title='无风格' key='1'>

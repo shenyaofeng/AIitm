@@ -10,12 +10,14 @@ import rehypeRaw from 'rehype-raw'// 解析标签，支持html语法
 import "github-markdown-css/github-markdown.css"
 const ChatDefault = () => {
   const x = useSelector((state: RootState) => state.content.receiveText)
+  // 监听x变化
   useEffect(() => {
     if (x) {
       setText(x)
     }
   }, [x])
-  const y = useSelector((state: RootState) => state.content.message)
+  // 所有对话
+  const message = useSelector((state: RootState) => state.content.message)
 
   const situation = useSelector((state: RootState) => state.content.situation)
 
@@ -24,13 +26,14 @@ const ChatDefault = () => {
 
   return (
     <div>
-      <div className="start-page-view">
+      {/* 如果没有对话则 */}
+      {message.length==0 && <div className="start-page-view">
         <p className="greeting-text">你好，我是你的AI智能助手</p>
         <p className="intro-text">作为你的智能伙伴，我既能写文案，想点子，又能写代码，做表格。</p>
-      </div>
+      </div>}
       {/* 流式输出完毕后替换 */}
       {
-        (y && history == -1) && y.map((item, index) => {
+        (message && history == -1) && message.map((item, index) => {
           return (
             <div key={index} className="start-page-view"><ReactMarkdown
               className='markdown-body'
@@ -65,7 +68,7 @@ const ChatDefault = () => {
                 remarkPlugins={[remarkGfm]}
                 rehypePlugins={[rehypeRaw]}
               >
-                {y[history].content}
+                {message[history].content}
               </ReactMarkdown>
             </div>
             <div className="start-page-view">
@@ -74,7 +77,7 @@ const ChatDefault = () => {
                 remarkPlugins={[remarkGfm]}
                 rehypePlugins={[rehypeRaw]}
               >
-                {y[history + 1].content}
+                {message[history + 1].content}
               </ReactMarkdown>
             </div>
           </div>
