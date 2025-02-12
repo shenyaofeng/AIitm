@@ -55,7 +55,6 @@ const Login = () => {
         username: values.username,
         password: values.password
       })
-      console.log(res)
       if (res.data.code !== 200) {
         if (res.data.serviceCode === 501) {
           message.error('用户名已存在，请重新输入')

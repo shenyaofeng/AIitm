@@ -2,7 +2,7 @@ import { Button, Modal, Space} from 'antd-mobile'
 import './index.scss'
 import { removeToken , removeUsername } from "../../utils";
 import { useNavigate } from "react-router-dom";
-
+import { message } from 'antd';
 const Person = () => {
   const navigate = useNavigate()
 
@@ -20,6 +20,7 @@ const Person = () => {
                   showCloseButton: true,
                   onConfirm: () => {
                     navigate('/login', { replace: true })
+                    message.success('退出成功')
                     removeToken()
                     removeUsername()
                   },

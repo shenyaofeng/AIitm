@@ -2,6 +2,7 @@ import InputBox from "./component/inputBox";
 import { useState } from "react";
 import "../Chat/Chat.scss"
 import { CapsuleTabs } from 'antd-mobile'
+import { Tag } from 'antd-mobile'
 import './index.scss'
 const Paint = () => {
   const [selectedTitle, setSelectedTitle] = useState<string>('无风格'); // 初始化选中的标题
@@ -29,7 +30,7 @@ const Paint = () => {
     setResponseData(response);
   };
   const tabs = (
-    <CapsuleTabs defaultActiveKey='1' onChange={handleTabChange}>
+    <CapsuleTabs defaultActiveKey='1' onChange={handleTabChange} style={{ backgroundColor: '#f0f0f0' }}>
       <CapsuleTabs.Tab title='无风格' key='1'>
       </CapsuleTabs.Tab>
       <CapsuleTabs.Tab title='动漫风格' key='2'>
@@ -52,7 +53,11 @@ const Paint = () => {
   )
   return (
     <div className="chatI">
-      生成风格
+      <div style={{ backgroundColor: '#f0f0f0',display: 'flex', justifyContent: 'center' }}>
+        <Tag color='primary' style={{ fontSize: '1.2rem', padding: '8px 16px' }}>
+          选择生成风格
+        </Tag>
+      </div>
       {tabs}
       {responseData && <div className="creativeImage">
         <img className="image" src={responseData}></img>

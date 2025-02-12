@@ -1,4 +1,4 @@
-import { Input, Button } from 'antd';
+import { Input, Button, message } from 'antd';
 const { TextArea } = Input;
 import { SendOutlined } from '@ant-design/icons';
 import { useState } from "react";
@@ -8,11 +8,14 @@ import { useDispatch } from 'react-redux';
 import { CreateImagesAPI } from '../../../API/AI/createImages';
 import { getToken } from '../../../utils';
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 interface InputBoxProps {
   tabs: React.ReactNode;
   onResponse: (data: string) => void;
 }
 const InputBox: React.FC<InputBoxProps> = ({ tabs, onResponse }) => {
+  //
+  const navigate = useNavigate()
   // 按钮状态
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
   const dispatch = useDispatch()
@@ -30,8 +33,11 @@ const InputBox: React.FC<InputBoxProps> = ({ tabs, onResponse }) => {
     if (getToken()) {
       setIsButtonDisabled(true);
       const res = await CreateImagesAPI({ prompt: inputContent + tabs })
+      if(res.data.code === 401){
+        message.error("token过期,请重新登录")
+        navigate("/login")
+      }
       onResponse(res.data.data.url); 
-      console.log(res.data.data.url)
       setIsButtonDisabled(false);
     } else {
       alert("请先登录")

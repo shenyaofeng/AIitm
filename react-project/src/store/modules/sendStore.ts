@@ -36,7 +36,7 @@ const chatBotMessage = createSlice({
     },
     userSendText(state, action) {
       state.receiveText = "";
-      console.log(action.payload);
+      // console.log(action.payload);
       state.message.push({
         role: "user",
         content: action.payload,
@@ -75,7 +75,6 @@ const AItext = () => {
         stream: true,
       }),
     });
-    console.log(response);
     // 检查 response.body 是否为 null
     if (response.body === null) {
       console.error("响应体为空");
@@ -96,7 +95,7 @@ const AItext = () => {
         window.location.href = "/login";
         return;
       }
-      console.log(text);
+      // console.log(text);
       if (
         text.includes("data") &&
         !text.includes("[DONE]") &&
@@ -107,7 +106,7 @@ const AItext = () => {
           const z = replace(parts[i], /data:/g, "");
           i = i + 2;
           const z1 = JSON.parse(z);
-          console.log(z1.choices[0].delta.content);
+          // console.log(z1.choices[0].delta.content);
           dispatch(handleText(z1.choices[0].delta.content));
         }
       } else {

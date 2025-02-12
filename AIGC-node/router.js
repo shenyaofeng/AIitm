@@ -11,7 +11,7 @@ router.post("/user/login", user.login);
 //文生文
 router.post("/aicompletions",authority, zhipu.createCompletions);
 //文生图
-router.post("/aiimages", zhipu.createImages);
+router.post("/aiimages", authority, zhipu.createImages);
 router.post("/send", zhipu.sendInput);
 router.post("/user/register", );
 module.exports = router;

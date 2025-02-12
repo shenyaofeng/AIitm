@@ -46,7 +46,6 @@ const Login = () => {
         username: values.username,
         password: values.password
       });
-      console.log(res.data.data);
       if (res.data.code === 200) {
         setToken(res.data.data.token);
         setUsername(values.username);

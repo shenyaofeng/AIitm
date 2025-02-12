@@ -47,10 +47,11 @@ const NavBar = () => {
     };
     //添加新页面
     const y = useSelector((state: RootState) => state.content.message)
-    const addNews = () => {
+    const addNews = async () => {
         if (!y[0]){
-            message.error("已经是新页面")
+            message.error("已经是新对话")
         }else{
+            await message.success("开启新对话")
             window.location.reload()
         }
     }

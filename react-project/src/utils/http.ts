@@ -12,11 +12,9 @@ httpInstance.interceptors.request.use(
   function (config) {
     // 在发送请求之前做些什么
     // 携带token
-    console.log(config);
     const token = getToken();
-    console.log(token);
     if (token) {
-      config.headers.Authorization = `Bearer ${token}`;
+      config.headers.Authorization = `${token}`;
     }
     return config;
   },
