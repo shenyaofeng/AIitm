@@ -7,7 +7,7 @@ class ZhipuAIController {
   async sendInput(ctx){
     const { data } = ctx.request.body;
     global.data = data;
-    ctx.send(123);
+    ctx.send("完成");
   }
   // 文生文
   async createCompletions(ctx) {
@@ -32,7 +32,7 @@ class ZhipuAIController {
       ],
     });
     for await (const chunk of data) {
-      ctx.send(123);
+      ctx.send("完成");
       ctx.res.write(chunk.toString());
     }
   }

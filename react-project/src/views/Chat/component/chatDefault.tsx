@@ -35,8 +35,8 @@ const ChatDefault = () => {
       {
         (message && history == -1) && message.map((item, index) => {
           return (
-            <div key={index} className="start-page-view"><ReactMarkdown
-              className='markdown-body'
+            <div key={index} className={`start-page-view ${item.role == "user" ? "start-page-view1" : ''}`}><ReactMarkdown
+              className={`${item.role == "user" ? "user-content" : 'markdown-body '}`}
               remarkPlugins={[remarkGfm]}
               rehypePlugins={[rehypeRaw]}
             >
@@ -62,9 +62,9 @@ const ChatDefault = () => {
       {
         (history != -1) && (
           <div>
-            <div className="start-page-view">
+            <div className="start-page-view1">
               <ReactMarkdown
-                className='markdown-body'
+                className='user-content'
                 remarkPlugins={[remarkGfm]}
                 rehypePlugins={[rehypeRaw]}
               >
