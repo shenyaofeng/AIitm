@@ -1,5 +1,5 @@
 import "../chatDefault.scss"
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import ReactMarkdown from 'react-markdown';
 // import {sendContent} from '../../../request/sendAPI'
 import { useSelector } from 'react-redux';
@@ -8,7 +8,7 @@ import remarkGfm from 'remark-gfm';// 划线、表、任务列表和直接url等
 import rehypeRaw from 'rehype-raw'// 解析标签，支持html语法
 //高亮的主题，还有很多别的主题，可以自行选择
 import "github-markdown-css/github-markdown.css"
-const ChatDefault = () => {
+const ChatDefault = React.memo(() => {
   const x = useSelector((state: RootState) => state.content.receiveText)
   // 监听x变化
   useEffect(() => {
@@ -23,7 +23,6 @@ const ChatDefault = () => {
 
   const history = Number(useSelector((state: RootState) => state.content.history))
   const [text, setText] = useState("")
-
   return (
     <div>
       {/* 如果没有对话则 */}
@@ -86,6 +85,6 @@ const ChatDefault = () => {
       }
     </div>
   )
-}
+})
 
 export default ChatDefault;

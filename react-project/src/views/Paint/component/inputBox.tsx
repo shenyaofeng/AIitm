@@ -2,34 +2,25 @@ import { Input, Button, message } from 'antd';
 const { TextArea } = Input;
 import { SendOutlined } from '@ant-design/icons';
 import { useState } from "react";
-// import {sendContent} from '../../../request/sendAPI'
-import { setbarstatus } from '../../../store/modules/tabBarStore';
-import { useDispatch } from 'react-redux';
 import { CreateImagesAPI } from '../../../API/AI/createImages';
 import { getToken } from '../../../utils';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Toast } from 'antd-mobile';
+// 封装一个自定义hook tabBar的状态
+import useTabBarStatus from '../../../hooks/useTabBarStatus';
 interface InputBoxProps {
   tabs: React.ReactNode;
   onResponse: (data: string) => void;
 }
 const InputBox: React.FC<InputBoxProps> = ({ tabs, onResponse }) => {
-  //
   const navigate = useNavigate()
   // 按钮状态
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
-  const dispatch = useDispatch()
   //输入框的值
   const [inputContent, setInputContent] = useState("请输入中文描述,比如画一位女子,身穿汉服,手拿佩剑,眼神凌厉")
-  // 显示tabbar
-  const setVisibleTabBar = () => {
-    dispatch(setbarstatus(true))
-  }
-  // 隐藏tabbar
-  const setUnvisibleTabBar = () => {
-    dispatch(setbarstatus(false))
-  }
+  // tabBar的状态自定义hooks
+  const { setVisibleTabBar, setUnvisibleTabBar } = useTabBarStatus()
   const toSend = async () => {
     if (getToken()) {
       setIsButtonDisabled(true);

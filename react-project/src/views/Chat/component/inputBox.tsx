@@ -2,15 +2,16 @@ import { Input, Button } from 'antd';
 const { TextArea } = Input;
 import { SendOutlined } from '@ant-design/icons';
 import { useState } from "react";
-// import {sendContent} from '../../../request/sendAPI'
-import { setbarstatus } from '../../../store/modules/tabBarStore';
 import { useDispatch } from 'react-redux';
 import { AItext, userSendText } from '../../../store/modules/sendStore'
 import { getToken } from '../../../utils';
 import { sendAPI } from '../../../API/user/register';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../store/index';
-const InputBox = () => {
+import React from 'react';
+// tabBar的状态自定义hooks
+import useTabBarStatus from '../../../hooks/useTabBarStatus';
+const InputBox = React.memo(() => {
   const dispatch = useDispatch()
   //输入框的值
   const [inputContent, setInputContent] = useState("")
@@ -28,12 +29,8 @@ const InputBox = () => {
   const situation = useSelector((state: RootState) => state.content.situation)
 
   const history = Number(useSelector((state: RootState) => state.content.history))
-  const setVisibleTabBar = () => {
-    dispatch(setbarstatus(true))
-  }
-  const setUnvisibleTabBar = () => {
-    dispatch(setbarstatus(false))
-  }
+  // tabBar的状态自定义hooks
+  const { setVisibleTabBar, setUnvisibleTabBar } = useTabBarStatus()
   return (
     <div className='chatbox'>
       <TextArea className='input'
@@ -49,6 +46,6 @@ const InputBox = () => {
       </Button>
     </div>
   )
-}
+})
 
 export default InputBox;

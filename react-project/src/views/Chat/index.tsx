@@ -1,7 +1,8 @@
 import InputBox from "./component/inputBox";
 import ChatDefault from "./component/chatDefault";
 import "./Chat.scss"
-const Chat = () => {
+import React from "react";
+const Chat = React.memo(() => {
   return (
     <div className="chatI">
       <ChatDefault />
@@ -10,6 +11,6 @@ const Chat = () => {
       </div>
     </div>
   )
-}
+})
 
 export default Chat;

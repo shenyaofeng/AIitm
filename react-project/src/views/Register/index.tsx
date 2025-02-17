@@ -1,33 +1,17 @@
 import { useState } from "react";
 import "./index.scss"
-// import axios from 'axios';
 import React from 'react'
 import { Button, Form, Input, message, } from "antd";
 import { registerAPI } from '../../API/user/register'
 import { useNavigate, Link } from "react-router-dom";
-import { Mask, SpinLoading } from 'antd-mobile'
-// http:192.168.43.147:7000;
+// 蒙层加载组件
+import { LoadingOverlay } from '../../components/LoadingOverlay'
 interface RegisterFormValues {
   username: string;
   password: string;
 }
-// 蒙层加载组件
-const LoadingOverlay = () => {
-  return (
-    <div className="overlay">
-      <Mask >
-        <div className="loading">
-          <SpinLoading color='primary' style={{ '--size': '48px' }} />
-          <div>
-            加载中...
-          </div>
-        </div>
-      </Mask>
-    </div>
-  );
-}
 
-const Login = () => {
+const Register = () => {
   // 加载状态
   const [loading, setLoading] = useState(false);
   // 按钮状态
@@ -146,4 +130,4 @@ const Login = () => {
   )
 }
 
-export default Login;
+export default Register;

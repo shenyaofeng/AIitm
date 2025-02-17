@@ -1,32 +1,16 @@
 import "./index.scss"
-// import axios from 'axios';
 import { Button, Form, Input, message } from "antd";
 import { useNavigate, Link } from "react-router-dom";
 import { loginAPI } from '../../API/user/login'
 import { setToken } from '../../utils/index'
 import { setUsername } from '../../utils/index'
 import { useState } from 'react';
-import { Mask, SpinLoading } from 'antd-mobile'
-// http:192.168.43.147:7000;
+// 蒙层加载组件
+import { LoadingOverlay } from '../../components/LoadingOverlay'
 
 interface LoginFormValues {
   username: string;
   password: string;
-}
-// 蒙层加载组件
-const LoadingOverlay = () => {
-  return (
-    <div className = "overlay">
-      <Mask >
-        <div className="loading">
-          <SpinLoading color='primary' style={{ '--size': '48px' }} />
-          <div>
-            加载中...
-          </div>
-        </div>
-      </Mask>
-    </div>
-  );
 }
 
 const Login = () => {
