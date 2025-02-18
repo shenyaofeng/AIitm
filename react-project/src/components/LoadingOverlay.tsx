@@ -1,4 +1,5 @@
 import { Mask, SpinLoading } from 'antd-mobile'
+// 加载中动画蒙层组件
 export const LoadingOverlay = () => {
   return (
     <div className = "overlay">

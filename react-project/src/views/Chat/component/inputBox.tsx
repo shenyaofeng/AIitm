@@ -41,7 +41,7 @@ const InputBox = React.memo(() => {
         onBlur={setUnvisibleTabBar}
         value={inputContent}
       />
-      <Button className='icon' type="primary" shape="circle" disabled={situation || history != -1}>
+      <Button className='icon' type="primary" shape="circle" disabled={situation || history != -1 || inputContent.length == 0}>
         <SendOutlined onClick={toSend} />
       </Button>
     </div>

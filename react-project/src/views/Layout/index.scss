@@ -8,11 +8,12 @@
       position: relative; // 相对定位，确保容器在布局中占据正确的位置
       flex: 1; // 占据剩余的空间
       overflow-y: auto; // 允许垂直滚动
+      scrollbar-color: #0091ff #ffffff;
       margin-top: 100px;
       margin-bottom: 50px;
       bottom: 50px;
       width: 100%;
-      background: linear-gradient(to bottom, #0091ff, #ffffff)
+      background: linear-gradient(to bottom, #0091ff, #ffffff)   
     }
     .footer {
       position: fixed;
