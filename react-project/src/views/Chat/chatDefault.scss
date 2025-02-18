@@ -12,25 +12,10 @@
     line-height: 6.5vw;
     padding: 2.5vw 0;
   }
-  .question-hint {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    .question-text {
-      color: #777a8d;
-    }
-    .change-btn {
-      display: flex;
-      align-items: center;
-      .change {
-        color: #5a56d0;
-      }
-      .rotate-animation {
-        transition: 1s;
-        transform: rotate(360deg);
-      }
-    }
-  }	
+  .recently-news{
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
 }
 .user-content{
   background-color: rgb(0, 170, 255);
