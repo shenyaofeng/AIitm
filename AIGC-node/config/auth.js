@@ -1,12 +1,8 @@
 // token相关操作
 const basicAuth = require("basic-auth");
 const jwt = require("jsonwebtoken");
-
 const authority = async (ctx,next) => {
   const token = ctx.get("Authorization");
-  // console.log(ctx.get("Authorization"));
-  // const token = basicAuth(token1);
-  // console.log(token);
   if (!token) {
     ctx.throw(401, "no authorization detected in request " + "headers");
   }
