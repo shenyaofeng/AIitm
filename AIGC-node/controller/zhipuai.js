@@ -32,9 +32,9 @@ class ZhipuAIController {
       ],
     });
     for await (const chunk of data) {
-      ctx.send("完成");
       ctx.res.write(chunk.toString());
     }
+    ctx.send("完成");
   }
   // 文生图
   async createImages(ctx) {

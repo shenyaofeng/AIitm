@@ -69,15 +69,6 @@ const AItext = () => {
       headers: {
         Authorization: `${token}`
       },
-      body: JSON.stringify({
-        messages: [
-          {
-            role: "user",
-            content: "你好",
-          },
-        ],
-        stream: true,
-      }),
     });
     // 检查 response.body 是否为 null
     if (response.body === null) {

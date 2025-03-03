@@ -1,0 +1,11 @@
+[2025-02-21T14:54:17.223] [ERROR] error - UnauthorizedError: token失效
+    at Object.throw (C:\AIitem\AIGC-node\node_modules\koa\lib\context.js:97:11)
+    at authority (C:\AIitem\AIGC-node\config\auth.js:13:14)
+    at dispatch (C:\AIitem\AIGC-node\node_modules\koa-compose\index.js:42:32)
+    at C:\AIitem\AIGC-node\node_modules\@koa\router\lib\router.js:261:18
+    at dispatch (C:\AIitem\AIGC-node\node_modules\koa-compose\index.js:42:32)
+    at C:\AIitem\AIGC-node\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\AIitem\AIGC-node\node_modules\@koa\router\lib\router.js:266:33)
+    at dispatch (C:\AIitem\AIGC-node\node_modules\koa-compose\index.js:42:32)
+    at errorhandler (C:\AIitem\AIGC-node\config\errorhandler.js:5:11)
+    at dispatch (C:\AIitem\AIGC-node\node_modules\koa-compose\index.js:42:32)
